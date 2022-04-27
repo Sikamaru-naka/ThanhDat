@@ -1,1 +1,69 @@
+[
+    {
+      "name": "theme_info",
+      "theme_name": "Dat theme",
+      "theme_version": "5.0.0",
+      "theme_author": "Shopify",
+      "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+      "theme_support_url": "https://support.shopify.com/"
+    },
+    {
+      "name": "ThanhDat color",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Primary colors"
+        },
+        {
+          "type": "color",
+          "id": "colors_text",
+          "default": "#171719",
+          "label": "Text color"
+        },
+        {
+            "type": "color",
+            "id": "colors_text_primary",
+            "default": "#fff",
+            "label": "Text color primary"
+        },
+        {
+          "type": "color",
+          "id": "colors_text_secondary",
+          "default": "#84848E",
+          "label": "Text color secondary"
+        },
+        {
+          "type": "color",
+          "id": "background_primary",
+          "default": "#fff",
+          "label": "Background-primary"
+        },
+        {
+            "type": "color",
+            "id": "background_secondary",
+            "default": "#171719",
+            "label": "Background-secondary"
+        },
+        {
+            "type": "color",
+            "id": "background_third",
+            "default": "#F5F5F5",
+            "label": "Background-third"
+        },
+        {
+            "type": "color",
+            "id": "background_btn",
+            "default": "#fff",
+            "label": "Background buttom"
+        },
+        {
+            "type": "color",
+            "id": "background_btn_secondary",
+            "default": "#EE4D2D",
+            "label": "Background buttom"
+        }
 
+      ]
+    }
+  ]
+  
