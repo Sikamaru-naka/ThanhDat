@@ -1,0 +1,90 @@
+[
+    {
+      "name": "theme_info",
+      "theme_name": "Dat theme",
+      "theme_version": "5.0.0",
+      "theme_author": "Shopify",
+      "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+      "theme_support_url": "https://support.shopify.com/"
+    },
+    {
+      "name": "ThanhDat color",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Primary colors"
+        },
+        {
+          "type": "color",
+          "id": "colors_solid_button_labels",
+          "default": "#FFFFFF",
+          "label": "Solid button label",
+          "info": "Used as foreground color on accent colors."
+        },
+        {
+          "type": "color",
+          "id": "colors_accent_1",
+          "default": "#C22222",
+          "label": "Color 1",
+          "info": "Used for solid button background."
+        },
+        {
+          "id": "gradient_accent_1",
+          "type": "color_background",
+          "label": "Color 1 gradient"
+        },
+        {
+          "type": "color",
+          "id": "colors_accent_2",
+          "default": "#334FB4",
+          "label": "Accent"
+        },
+        {
+          "id": "gradient_accent_2",
+          "type": "color_background",
+          "label": "Color 1 gradient"
+        },
+        {
+          "type": "header",
+          "content": "Secondary colors"
+        },
+        {
+          "type": "color",
+          "id": "colors_text",
+          "default": "#6BF247",
+          "label": "Text",
+          "info": "Used as foreground color on background colors."
+        },
+        {
+          "type": "color",
+          "id": "colors_outline_button_labels",
+          "default": "#121212",
+          "label": "Outline button",
+          "info": "Also used for text links."
+        },
+        {
+          "type": "color",
+          "id": "colors_background_1",
+          "default": "#FFFFFF",
+          "label": "Background 1"
+        },
+        {
+          "id": "gradient_background_1",
+          "type": "color_background",
+          "label": "Background 1 gradient"
+        },
+        {
+          "type": "color",
+          "id": "colors_background_2",
+          "default": "#F3F3F4",
+          "label": "Background 2"
+        },
+        {
+          "id": "gradient_background_2",
+          "type": "color_background",
+          "label": "Background 2 gradient"
+        }
+      ]
+    }
+  ]
+  
