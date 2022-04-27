@@ -1,0 +1,11 @@
+.font-family{
+  font-family: var(--font-body-family);
+}
+
+.font-n4{
+  font-weight: var(--font-body-weight);
+}
+
+.font-n7{
+  font-weight: var(--font-body-weight-bold);
+}
