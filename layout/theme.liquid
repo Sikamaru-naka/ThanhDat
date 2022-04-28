@@ -46,9 +46,8 @@
       {{ settings.type_header_font | font_face: font_display: 'swap' }}
 
       :root {
-<<<<<<< HEAD
+
         --font-body-family: {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
-        --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
         --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
 
@@ -156,7 +155,6 @@
         --variant-pills-shadow-horizontal-offset: {{ settings.variant_pills_shadow_horizontal_offset }}px;
         --variant-pills-shadow-vertical-offset: {{ settings.variant_pills_shadow_vertical_offset }}px;
         --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
-=======
         --color-text: {{ settings.colors_text.red }}, {{ settings.colors_text.green }}, {{ settings.colors_text.blue }};
         --color-text-primary: {{ settings.colors_text_primary.red }}, {{ settings.colors_text_primary.green }}, {{ settings.colors_text_primary.blue }};
         --colors-text-secondary: {{ settings.colors_text_secondary.red }}, {{ settings.colors_text_secondary.green }}, {{ settings.colors_text_secondary.blue }};
@@ -166,7 +164,8 @@
         --background-btn: {{ settings.background_btn.red }}, {{ settings.background_btn.green }}, {{ settings.background_btn.blue }};
         --background-btn-secondary: {{ settings.background_btn_secondary.red }}, {{ settings.background_btn_secondary.green }}, {{ settings.background_btn_secondary.blue }};
 
->>>>>>> thanh
+=======
+>>>>>>> cd594f6a807bc90091e1c48709d04e8d4b91e0b2
       }
 
       *,
