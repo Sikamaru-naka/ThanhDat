@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .font-family{
   font-family: var(--font-body-family);
 }
@@ -9,3 +10,46 @@
 .font-n7{
   font-weight: var(--font-body-weight-bold);
 }
+=======
+:root,
+.text-color {
+    --text-color: var(--color-text);
+}
+
+:root,
+.color-text-primary {
+    --color-text-primary: var(--color-text-primary);
+}
+
+:root,
+.colors-text-secondary {
+    --colors-text-secondary: var(--colors-text-secondary);
+}
+
+:root,
+.background-primary {
+    --dark-bgc: var(--background-primary);
+}
+
+:root,
+.background_secondary {
+    --gray-bgc: var(--background_secondary);
+}
+
+:root,
+.background-third {
+    --white-bgc: var(--background-third);
+}
+
+:root,
+.background-btn {
+    --background-color: var(--background-btn);
+}
+
+:root,
+.background-btn-secondary {
+    --orange-color: var(--background-btn-secondary);
+}
+
+
+>>>>>>> thanh
