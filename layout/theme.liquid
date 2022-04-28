@@ -32,8 +32,6 @@
       <meta name="description" content="{{ page_description | escape }}">
     {% endif %} 
 
-    {% render 'meta-tags' %}
-
     <!-- Nó tự động tải tất cả các tập lệnh theo yêu cầu của Shopify vào đầu tài liệu. -->
     {{ content_for_header }}
 
@@ -66,6 +64,9 @@
         --background-btn: {{ settings.background_btn.red }}, {{ settings.background_btn.green }}, {{ settings.background_btn.blue }};
         --background-btn-secondary: {{ settings.background_btn_secondary.red }}, {{ settings.background_btn_secondary.green }}, {{ settings.background_btn_secondary.blue }};
 
+
+      }
+      
     {% endstyle %}
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
