@@ -8,28 +8,32 @@
     <link rel="canonical" href="{{ canonical_url }}">
     <link rel="preconnect" href="https://cdngit .shopify.com" crossorigin>
 
+    <!-- Nếu không có biểu tượng của page thì thay link -->
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}
 
-    {%- unless settings.type_header_font.system? and settings.type_body_font.system? -%}
+    <!-- Nếu cả 2 font không phải là font chữ hệ thống thì dùng font mặc định -->
+    {%- unless settings.type_header_font.system? and settings.type_body_font. ? -%}
       <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
     {%- endunless -%}
+    
 
     <title>
+      <!-- page_title Trả về tiêu đề của page -->
       {{ page_title }}
       {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
       {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
       {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
     </title>
 
+    <!-- page_description trả về descrip tương ứng trong admin -->
     {% if page_description %}
       <meta name="description" content="{{ page_description | escape }}">
-    {% endif %}
+    {% endif %} 
 
     {% render 'meta-tags' %}
 
-    <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
 
     {%- liquid
@@ -37,8 +41,12 @@
       assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
       assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
     %}
+    
 
+    <!-- Bộ lọc FONT_FACE có một đối số FONT_DISPLAY tùy chọn để tùy chỉnh thuộc tính FONT-Display của khai báo FONT-Face. -->
+    <!-- font-display Cung cấp cho mặt phông chữ một khoảng thời gian khối cực nhỏ và một khoảng thời gian hoán đổi vô hạn. -->
     {% style %}
+      
       {{ settings.type_body_font | font_face: font_display: 'swap' }}
       {{ body_font_bold | font_face: font_display: 'swap' }}
       {{ body_font_italic | font_face: font_display: 'swap' }}

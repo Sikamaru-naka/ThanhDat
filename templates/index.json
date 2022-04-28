@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "image_banner": {
+      "type": "thanh"
+      
+    }
+  },
+    "order": [
+      "image_banner"
+    ]
+}
+  
