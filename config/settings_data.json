@@ -2,14 +2,14 @@
     "current": "Default",
     "presets": {
       "Default": {
-        "colors_text": "#121212",
-        "colors_text_primary": "#121212",
-        "colors_text_secondary": "#121212",
-        "background_primary": "#121212",
-        "background_secondary": "#121212",
-        "background_third": "#121212",
-        "background_btn": "#121212",
-        "background_btn_secondary": "#121212",
+        "colors_text": "#fff",
+        "colors_text_primary": "#171719",
+        "colors_text_secondary": "#84848E",
+        "background_primary": "#171719",
+        "background_secondary": "#F5F5F5",
+        "background_third": "#fff1ee",
+        "background_btn": "#EE4D2D",
+        "background_btn_secondary": "#fff",
 
 
         "type_page_font": "lato_n4",

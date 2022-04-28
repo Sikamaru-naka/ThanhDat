@@ -85,4 +85,106 @@
 }
 
 
+:root {
+
+    --font-size-regular: 1.4rem;
+    --line-height-regular: 2.4rem;
+
+    --font-size-bold: 3rem;
+    --line-height-bold: 4.5rem;
+
+    --letter-spacing: 0.2rem;
+    
+    --font-size-heading-mb: 2rem;
+    --line-height-heading-mb: 3rem;
+}
+
+* {
+    box-sizing: inherit;
+    
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    line-height: 1.8rem;
+    font-family: lato, sans-serif;
+    font-weight: 400;
+    color: var(--text-color);
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* .mb-20 {
+    margin-bottom: 20px;
+} */
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mb-40 {
+    margin-bottom: 40px;
+}
+
+.mb-50 {
+    margin-bottom: 40px;
+}
+
+ul {
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+p {
+    margin: 0;
+}
+
+.btn {
+    font-size: var(--font-size-regular);
+    line-height: var(--line-height-regular);
+    letter-spacing: var(--letter-spacing);
+    color: var(--text-color);
+    padding: 12px 32px;
+    background-color: var(--white-color);
+    display: inline-block;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+}
+
+.btn-submit {
+    color: #fff;
+    background-color: var(--dark-bgc);    
+}
+
+.heading {
+    font-size: var(--font-size-bold);
+    line-height: var(--line-height-bold);
+    letter-spacing: var(--letter-spacing);
+    font-weight: 600;
+    margin: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.df {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
