@@ -1,3 +1,18 @@
+<<<<<<< HEAD
+=======
+.font-family{
+  font-family: var(--font-body-family);
+}
+
+.font-n4{
+  font-weight: var(--font-body-weight);
+}
+
+.font-n7{
+  font-weight: var(--font-body-weight-bold);
+}
+
+>>>>>>> fec35b36ebc9eeb3ae7156ac6f81e629d90a1dcd
 :root,
 .text-color {
     --text-color: var(--color-text);
@@ -39,6 +54,7 @@
 }
 
 
+<<<<<<< HEAD
 .font-family{
   font-family: var(--font-body-family);
 }
@@ -50,3 +66,5 @@
 .font-n7{
   font-weight: var(--font-body-weight-bold);
 }
+=======
+>>>>>>> fec35b36ebc9eeb3ae7156ac6f81e629d90a1dcd
