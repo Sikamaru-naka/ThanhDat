@@ -8,7 +8,7 @@
       "theme_support_url": "https://support.shopify.com/"
     },
     {
-      "name": "ThanhDat color",
+      "name": "Color",
       "settings": [
         {
           "type": "header",
@@ -66,7 +66,7 @@
       ]
     },
     {
-      "name": "ThanhDat TYPOGRAPHY",
+      "name": "TYPOGRAPHY",
       "settings": [
         {
           "type": "header",
@@ -82,7 +82,7 @@
       ]
     },
     {
-      "name": "ThanhDat Social",
+      "name": "Social",
       "settings": [
         {
           "type": "header",
@@ -133,7 +133,7 @@
       ]
     },
     {
-      "name": "ThanhDat Favicon",
+      "name": "Favicon",
       "settings": [
         {
           "type": "image_picker",
