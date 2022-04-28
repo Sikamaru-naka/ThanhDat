@@ -1,3 +1,5 @@
-<h1>hello</h1>
+{{ 'base.css' | asset_url | stylesheet_tag }}
+
+<h1 class="text-color background-primary">hello</h1>
 
 {{ "<a> thanh </a>" | escape }}

@@ -42,7 +42,7 @@
 
 :root,
 .background-btn {
-    --background-color: var(--background-btn);
+    --background-btn: var(--background-btn);
 }
 
 :root,
@@ -50,6 +50,39 @@
     --orange-color: var(--background-btn-secondary);
 }
 
+.text-color {
+    color: rgb(var(--text-color));
+}
+
+.color-text-primary {
+    color: rgb(var(--color-text-primary));
+}
+
+.colors-text-secondary {
+    color: rgb(var(--colors-text-secondary));
+}
+
+.background-primary {
+    background-color: rgb(var(--dark-bgc));
+}
+
+.background_secondary {
+    background-color: rgb(var(--gray-bgc));
+}
+
+.background-third {
+    background-color: rgb(var(--white-bgc));
+}
+
+.background-btn {
+    background-color: rgb(var(--background-btn));
+
+}
+
+.background-btn-secondary {
+    background-color: rgb(var(--orange-color));
+
+}
 
 
 
