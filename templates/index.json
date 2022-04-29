@@ -44,9 +44,27 @@
       ],
       "settings": {
       }
+    },
+    "16512287608aa91b17": {
+      "type": "collection",
+      "blocks": {
+        "c07fee7a-1402-4da2-8cf4-0a8a241bf65a": {
+          "type": "collection",
+          "settings": {
+            "collection": "ring"
+          }
+        }
+      },
+      "block_order": [
+        "c07fee7a-1402-4da2-8cf4-0a8a241bf65a"
+      ],
+      "settings": {
+        "heading": "SHOP BY CATEGOR"
+      }
     }
   },
   "order": [
-    "1651203086568e7a1c"
+    "1651203086568e7a1c",
+    "16512287608aa91b17"
   ]
 }
