@@ -60,6 +60,7 @@
     color: rgb(var(--colors-text-primary));
 }
 
+/* den nhat */
 .colors-text-secondary {
     color: rgb(var(--text-colors-secondary));
 }
@@ -158,9 +159,9 @@ p {
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
     letter-spacing: var(--letter-spacing);
-    color: var(--text-color);
+    color: rgb(var(--color-text-primary));
     padding: 12px 32px;
-    background-color: var(--white-color);
+    background-color: rgb(var(--white-bgc));
     display: inline-block;
     cursor: pointer;
     outline: 0;
