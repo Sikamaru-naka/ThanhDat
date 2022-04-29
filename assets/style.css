@@ -321,6 +321,12 @@
     display: block;
 }
 
+.btn-category-placeholder:hover::after,
+.category-product__img--placeholder:hover::after {
+  display: none;
+} 
+
+
 .btn-category:hover ~.category-product__img>img,
 .category-product__img:hover >img {
     transform: scale(1.2);
