@@ -1,12 +1,12 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "thanh"
-      
+    "1651203086568e7a1c": {
+      "type": "slider",
+      "settings": {
+      }
     }
   },
-    "order": [
-      "image_banner"
-    ]
+  "order": [
+    "1651203086568e7a1c"
+  ]
 }
-  
