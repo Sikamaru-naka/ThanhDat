@@ -93,7 +93,7 @@ const menuHeight = $('.product-option-1');
 console.log()
 
 if(iconArrowDown){
-
+    
     iconArrowDown.addEventListener('click',function() {
         if(menuHeight.offsetHeight === 0) {
             iconArrowDown.classList.add('icon-rotate');
