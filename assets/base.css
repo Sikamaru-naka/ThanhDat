@@ -17,12 +17,12 @@
 
 :root,
 .color-text-primary {
-    --colors-text-primary: var(--color-text-primary)
+    --colors-text-primary: var(--color-text-primary);
 }
 
 :root,
 .colors-text-secondary {
-    --text-colors-secondary: var(--colors-text-secondary);
+    --colors-text-secondary: var(--colors-text-secondary);
 }
 
 :root,
@@ -42,7 +42,7 @@
 
 :root,
 .background-btn {
-    --btn-background: var(--background-btn);
+    --background-btn: var(--background-btn);
 }
 
 :root,
@@ -62,7 +62,7 @@
 
 /* den nhat */
 .colors-text-secondary {
-    color: rgb(var(--text-colors-secondary));
+    color: rgb(var(--colors-text-secondary));
 }
 
 .background-primary {
@@ -78,7 +78,7 @@
 }
 
 .background-btn {
-    background-color: rgb(var(--btn-background));
+    background-color: rgb(var(--background-btn));
 
 }
 
@@ -89,18 +89,18 @@
 
 
 :root {
+
+
     --font-size-regular: 1.4rem;
     --line-height-regular: 2.4rem;
-    
+
     --font-size-bold: 3rem;
     --line-height-bold: 4.5rem;
-    
+
     --letter-spacing: 0.2rem;
     
     --font-size-heading-mb: 2rem;
     --line-height-heading-mb: 3rem;
-
-    --pink-color: #fff1ee;
 }
 
 * {
@@ -182,7 +182,7 @@ p {
 }
 
 .hidden {
-    display: none !important;
+    display: none;
 }
 
 .df {
