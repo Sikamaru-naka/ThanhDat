@@ -2,18 +2,6 @@
   "sections": {
     "1651203086568e7a1c": {
       "type": "slider",
-      "blocks": {
-        "909a3ba7-595c-4ef8-aa17-73a80446c4e5": {
-          "type": "image_picker",
-          "settings": {
-            "heading": "DECORAZIONI PER LE FESTE",
-            "buttom": "Show Now"
-          }
-        }
-      },
-      "block_order": [
-        "909a3ba7-595c-4ef8-aa17-73a80446c4e5"
-      ],
       "settings": {
       }
     }
