@@ -2,11 +2,69 @@
   "sections": {
     "1651203086568e7a1c": {
       "type": "slider",
+      "blocks": {
+        "5a9a43d9-588e-4b50-a4fd-7aeedbe6854b": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-img-1.jpg",
+            "heading": "DECORAZIONI PER LE FESTE",
+            "buttom": "Show Now"
+          }
+        },
+        "1c6c48ca-b0fa-4309-9f61-cd94336f8f9a": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-img-2.jpg",
+            "heading": "DECORAZIONI PER LE FESTE",
+            "buttom": "Show Now"
+          }
+        },
+        "439d9530-0fa5-4cbf-8053-66996b1dff0e": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-img-3.jpg",
+            "heading": "DECORAZIONI PER LE FESTE",
+            "buttom": "Show Now"
+          }
+        },
+        "22433623-26a2-4bd7-8356-84bd33171fd9": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/collection-inmg.jpg",
+            "heading": "DECORAZIONI PER LE FESTE",
+            "buttom": "Show Now"
+          }
+        }
+      },
+      "block_order": [
+        "5a9a43d9-588e-4b50-a4fd-7aeedbe6854b",
+        "1c6c48ca-b0fa-4309-9f61-cd94336f8f9a",
+        "439d9530-0fa5-4cbf-8053-66996b1dff0e",
+        "22433623-26a2-4bd7-8356-84bd33171fd9"
+      ],
       "settings": {
+      }
+    },
+    "16512287608aa91b17": {
+      "type": "collection",
+      "blocks": {
+        "c07fee7a-1402-4da2-8cf4-0a8a241bf65a": {
+          "type": "collection",
+          "settings": {
+            "collection": "ring"
+          }
+        }
+      },
+      "block_order": [
+        "c07fee7a-1402-4da2-8cf4-0a8a241bf65a"
+      ],
+      "settings": {
+        "heading": "SHOP BY CATEGOR"
       }
     }
   },
   "order": [
-    "1651203086568e7a1c"
+    "1651203086568e7a1c",
+    "16512287608aa91b17"
   ]
 }
