@@ -51,21 +51,18 @@
     display: block;
 }
 
+.header-nav {
+    background-color: var(--white-color);
+}
+
 .header-nav__contain {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 110px;
-}
-
-.header-nav__contain > svg{
-    width: 130px;
-    background: cadetblue;
 }
 
 .header-logo {
     margin: 20px 0;
-    font-size: 1.6rem;
 }
 
 .header-logo img {
@@ -81,15 +78,6 @@
     margin: 0 25px;
     padding: 10px 0;
     position: relative;
-}
-
-.header-items a{
-    text-transform: uppercase;
-}
-
-.header-items svg{
-    margin-bottom: 2px;
-    margin-left: 3px;
 }
 
 .product-option {
@@ -155,6 +143,7 @@
 .header-link {
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
+    color: var(--text-color);
     letter-spacing: var(--letter-spacing);
     position: relative;
 }
@@ -164,10 +153,11 @@
     position: absolute;
     bottom: -5px;
     height: 2px;
+    background-color: var(--text-color);
     width: 0;
     left: -5%;
     transition: all 0.5s ease-out;
-    background-color: rgb(var(--dark-bgc));
+
 }
 
 .header-link:hover::after {
@@ -198,13 +188,13 @@
     position: relative;
 }
 
-.slider-contain {
-    
+.slider__items {
+    position: relative;
     width: 100%;
     flex: 1 0 100%;
 }
 
-.hero-container__wrap {
+.slider__wrap {
     display: flex;
 }
 
@@ -214,10 +204,6 @@
     object-fit: cover;
     position: absolute;
     z-index: -1;
-}
-
-.slider-main {
-    position: relative;
 }
 
 /* .slide-text  {
@@ -290,9 +276,11 @@
 }
 
 .category-product__img img{
-    width: 100%;
-    transition: all 0.8s ease-out;
-    display: block;
+  width: 100%;
+  transition: all 0.8s ease-out;
+  display: block;
+  height: 360px;
+  object-fit: cover;
 }
 
 
@@ -315,13 +303,17 @@
     display: none;
 }
 
+.category-product--placeholder {
+  height: 360px;
+  background-color: #807e7e;
+}
+
 .btn-category:hover ~.category-product__img::after,
 .feature-icon:hover ~.category-product__img::after,
 .category-product__img:hover::after {
     display: block;
 }
 
-.btn-category-placeholder:hover::after,
 .category-product__img--placeholder:hover::after {
   display: none;
 } 
@@ -700,6 +692,7 @@
     left: -1000px;
     top: -34px;
     width: 1000px;
+    background: #fff;
     height: 90px;
     display: none;
     
@@ -717,6 +710,7 @@
     border-style: none;
     width: 85%;
     font-size: 1.9rem;
+    color: var(--text-color);
     outline: none;
     padding: 10px;
     position: relative;
@@ -730,7 +724,7 @@
     content: "";
     position: absolute;
     width: 96%;
-    background: url('https://thanh991999.github.io/Decaclo_figma/assets/img/double-dotted.png');
+    background: url('../img/double-dotted.png');
     height: 3px;
     top: 15%;
     left: 2%;
@@ -740,7 +734,7 @@
     content: '';
     position: absolute;
     width: 96%;
-    background: url('https://thanh991999.github.io/Decaclo_figma/assets/img/double-dotted.png');
+    background: url(../img/double-dotted.png);
     height: 3px;
     bottom: 15%;
     left: 2%;
@@ -750,6 +744,7 @@
     border-style: none;
     color: #e34444;
     text-transform: uppercase;
+    background-color: #fff;
     font-weight: 700;
     font-size: 1.9rem;
     cursor: pointer;
@@ -796,7 +791,7 @@
     position: absolute;
     border-width: 11px 14px;
     border-style: solid;
-    border-color: transparent transparent #fff transparent;
+    border-color: transparent transparent var(--white-color) transparent;
     top: -22px;
     right: 18px;
 }
@@ -1108,7 +1103,7 @@
 }
 
 .header-setting__item:hover {
-    background-color: rgb(var(--gray-bgc));
+    background-color: var(--gray-bgc);
 }
 
 .header-setting.active {
@@ -1127,6 +1122,10 @@
     display: block;
 } */
 
-.dat{
-    
+.placeholder-text {
+  padding: 305px 0;
+  text-align: center;
+  font-size: 7rem;
+  /* display: block; */
+  line-height: 1.5;
 }
