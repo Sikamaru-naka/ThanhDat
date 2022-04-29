@@ -1,19 +1,26 @@
 
 const nextBtn = $('.next-btn');
 const preBtn= $('.pre-btn');
-const boxImages = $$('.slider-contain');
-const mainSlide = $('.hero-container__wrap');
+const boxImages = $$('.slider__items');
+const mainSlide = $('.slider__wrap');
 const size = boxImages[0].offsetWidth;
 
-function silderCustomer() {
-    let counter = 1;
+console.log(boxImages.length)
 
-    mainSlide.style.transform = `translateX(${-size * counter}px)`;
+function silderCustomer() {
+    let counter = 0;
+
+    // mainSlide.style.transform = `translateX(${-size * counter}px)`;
     
     nextBtn.addEventListener('click', function() {
         if(counter >= boxImages.length) return;
         mainSlide.style.transition = "transform 0.4s ease-in-out";
         counter++;
+
+        if( counter >= boxImages.length ) {
+          counter = boxImages.length - 1
+        }
+
         mainSlide.style.transform = `translateX(${-size * counter}px)`
        
     });
@@ -22,25 +29,14 @@ function silderCustomer() {
         if(counter <= 0) return;
         mainSlide.style.transition = "transform 0.4s ease-in-out";
         counter--;
+        if(counter <= 0 ) {
+          counter = 0
+        }
         mainSlide.style.transform = `translateX(${-size * counter}px)`
-       
+
     });
 
-    mainSlide.addEventListener('transitionend', function() {
-        if(boxImages[counter].id === 'lastClone') {
-            mainSlide.style.transition = "none";
-            counter = boxImages.length - 2;
-            mainSlide.style.transform = `translateX(${-size * counter}px)`
-
-        }
-        if(boxImages[counter].id === 'firstClone') {
-            console.log(counter)
-            mainSlide.style.transition = "none";
-            counter = boxImages.length - counter;
-            mainSlide.style.transform = `translateX(${-size * counter}px)`
-
-        }
-    })
+    
 }
 
 silderCustomer();
