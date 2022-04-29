@@ -544,7 +544,7 @@
 /* footer */
 
 .footer {
-    background-color: var(--dark-bgc);
+
 }
 
 .footer-logo {
@@ -552,6 +552,15 @@
     position: relative;
     text-align: center;
     margin-bottom: 70px;
+}
+
+.footer-logo a{
+    font-size: 1.6rem;
+}
+
+.footer-logo svg{
+    width: 15%;
+    background: cadetblue
 }
 
 .footer-logo::after {
@@ -568,7 +577,6 @@
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
     letter-spacing: var(--letter-spacing);
-    color: var(--white-color);
     margin-bottom: 30px;
 }
 
@@ -580,7 +588,6 @@
 .footer-link {
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
-    color: var(--text-color-secondary);
 }
 
 .footer-item:hover .footer-link {
@@ -590,7 +597,6 @@
 .footer-addres {
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
-    color: var(--text-color-secondary);
     width: 100%;
     max-width: 200px;
 }
@@ -604,7 +610,6 @@
 }
 
 #inputEmail {
-    color: var(--text-color-secondary);
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
     flex: 1;
@@ -612,10 +617,10 @@
     outline: none;
     padding: 0;
     background-color: #262628;
+    width: 80%;
 }
 
 .form-email button {
-    color: var(--white-color);
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
     border: none;
@@ -625,7 +630,6 @@
 }
 
 .footer-social {
-    color: var(--white-color);
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
     letter-spacing: var(--letter-spacing);
@@ -645,14 +649,12 @@
 .footer-ifo {
     padding-top: 90px;
     margin-bottom: 10px;
-    color: var(--text-color-secondary);
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
     text-align: center;
 }
 
 .author {
-    color: var(--text-color-secondary);
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
     text-align: center;
@@ -762,7 +764,7 @@
     width: 404px;
     position: absolute;
     top: 160%;
-    background-color: var(--white-color);
+    background-color: rgb(var(--text-color));
     right: -23px;
     border-radius: 2px;
     border: 1px solid rgba(0, 0, 0, 0.1);
