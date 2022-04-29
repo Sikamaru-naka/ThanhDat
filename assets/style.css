@@ -316,6 +316,7 @@
     display: block;
 }
 
+.btn-category-placeholder:hover::after,
 .category-product__img--placeholder:hover::after {
   display: none;
 } 
