@@ -1129,5 +1129,6 @@
   text-align: center;
   font-size: 7rem;
   /* display: block; */
+  line-height: 1.4;
   line-height: 1.5;
 }
