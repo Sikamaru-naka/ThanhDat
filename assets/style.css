@@ -56,18 +56,21 @@
     display: block;
 }
 
-.header-nav {
-    background-color: var(--white-color);
-}
-
 .header-nav__contain {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: 110px;
+}
+
+.header-nav__contain > svg{
+    width: 130px;
+    background: cadetblue;
 }
 
 .header-logo {
     margin: 20px 0;
+    font-size: 1.6rem;
 }
 
 .header-logo img {
@@ -83,6 +86,15 @@
     margin: 0 25px;
     padding: 10px 0;
     position: relative;
+}
+
+.header-items a{
+    text-transform: uppercase;
+}
+
+.header-items svg{
+    margin-bottom: 2px;
+    margin-left: 3px;
 }
 
 .product-option {
@@ -117,8 +129,8 @@
     content: "";
     position: absolute;
     bottom: -5px;
-    height: 2px;
-    background-color: var(--text-color);
+    height: 3px;
+    background-color: rgb(var(--text-color));
     width: 0;
     left: 0%;
     transition: all 0.5s ease-out;
@@ -149,7 +161,6 @@
 .header-link {
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
-    color: var(--text-color);
     letter-spacing: var(--letter-spacing);
     position: relative;
 }
@@ -159,11 +170,10 @@
     position: absolute;
     bottom: -5px;
     height: 2px;
-    background-color: var(--text-color);
     width: 0;
     left: -5%;
     transition: all 0.5s ease-out;
-
+    background-color: rgb(var(--dark-bgc));
 }
 
 .header-link:hover::after {
@@ -660,7 +670,6 @@
     left: -1000px;
     top: -34px;
     width: 1000px;
-    background: #fff;
     height: 90px;
     display: none;
     
@@ -678,7 +687,6 @@
     border-style: none;
     width: 85%;
     font-size: 1.9rem;
-    color: var(--text-color);
     outline: none;
     padding: 10px;
     position: relative;
@@ -692,7 +700,7 @@
     content: "";
     position: absolute;
     width: 96%;
-    background: url('../img/double-dotted.png');
+    background: url('https://thanh991999.github.io/Decaclo_figma/assets/img/double-dotted.png');
     height: 3px;
     top: 15%;
     left: 2%;
@@ -702,7 +710,7 @@
     content: '';
     position: absolute;
     width: 96%;
-    background: url(../img/double-dotted.png);
+    background: url('https://thanh991999.github.io/Decaclo_figma/assets/img/double-dotted.png');
     height: 3px;
     bottom: 15%;
     left: 2%;
@@ -712,7 +720,6 @@
     border-style: none;
     color: #e34444;
     text-transform: uppercase;
-    background-color: #fff;
     font-weight: 700;
     font-size: 1.9rem;
     cursor: pointer;
@@ -759,7 +766,7 @@
     position: absolute;
     border-width: 11px 14px;
     border-style: solid;
-    border-color: transparent transparent var(--white-color) transparent;
+    border-color: transparent transparent #fff transparent;
     top: -22px;
     right: 18px;
 }
@@ -1071,7 +1078,7 @@
 }
 
 .header-setting__item:hover {
-    background-color: var(--gray-bgc);
+    background-color: rgb(var(--gray-bgc));
 }
 
 .header-setting.active {

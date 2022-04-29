@@ -1,0 +1,272 @@
+<div class="header-nav background-third container__large container-pc-low">
+    <div class="header-nav__contain wide grid">
+      {% if section.settings.logo == blank and section.settings.nameshop != blank %}
+        <a href="{{ routes.root_url }}" class="header-logo">{{ section.settings.nameshop }}</a>
+      {% elsif section.settings.logo == blank and section.settings.nameshop == blank %}  
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% else %}
+        <a href="{{ routes.root_url }}" class="header-logo">
+          <img class="header__logo-img" src="{{ section.settings.logo| img_url: '100x100' }}" alt="">
+        </a>
+      {% endif %}           
+
+        <ul class="header-list">
+          {% for link in section.settings.menu.links %}
+            <li class="header-items">
+              <a class="header-link color-text-primary" href="{{ link.url }}">{{ link.title }}</a>
+                {% if link.links.size > 0 %}
+                  {% render 'icon-arrow-down-black' %}
+                {% endif %}
+                {% if link.links.size > 0 %}
+                  <div class="product-option">
+                    <ul class="select-product__option">
+                      {% for child_link in link.links %}
+                        <li class="select-product__option-level">
+                          <a class="select-product__option-link color-text-primary" href="{{ child_link.url }}">{{ child_link.title }}</a>                                     
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+
+        <div class="product-option-1 hidden">
+          <ul class="select-product__option">
+              <li class="select-product__option-level">
+                  <a href="./product.html" class="select-product__option-link">CARE OF PRODUCT</a>                                      
+              </li>
+              <li class="select-product__option-level">
+                  <a href="./product_detail.html" class="select-product__option-link">PRODUCT DETAIL</a>                                      
+              </li>
+          </ul>
+        </div>
+
+        <ul class="header-func-list">
+            <li>
+                <div class="tool-search">
+                    {% render 'icon-search' %}
+                </div>
+            </li>
+
+            <li>
+               <div class="notify">
+                {% render 'icon-heart' %}
+                <div class="header__notify">
+                    <header class="header__notify-header">
+                        <h3>Products of interest</h3>
+                    </header>
+                    <ul class="header__notify-list">
+                        <li class="header__notify-items header__notify-items--viewed">
+                            <a href="#" class="header__notify-link">
+                                <img src="https://thanh991999.github.io/Decaclo_figma/assets/img/product-1/product-6.jpg" alt="notify-img" class="header__notify-img">
+                                <div class="header__notify-info">
+                                    <span class="header__notify-name">Rings</span>
+                                    <span class="header__notify-description">10% discount on any jewelry (or watch) repair </span>
+                                </div>
+                            </a>
+                        </li>  
+                        <li class="header__notify-items header__notify-items--viewed">
+                            <a href="#" class="header__notify-link">
+                                <img src="https://thanh991999.github.io/Decaclo_figma/assets/img/product-1/product-7.jpg" alt="notify-img" class="header__notify-img">
+                                <div class="header__notify-info">
+                                    <span class="header__notify-name">BRACELETS</span>
+                                    <span class="header__notify-description">30-60% off everything in stock</span>
+                                </div>
+                            </a>
+                        </li> 
+                        <li class="header__notify-items header__notify-items--viewed">
+                            <a href="#" class="header__notify-link">
+                                <img src="https://thanh991999.github.io/Decaclo_figma/assets/img/product-1/product-8.jpg" alt="notify-img" class="header__notify-img">
+                                <div class="header__notify-info">
+                                    <span class="header__notify-name">EARINGS</span>
+                                    <span class="header__notify-description">Massive sales (for holidays — 30-60% off)</span>
+                                </div>
+                            </a>
+                        </li> 
+                        <li class="header__notify-items header__notify-items--viewed">
+                            <a href="#" class="header__notify-link">
+                                <img src="https://thanh991999.github.io/Decaclo_figma/assets/img/product-1/product-9.jpg" alt="notify-img" class="header__notify-img">
+                                <div class="header__notify-info">
+                                    <span class="header__notify-name">NECKLACE</span>
+                                    <span class="header__notify-description">Mùi hương nhẹ nhàng, quyến rũ đang được nhiều chị em săn đón.</span>
+                                </div>
+                            </a>
+                        </li>         
+                    </ul>
+
+                    <footer class="header__notify-footer">
+                        <a class="header__notify-more" href="#">See More</a>
+                    </footer>
+                </div>
+               </div>
+            </li>
+
+            <li>
+                <div class="user-settings">
+                    {% render 'icon-user' %}
+                    <div class="header-setting ">
+                        <div class="header-setting__wrap">
+                            <ul class="header-setting__list">
+                                <li class="header-setting__item">
+                                    <div class="header-setting__content">
+                                        <i class="zm-navbar__menu-icon bi bi-person-bounding-box"></i>
+                                        User
+                                    </div>                                               
+                                </li> 
+
+                                <li class="header-setting__item">
+                                    <div class="header-setting__content">
+                                        <i class="bi bi-calendar-event-fill"></i>
+                                        Buy code VIP
+                                    </div>  
+                                </li>
+
+                                <li class="header-setting__item">
+                                    <div class="header-setting__content">
+                                        <i class="bi bi-info-circle"></i>
+                                        Introduce
+                                    </div>                                               
+                                </li>
+
+                                <li class="header-setting__item">
+                                    <div class="header-setting__content">
+                                        <i class="bi bi-flag"></i>
+                                        Feedback
+                                    </div>  
+                                </li>
+
+                                <li class="header-setting__item">
+                                    <div class="header-setting__content">
+                                        <i class="bi bi-telephone"></i>
+                                        Contact Us
+                                    </div>  
+                                </li>
+                                <li class="header-setting__item">
+                                    <div class="header-setting__content">
+                                        <i class="bi bi-shield-check"></i>
+                                        Privacy Policy
+                                    </div>  
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <li>
+                <div class="cart-has-product">
+                    {% render 'icon-bag' %}
+
+                    <div class="header__cart-list ">
+                        
+                        <h4 class="header__cart-heading">Product Has Been Added</h4>
+                        <div class="header__cart-body">
+                            <ul class="header__cart-list-items">
+                                <li class="header__cart-items">
+                                    <img src="./assets/img/product-1/product-1.jpg" alt="F10 Plus Xanh" class="header__cart-items-img">
+                                    <div class="header__cart-items-head">
+                                        <div class="header__cart-items-description">
+                                            Stackable Diamond V Ring
+                                        </div>
+                                        <span class="header__cart-items-cost">
+                                            <span class="header__cart-items-units">$</span>
+                                            37.000
+                                        </span>
+                                    </div>
+                                    
+                                </li>
+                                <li class="header__cart-items">
+                                    <img src="./assets/img/product-1/product-2.jpg" alt="Bàn phím cơ Keychron K2" class="header__cart-items-img">
+        
+                                    <div class="header__cart-items-head">
+                                        <div class="header__cart-items-description">
+                                            Emerald Eternity Band with Diamond Heart
+                                            
+                                        </div>
+                                        <span class="header__cart-items-cost">
+                                            <span class="header__cart-items-units">$</span>
+                                            2.190.000
+                                        </span>
+                                    </div>
+                                    
+                                </li>
+                                <li class="header__cart-items">
+                                    <img src="./assets/img/product-1/product-6.jpg" alt="F10 Plus Xanh" class="header__cart-items-img">
+                                    
+                                    <div class="header__cart-items-head">
+                                        <div class="header__cart-items-description">
+                                            <button class="header__cart-items-sale">Sale Up To 20%</button>
+                                            Sapphire Eternity Band with Pear Diamond
+                                            
+                                        </div>
+                                        <span class="header__cart-items-cost">
+                                            <span class="header__cart-items-units">$</span>
+                                            189.000
+                                        </span>
+                                    </div>
+                                </li>
+                                <li class="header__cart-items">
+                                    <img src="./assets/img/product-1/product-8.jpg" alt="F10 Plus Xanh" class="header__cart-items-img">
+                                    <div class="header__cart-items-head">
+                                        <div class="header__cart-items-description">
+                                            Bezel Set Baguette Diamond Studs
+                                            
+                                        </div>
+                                        <span class="header__cart-items-cost">
+                                            <span class="header__cart-items-units">$</span>
+                                            93.000
+                                        </span>
+                                    </div>
+                                </li>
+                                
+                            </ul>
+                        </div>
+
+                        <div class="header__cart-footer">
+                            <a href="#" class="header__cart-footer-see-cart btn-cart btn--primary">
+                                See Cart
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </li>
+            <li class="hidden-pc">
+                <i class="bi bi-list menu-icon"></i>
+                <i class="bi bi-x close-icon "></i>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'openFunctionNav.js' | asset_url }}" defer="defer"></script>
+
+
+
+{% schema %}
+{
+  "name": "Header",
+  "settings":[
+    {
+      "type": "text",
+      "label": "Type name shop",
+      "default": "Name Shop",
+      "id": "nameshop"
+    },
+    {
+      "type": "image_picker",
+      "label": "Image logo",
+      "id": "logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "Menu"
+    }
+  ]
+}
+{% endschema %}
