@@ -53,10 +53,31 @@
           "settings": {
             "collection": "ring"
           }
+        },
+        "518da865-5ff9-4af2-91e0-d88dd8593f1f": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "143fcccc-ccd4-4e9e-adaa-007a0b8f9f43": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "993a6f8a-f98a-4ce2-9961-4166243cde50": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
         }
       },
       "block_order": [
-        "c07fee7a-1402-4da2-8cf4-0a8a241bf65a"
+        "c07fee7a-1402-4da2-8cf4-0a8a241bf65a",
+        "518da865-5ff9-4af2-91e0-d88dd8593f1f",
+        "143fcccc-ccd4-4e9e-adaa-007a0b8f9f43",
+        "993a6f8a-f98a-4ce2-9961-4166243cde50"
       ],
       "settings": {
         "heading": "SHOP BY CATEGOR"
