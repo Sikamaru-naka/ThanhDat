@@ -1,0 +1,61 @@
+<div class="category featured">
+  <div class="category-wrap grid wide1 container__large ">
+    <h2 class="heading category-heading featured-heading">{{ section.settings.heading }}</h2>
+    <div class="row featured-row">
+      {% for product in section.settings.collection.products %}
+        <div class="col l-3 m-3">
+          <div class="feature-product category-product ">
+              <i class="bi bi-suit-heart feature-icon "></i>
+              <i class="bi bi-suit-heart-fill feature-icon--active "></i>
+              <div class="category-product__img feature-img">
+                <img src="{{ product.featured_image | image_url: width: 300 }}">
+              </div>
+              <div class="product-name">
+                <a href="./product_detail.html" class="">
+                  {{ product.title }}
+                </a>
+              </div>
+              <div class="product-cost">
+                  <a href="./product_detail.html" class="">
+                  {{ product.price | money }}
+                  </a>
+              </div>
+              <form method="post" action="/cart/add">
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
+                <button type="submit" name="add" class="btn btn-feature">
+                  <a href="./product_detail.html" class="">
+                    ADD TO CART
+                  </a>
+                </button>
+              </form>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name" : "FEATURED PRODUCT",
+  "settings": [
+    { 
+      "type": "text",
+      "label": "Heading",
+      "id": "heading",
+      "default" : "FEATURED PRODUCT"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "collection"
+    }
+  ],
+  "presets":[
+    {
+      "name" : "Featured product"    
+    }
+  ]
+}
+{% endschema %}

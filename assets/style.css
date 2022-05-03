@@ -392,6 +392,10 @@
     letter-spacing: var(--letter-spacing);
 }
 
+.product-name a{
+    text-transform: uppercase;
+}
+
 .product-cost {
     margin-bottom: 20px;
     font-size: var(--font-size-regular);

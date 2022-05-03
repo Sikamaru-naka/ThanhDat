@@ -57,19 +57,19 @@
         "518da865-5ff9-4af2-91e0-d88dd8593f1f": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "bracelets"
           }
         },
         "143fcccc-ccd4-4e9e-adaa-007a0b8f9f43": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "earings"
           }
         },
         "993a6f8a-f98a-4ce2-9961-4166243cde50": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "necklace"
           }
         }
       },
@@ -82,10 +82,18 @@
       "settings": {
         "heading": "SHOP BY CATEGOR"
       }
+    },
+    "1651586826e3fbf794": {
+      "type": "featured-product",
+      "settings": {
+        "heading": "FEATURED PRODUCT",
+        "collection": "bracelets"
+      }
     }
   },
   "order": [
     "1651203086568e7a1c",
-    "16512287608aa91b17"
+    "16512287608aa91b17",
+    "1651586826e3fbf794"
   ]
 }
