@@ -1,11 +1,9 @@
 
-<h1>Thanh</h1>
-
 <div class="category">
   <div class="category-wrap grid wide1 container__large">
     <h2 class="heading category-heading">{{ section.settings.heading }}</h2>
     <div class="row">
-      {% for block in section.blocks%}
+      {% for block in section.blocks %}
         {%- if block.settings.collection != blank -%}
           <div class="col l-3 m-3 c-6 mb-15">
               <div class="category-product">
