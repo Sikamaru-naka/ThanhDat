@@ -7,7 +7,7 @@
         <div class="col l-6 m-6 c-12">
           <div class="discover-vid">
             
-            <img class="discover-img" src="{{ section.settings.imagevid | img_url: "master" }}" alt="">
+            <img class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | img_url: "master" }}" alt="">
 
             <img class="discover-play" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
 
@@ -54,7 +54,7 @@
         <div class="col l-6 m-6 c-12">
           <div class="discover-vid">
             
-            <img class="discover-img" src="{{ section.settings.imagevid | img_url: "master" }}" alt="">
+            <img class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | img_url: "master" }}" alt="">
 
             <img class="discover-play" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
 
@@ -160,7 +160,18 @@
   ],
   "presets": [
     {
-      "name": "Video with text"
+      "name": "Video with text",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "description"
+        },
+        {
+          "type": "link"
+        }
+      ]
     }
   ]
 }

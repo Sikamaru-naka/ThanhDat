@@ -358,6 +358,9 @@
   z-index: -1;
 }
 
+.discover-img--level {
+  z-index: -13;
+}
 
 .discover-play img{
   cursor: pointer;
