@@ -344,22 +344,39 @@
 /* discovery */
 
 .discover-vid {
-    width: 100%;
-    min-height: 590px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+  width: 100%;
+  min-height: 590px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
+
+.discover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  height: 100%;
+  z-index: -1;
+}
+
 
 .discover-play img{
-    cursor: pointer;
+  cursor: pointer;
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  object-fit: cover;
+  height: 100%; */
 }
 
-.discover-col {
-    display: flex;
-    align-items: center;
-    background-color: var(--gray-bgc);
+.discover-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
     
 }
 
@@ -689,7 +706,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: -12;
+    z-index: -12; 
     height: 100%;
     background-color: #000;
 }

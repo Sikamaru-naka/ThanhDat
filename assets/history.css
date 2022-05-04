@@ -39,9 +39,7 @@
 }
 
 .feature {
-    margin-top: 100px;
-    background-color: var(--gray-bgc);
-    padding-bottom: 100px;
+  padding-top: 100px;
 }
 
 
@@ -81,10 +79,10 @@
 
 }
 
-.featured-descript span {
-    color: var(--text-color);
-    font-weight: 600;
-    
+
+.featured-subheading  {
+  /* color: var(--text-color); */
+  font-weight: 600;
 }
 
 .reasons-heading {
