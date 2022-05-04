@@ -9,25 +9,30 @@
     </div>
 
     <div class="collection-content grid wide1 {% if section.settings.options == 'center' %} text-center {% endif %} ">
-      <h2 class="heading collection-heading text-color">
-        {{ section.settings.heading }}
-      </h2>
-      <p class="collection-text {% if section.settings.options == 'center' %} width-unset {% endif %}">
-        {{ section.settings.description }}
-      </p>
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'heading' %}
+            <h2 class="heading collection-heading text-color">
+              {{ block.settings.heading }}
+            </h2>
+          {% when 'Description' %}
+            <p class="collection-text {% if section.settings.options == 'center' %} width-unset {% endif %}">
+              {{ block.settings.Description }}
+            </p>
+          {% when 'Link' %}
+            <a href="./shop.html" class="collection-more text-color">
+              {{ block.settings.Link }}
+              {% if block.settings.Link != blank %}
+                {% render 'icon-arrow-right-white' %}
+              {% endif %}
+            </a>
+          {% when 'Button' %}
+            <button class="btn">
+              {{ block.settings.Button }}
+            </button>
+        {% endcase %}
+      {% endfor %}
 
-      <a href="./shop.html" class="collection-more text-color">
-        {{ section.settings.link }}
-        {% if section.settings.link != blank %}
-          {% render 'icon-arrow-right-white' %}
-        {% endif %}
-      </a>
-
-      <button class="btn">
-        <a href="./shop.html" >
-          BACK TO SHOPPING NOW
-        </a>
-      </button>
     </div>
   </div>
 </div>
@@ -40,24 +45,6 @@
       "type": "image_picker",
       "label": "Image",
       "id": "image"
-    },
-    {
-      "type": "text",
-      "label": "Heading",
-      "id": "heading",
-      "default": "NEW COLLECTION 2021"
-    },
-    {
-      "type": "text",
-      "label": "Description",
-      "id": "description",
-      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu"
-    },
-    {
-      "type": "text",
-      "label": "Link",
-      "id": "link",
-      "default": "SEE MORE"
     },
     {
       "type": "select",
@@ -75,9 +62,73 @@
       ]
     }
   ],
+  "blocks": [
+    {
+      "name": "Heading",
+      "type": "heading",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Heading",
+          "id": "heading",
+          "default": "NEW COLLECTION 2021"  
+        }
+      ]
+    },
+    {
+      "name": "Description",
+      "type": "Description",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Description",
+          "id": "Description",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu" 
+        }
+      ]
+    },
+    {
+      "name": "Link",
+      "type": "Link",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Link",
+          "id": "Link",
+          "default": "SEE MORE"  
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Button",
+          "id": "Button",
+          "default": "BACK TO SHOPPING NOW"  
+        }
+      ]
+    }
+  ],
   "presets": [
     {
-      "name": "Image Banner"
+      "name": "Image Banner",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "Description"
+        },
+        {
+          "type": "Link"
+        },
+        {
+          "type": "Button"
+        }
+      ]
     }
   ]
 }

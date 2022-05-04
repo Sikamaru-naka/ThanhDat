@@ -14,7 +14,9 @@
             </p>
             <a href="./FQA.html" class="collection-more service-more">
               {{ block.settings.link }}
-              {% render 'icon-arrow-right-black' %}
+              {% if block.settings.link != blank %}
+                {% render 'icon-arrow-right-black' %}
+              {% endif %}
             </a>
           </div>
         </div>
