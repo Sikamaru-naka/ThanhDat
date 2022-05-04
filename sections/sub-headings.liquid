@@ -1,0 +1,25 @@
+
+{{ 'history.css' | asset_url | stylesheet_tag }}
+
+<h1 class="heading heading-history background_secondary">
+  {{ section.settings.heading }}
+</h1>
+
+{% schema %}
+{
+  "name": "Sub Headings",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "heading",
+      "default": "CONTACT US"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Sub Headings"
+    }
+  ]
+}
+{% endschema %}
