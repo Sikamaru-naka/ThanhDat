@@ -20,7 +20,7 @@
               {{ block.settings.Description }}
             </p>
           {% when 'Link' %}
-            <a href="./shop.html" class="collection-more text-color">
+            <a href="{{ block.settings.more_link }}" class="collection-more text-color">
               {{ block.settings.Link }}
               {% if block.settings.Link != blank %}
                 {% render 'icon-arrow-right-white' %}
@@ -96,6 +96,11 @@
           "label": "Link",
           "id": "Link",
           "default": "SEE MORE"  
+        },
+        {
+          "type": "url",
+          "id": "more_link",
+          "label": "Link"
         }
       ]
     },

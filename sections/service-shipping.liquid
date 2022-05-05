@@ -12,7 +12,7 @@
             <p class="service-descript {% if block.settings.description == blank %} hidden {% endif %} ">
               {{ block.settings.description }}
             </p>
-            <a href="./FQA.html" class="collection-more service-more">
+            <a href="{{ block.settings.more_link }}" class="collection-more service-more">
               {{ block.settings.link }}
               {% if block.settings.link != blank %}
                 {% render 'icon-arrow-right-black' %}
@@ -56,9 +56,14 @@
         },
         {
           "type": "text",
-          "label": "Link",
+          "label": "Direction",
           "id": "link",
           "default": "SEE MORE"
+        },
+        {
+          "type": "url",
+          "id": "more_link",
+          "label": "Link"
         }
       ]      
     }
