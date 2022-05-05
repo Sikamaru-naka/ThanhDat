@@ -13,7 +13,6 @@
 .form-text {
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
-    color: var(--text-color-secondary);
     margin-top: 15px;
 }
 
@@ -70,7 +69,7 @@
     padding: 18px 20px;
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
-    color: var(--text-color-secondary);
+    /* color: var(--text-color-secondary); */
     border: 1px solid #ECECEC;
     outline: none;
 }

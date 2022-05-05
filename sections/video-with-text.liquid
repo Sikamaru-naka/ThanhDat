@@ -9,7 +9,7 @@
             
             <img class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | img_url: "master" }}" alt="">
 
-            <img class="discover-play" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
+            <img class="discover-play {% if section.settings.imagevid == blank %} hidden {% endif %}" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
 
             
             {%- if section.settings.video_url.type == 'youtube' -%}
@@ -28,7 +28,7 @@
         <div class="discover-wrapper background_secondary">
           <div class="discover-content">
             {% for block in section.blocks %}
-              {% case block.type%}
+              {% case block.type %}
                 {% when 'heading' %}
                   <h2 class="heading">
                     {{ block.settings.heading }}
@@ -75,7 +75,7 @@
 </div>
 
 <script src="{{ 'playVideo.js' | asset_url }}" defer="defer"></script>
-
+a
 {% schema %}
 {
   "name": "Video with text",
@@ -112,7 +112,7 @@
           "label": "Right"
         }
       ]
-  }
+    }
     
   ],
   "blocks": [
