@@ -118,19 +118,32 @@
 .space-line span{
     margin-bottom: 20px;
     display: block;
+    line-height: 3.2rem;
 }
 
-.questtions-more {
+.questions-more {
     padding: 100px 0;
     text-align: center;
     font-size: 2rem;
     line-height: 3rem;
     font-weight: 600;
     color: var(--text-color);
+    display: flex;
+    justify-content: center;
 }
 
-.questtions-more a {
+.questions-more--link,
+.quetions-more a {
     text-decoration: underline;
     color: var(--text-color);
+}
 
+.questions-more--des,
+.questions-more--link{
+    text-align: center;
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: 600;
+    margin-left: 4px;
+    display: block;
 }
