@@ -3,7 +3,7 @@
     <div class="row no-gutters">
 
       {% if section.settings.layout == 'left' %}
-
+        
         <div class="col l-6 m-6 c-12">
           <div class="discover-vid">
             
@@ -80,6 +80,21 @@
 {
   "name": "Video with text",
   "settings": [
+    {
+      "type": "select",
+      "label": "Options",
+      "id": "options",
+      "options": [
+        {
+          "label": "Choose a video",
+          "value": "choose_video"
+        },
+        {
+          "label": "Choose a picture",
+          "value": "choose_picture"
+        }
+      ]
+    },
     {
       "type": "video_url",
       "id": "video_url",
