@@ -33,7 +33,6 @@
     margin-top: 25px;
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
-    color: var(--text-color-secondary);
     
 }
 
@@ -41,6 +40,9 @@
   padding-top: 100px;
 }
 
+.featured-wrap svg {
+  margin-bottom: 30px;
+}
 
 .featured-img {
     display: block;

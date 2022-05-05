@@ -1,13 +1,31 @@
 const videoPlayer = $('.discover-vid');
 
-const videoBtn = $('.discover-play');
+if( videoPlayer ) {
 
-const video = $('.control-video');
+  const videoBtn = $('.discover-play');
+
+  const video = $('.control-video');
+  videoPlayer.addEventListener('click', function(e)
+  {
+    video.style.zIndex = '6';
+    // video.play();
+  })
+}
 
 
+const videoPlayerHis = $('.history-vid');
 
-videoPlayer.addEventListener('click', function(e)
-{
-  video.style.zIndex = '2';
-  // video.play();
-})
+
+if( videoPlayerHis ) {
+
+  const videoBtnHis = $('.history-play');
+
+  const videoHis = $('.control-video--his');
+  videoPlayerHis.addEventListener('click', function(e)
+  {
+    videoHis.style.zIndex = '6';
+    // video.play();
+  })
+}
+
+

@@ -339,6 +339,7 @@
 
 /* discovery */
 
+.history-vid,
 .discover-vid {
   width: 100%;
   min-height: 590px;
@@ -348,6 +349,7 @@
   position: relative;
 }
 
+
 .discover-img {
   position: absolute;
   top: 0;
@@ -355,21 +357,21 @@
   width: 100%;
   object-fit: cover;
   height: 100%;
-  z-index: -1;
+  z-index: 4;
 }
 
 .discover-img--level {
-  z-index: -13;
+  z-index: 1  ;
+}
+
+.history-play,
+.discover-play {
+  z-index: 4;
 }
 
 .discover-play img{
   cursor: pointer;
-  /* position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  object-fit: cover;
-  height: 100%; */
+  
 }
 
 .discover-wrapper {
@@ -730,15 +732,18 @@
     display: none;
 }
 
+.control-video--his,
 .control-video {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: -12; 
+    z-index: 3  ; 
     height: 100%;
     background-color: #000;
 }
+
+
 
 .header-nav {
     /* position: relative; */
