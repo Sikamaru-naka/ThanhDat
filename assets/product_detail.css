@@ -5,17 +5,22 @@
 
 .detail-folder {
     display: flex;
+    align-items: center;
 }
 
 .detail-text span{
     font-size: 1.5rem;
     line-height: var(--line-height-regular);
     color: rgba(186, 188, 195, 1);
-    margin-right: 15px;
+    margin-right: 5px;
+}
+
+.detail-text__icon {
+  font-size: 3rem;
 }
 
 .detail-text {
-    margin-right: 15px;
+    margin-right: 5px;
 }
 
 .detail-text:last-child span {
@@ -209,8 +214,8 @@
 }
 
 .btn-buy-now {
-    background-color: var(--text-color);
-    color: var(--white-color);
+    background-color: rgb(var(--dark-bgc));
+    color: rgb(var(--text-color));
     display: block;
     width: 100%;
     margin-top: 28px;

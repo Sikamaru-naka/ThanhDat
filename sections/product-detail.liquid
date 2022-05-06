@@ -1,0 +1,202 @@
+
+{{ 'product_detail.css' | asset_url | stylesheet_tag }}
+{{ 'res-product-detail.css' | asset_url | stylesheet_tag }}
+
+
+<div class="detail-container ">
+  <div class="container__large grid wide1">
+    <div class="detail-folder">
+      <p class="detail-text detail-text__icon df">
+        <span>HOME</span>
+        <i class="bi bi-dot detail-text__icon" ></i>
+      </p>
+      <p class="detail-text df">
+        <span>RING</span>
+        <i class="bi bi-dot detail-text__icon"></i>
+
+      </p>
+      <p class="detail-text">
+        <span>PRODUCT NAME</span>
+      </p>
+    </div>
+
+    <div class="detail-wraper">
+      <div class="row">
+        <div class="col l-6 m-12 c-12">
+          <div class="detail-show">
+            <div class="row">
+              <div class="col l-12">
+                <div class="detail-show__main">
+                  <div class="detail-show__main-slide">
+                    <img class="detail-show__main-img" src="{{ product.featured_media| product_img_url: 'master' }}" alt="img1">
+                    <img class="detail-show__main-img" src="./assets/img/product-1/product-3.jpg" alt="">
+                    <img class="detail-show__main-img" src="./assets/img/product-1/product-4.jpg" alt="">
+                    <img class="detail-show__main-img" src="./assets/img/product-1/product-5.jpg" alt="">
+                    <img class="detail-show__main-img" src="./assets/img/product-1/product-6.jpg" alt="">
+                    <img class="detail-show__main-img" src="./assets/img/product-1/product-7.jpg" alt="">
+                    <img class="detail-show__main-img" src="./assets/img/product-1/product-8.jpg" alt="">
+                    <img class="detail-show__main-img" src="./assets/img/product-1/product-1.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <div class="btn-detail-posi">
+              <div class="row mt-20 no-grap sub-main-slide">
+                <div class="col l-3 m-3 c-3 ">
+                    <div class="detail-show__items active">
+                        <img  class="detail-show__items-img" src="./assets/img/product-1/product-3.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="col l-3 m-3 c-3">
+                  <div class="detail-show__items">
+                    <img  class="detail-show__items-img" src="./assets/img/product-1/product-4.jpg" alt="">
+                  </div>
+                </div>
+
+                <div class="col l-3 m-3 c-3">
+                  <div class="detail-show__items">
+                    <img  class="detail-show__items-img" src="./assets/img/product-1/product-5.jpg" alt="">
+                  </div>
+                </div>
+
+                <div class="col l-3 m-3 c-3">
+                  <div class="detail-show__items">
+                      <img  class="detail-show__items-img" src="./assets/img/product-1/product-6.jpg" alt="">
+                  </div>
+                </div>
+          
+                <div class="col l-3 m-3 c-3">
+                    <div class="detail-show__items">
+                        <img  class="detail-show__items-img" src="./assets/img/product-1/product-7.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="col l-3 m-3 c-3">
+                    <div class="detail-show__items">
+                        <img  class="detail-show__items-img" src="./assets/img/product-1/product-8.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class="col l-3 m-3 c-3">
+                    <div class="detail-show__items">
+                        <img  class="detail-show__items-img" src="./assets/img/product-1/product-1.jpg" alt="">
+                    </div>
+                </div>
+              </div>
+
+              <i class="bi bi-chevron-left detail-pre-btn"></i>
+              <i class="bi bi-chevron-right detail-next-btn"></i>
+            </div>
+                    
+          </div>
+        </div>
+        
+        <div class="col l-6 m-12 c-12">
+          <div class="detail-info">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'title' -%}
+                  <h3 class="detail-info__name"> 
+                    {{ product.title }}
+                  </h3>
+                {%- when 'price' -%}
+                  <span class="detail-info__cost mt-20"> {{ product.price_max | money }}</span>
+
+                <div class="detail-info__size">
+                  <span>SIZE</span>
+                  <div class="detail-info__size-icon df">
+                      <img src="./assets/icon/detail-icon/size-icon.svg" alt="">
+                      <span>Find your size</span>
+                  </div>
+                </div>
+
+                <form action="" class="mt-20">
+                    <div class="select">
+                        <select class="form-chose__size" name="" id="">
+                            <option selected value="50">50</option>
+                            <option value="48">48</option>
+                            <option value="46">46</option>
+                        </select>
+                    </div>
+
+                    <div class="form-option">
+                        <div class="option-amount ">
+                            <i class="bi bi-dash dash-icon"></i>
+                            <span>1</span> 
+                            <i class="bi bi-plus plus-icon"></i>
+                        </div>
+
+                        <button class="option-add-cart btn ">ADD TO CART</button>
+
+                        <div class="option-like">
+                            <i class="bi bi-suit-heart option-like__icon active"></i>
+                            <i class="bi bi-suit-heart-fill option-like__icon-fill"></i>
+                        </div>
+                    </div>
+                    <button class="btn btn-buy-now background-primary">  BUY NOW </button>
+
+                    
+                </form>
+                <p class="detail-comment">
+                  GET THIS PRODUCT BY 1ST APR !
+                </p>
+
+                <p class="detail-descript">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudanm, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
+
+                <h3 class="detail-heading__gift">
+                  OUR GIFT BOX EXCLUSIVELY FOR YOU
+                </h3>
+
+                <img class="detail-heading__gift-img" src="./assets/img/product-detail-img/detail-img-5.jpg" alt="">
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product-detail",
+  "blocks": [
+    {
+      "type": "title",
+      "name": "Title"
+    },
+    {
+      "type": "price",
+      "name": "Price"
+    },
+    {
+      "type": "select",
+      "name": "Select Size"
+    },
+    {
+      "type": "quantity",
+      "name": "Quantity product"
+    },
+    {
+      "type": "addToCart",
+      "name": "Buy Btn"
+    } ,
+    {
+        "type": "descript",
+        "name": "Description"
+    },
+    {
+      "type": "review",
+      "name": "Review"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product-detail"
+    }
+  ]
+}
+{% endschema %}
