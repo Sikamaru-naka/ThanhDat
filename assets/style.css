@@ -342,7 +342,7 @@
 .history-vid,
 .discover-vid {
   width: 100%;
-  min-height: 590px;
+  /* min-height: 590px; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -358,6 +358,12 @@
   object-fit: cover;
   height: 100%;
   z-index: 4;
+}
+
+.cleaning-tool--img svg,
+.cleaning-tool--img img{
+    width: 100%;
+    object-fit: cover;
 }
 
 .discover-img--level {
@@ -517,6 +523,8 @@
 
 .collection-img img{
     width: 100%;    
+    height: 100%;
+    object-fit: cover;
 }
 
 .collection-img svg{

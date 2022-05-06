@@ -303,6 +303,7 @@
     color: var(--text-color);
     letter-spacing: var(--letter-spacing);
     margin-bottom: 35px;
+    text-transform: uppercase;
 }
 
 .detail-product__list {
@@ -310,13 +311,20 @@
     line-height: var(--font-size-regular);
     color: var(--text-color-secondary);
     margin-bottom: 15px;
-    list-style: disc;
     margin-left: 20px;
 }
 
 .detail-product__info {
     width: 100%;
 
+}
+
+.detail-product__list--term{
+    line-height: 2.4rem;
+}
+
+.detail-product__list--term li{
+    list-style: unset;
 }
 
 .btn-detail-posi {
@@ -409,4 +417,10 @@
 
 .detail-product__info-wrap {
 
+}
+
+.service-img{
+    width: 100%;
+    object-fit: cover;
+    background: cadetblue;
 }

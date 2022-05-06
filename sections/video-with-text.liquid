@@ -3,25 +3,35 @@
     <div class="row no-gutters">
 
       {% if section.settings.layout == 'left' %}
+        {% if section.settings.options == 'choose_video' %}       
+          <div class="col l-6 m-6 c-12">
+            <div class="discover-vid">
+              
+              <img class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | img_url: "master" }}" alt="">
 
-        <div class="col l-6 m-6 c-12">
-          <div class="discover-vid">
-            
-            <img class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | img_url: "master" }}" alt="">
+              <img class="discover-play {% if section.settings.imagevid == blank %} hidden {% endif %}" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
 
-            <img class="discover-play {% if section.settings.imagevid == blank %} hidden {% endif %}" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
+              
+              {%- if section.settings.video_url.type == 'youtube' -%}
+                <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1" class="js-youtube control-video" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+              {%- else -%}
+                <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}" class="js-vimeo control-video" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+              {%- endif -%}
 
-            
-            {%- if section.settings.video_url.type == 'youtube' -%}
-              <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1" class="js-youtube control-video" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
-            {%- else -%}
-              <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}" class="js-vimeo control-video" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
-            {%- endif -%}
-
-            <!-- <video controls class="control-video" src="./assets/video/video-ad.mp4"></video> -->
+              <!-- <video controls class="control-video" src="./assets/video/video-ad.mp4"></video> -->
+            </div>
           </div>
-        </div>
-
+          {% elsif section.settings.options == 'choose_picture' %}
+          <div class="col l-6 m-6 c-12 order-mb-1">
+            <div class="discover-vid cleaning-tool--img">
+              {% if section.settings.choose_img != blank %}
+                <img src="{{ section.settings.choose_img| img_url: 'master' }}" alt="">
+              {% else %}
+                {{ 'collection-1' | placeholder_svg_tag: 'featured-img bg-gray ' }}
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
       {% endif %}
 
       <div class="col l-6 m-6 c-12  ">
@@ -50,24 +60,35 @@
       </div>
 
       {% if section.settings.layout == 'right' %}
+        {% if section.settings.options == 'choose_video' %}
+          <div class="col l-6 m-6 c-12">
+            <div class="discover-vid">
+              
+              <img class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | img_url: "master" }}" alt="">
 
-        <div class="col l-6 m-6 c-12">
-          <div class="discover-vid">
-            
-            <img class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | img_url: "master" }}" alt="">
+              <img class="discover-play" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
 
-            <img class="discover-play" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
+              
+              {%- if section.settings.video_url.type == 'youtube' -%}
+                <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1" class="js-youtube control-video" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+              {%- else -%}
+                <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}" class="js-vimeo control-video" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+              {%- endif -%}
 
-            
-            {%- if section.settings.video_url.type == 'youtube' -%}
-              <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1" class="js-youtube control-video" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
-            {%- else -%}
-              <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}" class="js-vimeo control-video" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
-            {%- endif -%}
-
-            <!-- <video controls class="control-video" src="./assets/video/video-ad.mp4"></video> -->
+              <!-- <video controls class="control-video" src="./assets/video/video-ad.mp4"></video> -->
+            </div>
           </div>
-        </div>
+        {% elsif section.settings.options == 'choose_picture' %}
+          <div class="col l-6 m-6 c-12 order-mb-1">
+            <div class="discover-vid cleaning-tool--img">
+              {% if section.settings.choose_img != blank %}
+                <img src="{{ section.settings.choose_img| img_url: 'master' }}" alt="">
+              {% else %}
+                {{ 'collection-1' | placeholder_svg_tag: 'featured-img bg-gray ' }}
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
 
       {% endif %}
     </div>
@@ -80,6 +101,26 @@ a
 {
   "name": "Video with text",
   "settings": [
+    {
+      "type": "select",
+      "label": "Options",
+      "id": "options",
+      "options": [
+        {
+          "label": "Choose a video",
+          "value": "choose_video"
+        },
+        {
+          "label": "Choose a picture",
+          "value": "choose_picture"
+        }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "choose_img"
+    },
     {
       "type": "video_url",
       "id": "video_url",
