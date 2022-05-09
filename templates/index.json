@@ -8,7 +8,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/slide-img-1.jpg",
             "heading": "DECORAZIONI PER LE FESTE",
-            "buttom": "Show Now"
+            "button": "Show Now",
+            "link": "shopify:\/\/collections\/all"
           }
         },
         "1c6c48ca-b0fa-4309-9f61-cd94336f8f9a": {
@@ -16,7 +17,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/slide-img-2.jpg",
             "heading": "DECORAZIONI PER LE FESTE",
-            "buttom": "Show Now"
+            "button": "Show Now",
+            "link": ""
           }
         },
         "439d9530-0fa5-4cbf-8053-66996b1dff0e": {
@@ -24,7 +26,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/slide-img-3.jpg",
             "heading": "DECORAZIONI PER LE FESTE",
-            "buttom": "Show Now"
+            "button": "Show Now",
+            "link": ""
           }
         },
         "22433623-26a2-4bd7-8356-84bd33171fd9": {
@@ -32,7 +35,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/collection-inmg.jpg",
             "heading": "DECORAZIONI PER LE FESTE",
-            "buttom": "Show Now"
+            "button": "Show Now",
+            "link": ""
           }
         }
       },
@@ -102,7 +106,11 @@
           "type": "link",
           "settings": {
             "btn": "DISCOVER THE STORY",
+<<<<<<< HEAD
             "link": ""
+=======
+            "link": "shopify:\/\/pages\/history"
+>>>>>>> thanh
           }
         }
       },
@@ -112,7 +120,10 @@
         "16520660290c76bbbe-2"
       ],
       "settings": {
+<<<<<<< HEAD
         "options": "choose_video",
+=======
+>>>>>>> thanh
         "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "imagevid": "shopify:\/\/shop_images\/img4.jpg",
         "layout": "left"
@@ -132,7 +143,12 @@
         "16520660322a7cc9b2-0": {
           "type": "heading",
           "settings": {
+<<<<<<< HEAD
             "heading": "NEW COLLECTION 2021"
+=======
+            "heading": "NEW COLLECTION 2021",
+            "optionSize": "large"
+>>>>>>> thanh
           }
         },
         "16520660322a7cc9b2-1": {

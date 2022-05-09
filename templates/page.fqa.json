@@ -1,10 +1,6 @@
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "settings": {
-      }
-    },
+    
     "1652062335f99e5094": {
       "type": "sub-header",
       "settings": {
@@ -206,7 +202,7 @@
     }
   },
   "order": [
-    "main",
+
     "1652062335f99e5094",
     "1652062339acf55558"
   ]
