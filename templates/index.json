@@ -83,64 +83,139 @@
         "heading": "SHOP BY CATEGOR"
       }
     },
-    "1651586826e3fbf794": {
-      "type": "featured-product",
-      "settings": {
-        "heading": "FEATURED PRODUCT",
-        "collection": "bracelets"
-      }
-    },
-    "1651739822d007a044": {
-      "type": "dealer",
-      "settings": {
-        "heading": "BECOME OFFICIAL DE CARLO DEALER",
-        "subheading": "Exclusive jewels with a contemporary design, handcrafted finished and able to arouse emotions"
-      }
-    },
-    "16517398597eb9d367": {
-      "type": "collection",
+    "165206602989029dc5": {
+      "type": "video-with-text",
       "blocks": {
-        "3bf3a251-3407-4fef-b69d-4d7e9e749fb9": {
-          "type": "collection",
+        "16520660290c76bbbe-0": {
+          "type": "heading",
           "settings": {
-            "collection": ""
+            "heading": "WE FOCUS ON WHAT’S REALLY IMPORTANT"
           }
         },
-        "15b8a984-6c1b-429e-a944-3574c935718d": {
-          "type": "collection",
+        "16520660290c76bbbe-1": {
+          "type": "description",
           "settings": {
-            "collection": ""
+            "richtext": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte<\/p>"
           }
         },
-        "f35243ea-d9d4-47ec-99ae-52e0feeb98b7": {
-          "type": "collection",
+        "16520660290c76bbbe-2": {
+          "type": "link",
           "settings": {
-            "collection": ""
-          }
-        },
-        "c55a67cb-db19-47c1-8505-aa17410f7e03": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
+            "btn": "DISCOVER THE STORY",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "3bf3a251-3407-4fef-b69d-4d7e9e749fb9",
-        "15b8a984-6c1b-429e-a944-3574c935718d",
-        "f35243ea-d9d4-47ec-99ae-52e0feeb98b7",
-        "c55a67cb-db19-47c1-8505-aa17410f7e03"
+        "16520660290c76bbbe-0",
+        "16520660290c76bbbe-1",
+        "16520660290c76bbbe-2"
       ],
       "settings": {
-        "heading": "SHOP BY CATEGOR"
+        "options": "choose_video",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "imagevid": "shopify:\/\/shop_images\/img4.jpg",
+        "layout": "left"
+      }
+    },
+    "1651586826e3fbf794": {
+      "type": "featured-product",
+      "settings": {
+        "options": "center",
+        "heading": "FEATURED PRODUCT",
+        "collection": "bracelets"
+      }
+    },
+    "16520660328a021147": {
+      "type": "image-banner",
+      "blocks": {
+        "16520660322a7cc9b2-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "NEW COLLECTION 2021"
+          }
+        },
+        "16520660322a7cc9b2-1": {
+          "type": "Description",
+          "settings": {
+            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu"
+          }
+        },
+        "39b5ed20-3d56-46e3-93d1-67a9cff5c777": {
+          "type": "Link",
+          "settings": {
+            "Link": "SEE MORE",
+            "more_link": "shopify:\/\/collections"
+          }
+        }
+      },
+      "block_order": [
+        "16520660322a7cc9b2-0",
+        "16520660322a7cc9b2-1",
+        "39b5ed20-3d56-46e3-93d1-67a9cff5c777"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/collection-inmg_2e730b63-e313-4ebb-8eca-febfa942ad0a.jpg",
+        "options": "left"
+      }
+    },
+    "165206722833dcf75f": {
+      "type": "service-shipping",
+      "blocks": {
+        "165206722850466240-0": {
+          "type": "column",
+          "settings": {
+            "heading": "FREE SHIPPING IN ITALY",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link": "SEE MORE",
+            "more_link": "shopify:\/\/pages\/faq"
+          }
+        },
+        "165206722850466240-1": {
+          "type": "column",
+          "settings": {
+            "heading": "FREE SHIPPING IN ITALY",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link": "SEE MORE",
+            "more_link": "shopify:\/\/pages\/faq"
+          }
+        },
+        "165206722850466240-2": {
+          "type": "column",
+          "settings": {
+            "heading": "FREE SHIPPING IN ITALY",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link": "SEE MORE",
+            "more_link": "shopify:\/\/pages\/faq"
+          }
+        },
+        "165206722850466240-3": {
+          "type": "column",
+          "settings": {
+            "heading": "FREE SHIPPING IN ITALY",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link": "SEE MORE",
+            "more_link": "shopify:\/\/pages\/faq"
+          }
+        }
+      },
+      "block_order": [
+        "165206722850466240-0",
+        "165206722850466240-1",
+        "165206722850466240-2",
+        "165206722850466240-3"
+      ],
+      "settings": {
+        "heading": "OUR SERVICES"
       }
     }
   },
   "order": [
     "1651203086568e7a1c",
     "16512287608aa91b17",
+    "165206602989029dc5",
     "1651586826e3fbf794",
-    "1651739822d007a044",
-    "16517398597eb9d367"
+    "16520660328a021147",
+    "165206722833dcf75f"
   ]
 }

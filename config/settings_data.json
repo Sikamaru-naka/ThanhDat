@@ -17,6 +17,7 @@
     "social_tiktok_link": "",
     "social_snapchat_link": "",
     "social_youtube_link": "https:\/\/www.youtube.com\/shopify",
+    "favicon": "shopify:\/\/shop_images\/a_3.png",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -24,7 +25,7 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "Welcome to our store"
+              "text": "FREE SHIPPING IN ITALY"
             }
           }
         },
