@@ -1280,3 +1280,25 @@
   font-size: 2rem;
   line-height: 3rem;
 }
+
+.icon-arrow {
+  width: 20px;
+  margin-left: 20px;
+}
+
+.collection-list__item img {
+  width: 100%;
+}
+
+.collection-list__title {
+  font-size: 3rem;
+  line-height: 4rem;
+}
+
+.collection-list__heading {
+  font-size: 4rem;
+  line-height: 5rem;
+  margin-bottom: 40px;
+}
+
+
