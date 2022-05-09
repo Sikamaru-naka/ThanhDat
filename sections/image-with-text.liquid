@@ -69,9 +69,9 @@
               {{ block.settings.richtext }}
             </div>
             {% when 'button' %}
-            <a class="btn featured-btn">
-              {{ block.settings.button }}
-            </a>
+              <a href="{{ block.settings.link }}" class="btn featured-btn">
+                {{ block.settings.button }}
+              </a>
           {% endcase %}
         {% endfor %}
       </div>
