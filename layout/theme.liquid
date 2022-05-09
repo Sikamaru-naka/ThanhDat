@@ -88,17 +88,6 @@
     {{ 'res-shop.css' | asset_url | stylesheet_tag }}
     {{ 'res-contact.css' | asset_url | stylesheet_tag }}
 
-
-
-
-
-
-
-
-
-
-    
-
     {%- unless settings.type_page_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
@@ -116,6 +105,8 @@
     </main>
 
     {% section 'footer' %}
+    <script src="{{ 'addPaddingImageWidthText.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'playVideo.js' | asset_url }}" defer="defer"></script>
 
   </body>
 </html>
