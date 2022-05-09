@@ -1,0 +1,18 @@
+{
+  "sections": {
+    "main": {
+      "type": "featured-product",
+      "settings": {
+        "heading": "PRODUCTS",
+        "sort": "alphabetical"
+      }
+    },
+    "image-banner":{
+      "type": "image-banner"
+    }
+  },
+  "order": [
+    "image-banner",
+    "main"
+  ]
+}
