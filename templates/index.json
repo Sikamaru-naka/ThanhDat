@@ -106,11 +106,7 @@
           "type": "link",
           "settings": {
             "btn": "DISCOVER THE STORY",
-<<<<<<< HEAD
-            "link": ""
-=======
             "link": "shopify:\/\/pages\/history"
->>>>>>> thanh
           }
         }
       },
@@ -120,10 +116,6 @@
         "16520660290c76bbbe-2"
       ],
       "settings": {
-<<<<<<< HEAD
-        "options": "choose_video",
-=======
->>>>>>> thanh
         "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "imagevid": "shopify:\/\/shop_images\/img4.jpg",
         "layout": "left"
@@ -143,12 +135,8 @@
         "16520660322a7cc9b2-0": {
           "type": "heading",
           "settings": {
-<<<<<<< HEAD
-            "heading": "NEW COLLECTION 2021"
-=======
             "heading": "NEW COLLECTION 2021",
             "optionSize": "large"
->>>>>>> thanh
           }
         },
         "16520660322a7cc9b2-1": {

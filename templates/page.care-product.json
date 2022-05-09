@@ -1,6 +1,5 @@
 {
   "sections": {
-   
     "1652060093fb5e5388": {
       "type": "sub-header",
       "settings": {
@@ -51,7 +50,8 @@
         "16520601497d2ae97d-0": {
           "type": "heading",
           "settings": {
-            "heading": "NEW COLLECTION 2021"
+            "heading": "NEW COLLECTION 2021",
+            "optionSize": "large"
           }
         },
         "16520601497d2ae97d-1": {
@@ -73,45 +73,41 @@
     "16520605579b354407": {
       "type": "image-with-text",
       "blocks": {
-        "1652060557d0815307-0": {
-          "type": "icon",
-          "settings": {
-            "options_icon": "icon1"
-          }
-        },
         "1652060557d0815307-1": {
           "type": "heading",
           "settings": {
-            "heading": "ELEGANCE"
-          }
-        },
-        "1652060557d0815307-2": {
-          "type": "subheading",
-          "settings": {
-            "subheading": "DE CARLO means elegance"
+            "heading": "CLEANING TOOL"
           }
         },
         "1652060557d0815307-3": {
           "type": "description",
           "settings": {
-            "richtext": "<p>exhibited thanks to the shining and refined stones that portray the contemporary era, sensual, simple and eye-catching creations that perfectly frame the female body, enhancing its natural beauty.<\/p>"
+            "richtext": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte<\/p>"
           }
         },
         "1652060557d0815307-4": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/img-1_8c4f388c-27cd-4865-a3af-5987aa1df50b.jpg"
+          }
+        },
+        "f3399ec1-8ac8-4b7a-84e6-950e9843d4a8": {
+          "type": "button",
+          "settings": {
+            "button": "BUY NOW",
+            "link": "shopify:\/\/collections\/all"
           }
         }
       },
       "block_order": [
-        "1652060557d0815307-0",
         "1652060557d0815307-1",
-        "1652060557d0815307-2",
         "1652060557d0815307-3",
-        "1652060557d0815307-4"
+        "1652060557d0815307-4",
+        "f3399ec1-8ac8-4b7a-84e6-950e9843d4a8"
       ],
       "settings": {
-        "layout": "left"
+        "layout": "left",
+        "width": "large"
       }
     }
   },
