@@ -37,6 +37,6 @@
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
     font-weight: 600;
-    color: var(--text-color-secondary);
+    color: rgb(var(--colors-text-secondary));
     display: block;
 }

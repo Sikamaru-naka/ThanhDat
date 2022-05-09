@@ -193,6 +193,10 @@ p {
   align-items: center;
 }
 
+.pb-100 {
+  padding-bottom: 100px;
+}
+
 /* .bg-gray {
   background-color: #807e7e;
 } */

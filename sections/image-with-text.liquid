@@ -45,7 +45,14 @@
       <div class="col c-12 m-12 l-6 oder-tab-mb-2 mt-30 f1">
         {% for block in section.blocks %}
           {% case block.type %}
-            <img src="./assets/icon/history-icon/icon-1.svg" alt="" class="featured-icon">
+            {% when "icon"%}
+              {% if block.settings.options_icon == 'icon1' %}
+                {% render 'icon-bracelet' %}
+              {% elsif block.settings.options_icon == 'icon2' %}
+                {% render 'icon-diamond' %}
+              {% else %}
+                {% render 'icon-candle-heart' %}
+              {% endif %}
             {% when 'heading' %}
               <div class="featured-title">{{ block.settings.heading }}</div>
             {% when 'subheading' %}
