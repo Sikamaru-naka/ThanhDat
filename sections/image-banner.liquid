@@ -27,9 +27,9 @@
               {% endif %}
             </a>
           {% when 'Button' %}
-            <button class="btn">
+            <a href="{{ block.settings.Botton_url }}" class="btn">
               {{ block.settings.Button }}
-            </button>
+            </a>
         {% endcase %}
       {% endfor %}
 
@@ -132,6 +132,11 @@
           "label": "Button",
           "id": "Button",
           "default": "BACK TO SHOPPING NOW"  
+        },
+        {
+          "type": "url",
+          "label": "Botton url ",
+          "id": "Botton_url"
         }
       ]
     }
