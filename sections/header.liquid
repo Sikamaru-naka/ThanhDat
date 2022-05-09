@@ -34,39 +34,43 @@
 
         <div class="product-option-1 hidden">
           <ul class="select-product__option">
-              <li class="select-product__option-level">
-                  <a href="./product.html" class="select-product__option-link">CARE OF PRODUCT</a>                                      
-              </li>
-              <li class="select-product__option-level">
-                  <a href="./product_detail.html" class="select-product__option-link">PRODUCT DETAIL</a>                                      
-              </li>
+            <li class="select-product__option-level">
+              <a href="./product.html" class="select-product__option-link">CARE OF PRODUCT</a>                                      
+            </li>
+            <li class="select-product__option-level">
+              <a href="./product_detail.html" class="select-product__option-link">PRODUCT DETAIL</a>                                      
+            </li>
           </ul>
         </div>
 
         <ul class="header-func-list">
-            <li>
-                <div class="tool-search">
-                    {% render 'icon-search' %}
-                    
-                    <div class="search-form">
-                        <form class="nav-form" action="{{ routes.search_url }}">
-                            <input class="search-form__control" placeholder="Search product on Decarlo" type="search" name="q" value="{{ search.terms | escape }}">
-        
-                            <button class="search-form__btn" type="submit" value="">search</button>
-                        </form>
-                    </div>
-                </div>
-            </li>
+          <li>
+            <div class="tool-search">
+              {% render 'icon-search' %}               
+              <div class="search-form">
+                <form class="nav-form" action="{{ routes.search_url }}">
+                  <input class="search-form__control" placeholder="Search product on Decarlo" type="search" name="q" value="{{ search.terms | escape }}">  
+                  <button class="search-form__btn" type="submit" value="">search</button>
+                </form>
+              </div>
+            </div>
+          </li>
 
-            <li>
-                <div class="user-settings">
-                    {% render 'icon-user' %}
-                </div>
-            </li>
+          <li>
+            <div class="user-settings">
+              {%- if shop.customer_accounts_enabled -%}
+                <a href="{{ routes.account_url }}">
+                  {% render 'icon-user' %}
+                </a>
+              {% endif %}
+            </div>
+          </li>
 
             <li>
                 <div class="cart-has-product">
+                  <a href="{{ routes.cart_url }}">
                     {% render 'icon-bag' %}
+                  </a>
                 </div>
             </li>
             <li class="hidden-pc">
