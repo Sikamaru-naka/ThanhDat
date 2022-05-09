@@ -109,3 +109,15 @@
     padding-bottom: 175px;
     text-align: center;
 }
+
+.featured-btn{
+    margin-top: 20px;
+}
+
+.featured-options--bgc{
+    background-color: rgb(var(--gray-bgc));
+}
+
+.featured-img-mw{
+    max-width: unset;
+}
