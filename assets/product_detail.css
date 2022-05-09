@@ -81,12 +81,13 @@
 }
 
 .detail-info__name {
-    margin-top: 0;
-    font-size: var(--font-size-bold);
-    line-height: 4rem;
-    font-weight: 600;
-    color: var(--text-color);
-    letter-spacing: var(--letter-spacing);
+  margin-top: 0;
+  font-size: var(--font-size-bold);
+  line-height: 4rem;
+  font-weight: 600;
+  color: var(--text-color);
+  letter-spacing: var(--letter-spacing);
+  text-transform: uppercase;
 }
 
 .detail-info__cost {
@@ -107,19 +108,14 @@
     line-height: 1.9rem;
     letter-spacing: var(--letter-spacing);
     font-weight: 600;
+    text-transform: uppercase;
 }
-
-.detail-info__size-icon {
-    
-
-}
-
 
 .detail-info__size-icon> span {
-    margin: 0 10px;
-    font-size: var(--font-size-regular);
-    line-height: var(--line-height-regular);
-    color: var(--text-color-secondary);
+  margin: 0 10px;
+  font-size: var(--font-size-regular);
+  line-height: var(--line-height-regular);
+  color: rgb(var(--colors-text-secondary));
 }
 
 .form-chose__size {

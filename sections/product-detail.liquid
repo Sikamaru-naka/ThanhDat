@@ -16,7 +16,7 @@
 
       </p>
       <p class="detail-text">
-        <span>PRODUCT NAME</span>
+        <span>PRODUCT NAME {{ collection }}</span>
       </p>
     </div>
 
@@ -28,14 +28,9 @@
               <div class="col l-12">
                 <div class="detail-show__main">
                   <div class="detail-show__main-slide">
-                    <img class="detail-show__main-img" src="{{ product.featured_media| product_img_url: 'master' }}" alt="img1">
-                    <img class="detail-show__main-img" src="./assets/img/product-1/product-3.jpg" alt="">
-                    <img class="detail-show__main-img" src="./assets/img/product-1/product-4.jpg" alt="">
-                    <img class="detail-show__main-img" src="./assets/img/product-1/product-5.jpg" alt="">
-                    <img class="detail-show__main-img" src="./assets/img/product-1/product-6.jpg" alt="">
-                    <img class="detail-show__main-img" src="./assets/img/product-1/product-7.jpg" alt="">
-                    <img class="detail-show__main-img" src="./assets/img/product-1/product-8.jpg" alt="">
-                    <img class="detail-show__main-img" src="./assets/img/product-1/product-1.jpg" alt="">
+                    {% for image in product.images %}
+                      <img class="detail-show__main-img" src="{{ image| product_img_url: 'master' }}" alt="img1">
+                    {% endfor %}
                   </div>
                 </div>
               </div>
@@ -43,47 +38,14 @@
         
             <div class="btn-detail-posi">
               <div class="row mt-20 no-grap sub-main-slide">
-                <div class="col l-3 m-3 c-3 ">
+                {% for image in product.images %}
+                  <div class="col l-3 m-3 c-3 ">
                     <div class="detail-show__items active">
-                        <img  class="detail-show__items-img" src="./assets/img/product-1/product-3.jpg" alt="">
+                      <img class="detail-show__main-img" src="{{ image| product_img_url: 'master' }}" alt="img1">
                     </div>
-                </div>
-
-                <div class="col l-3 m-3 c-3">
-                  <div class="detail-show__items">
-                    <img  class="detail-show__items-img" src="./assets/img/product-1/product-4.jpg" alt="">
                   </div>
-                </div>
-
-                <div class="col l-3 m-3 c-3">
-                  <div class="detail-show__items">
-                    <img  class="detail-show__items-img" src="./assets/img/product-1/product-5.jpg" alt="">
-                  </div>
-                </div>
-
-                <div class="col l-3 m-3 c-3">
-                  <div class="detail-show__items">
-                      <img  class="detail-show__items-img" src="./assets/img/product-1/product-6.jpg" alt="">
-                  </div>
-                </div>
-          
-                <div class="col l-3 m-3 c-3">
-                    <div class="detail-show__items">
-                        <img  class="detail-show__items-img" src="./assets/img/product-1/product-7.jpg" alt="">
-                    </div>
-                </div>
-
-                <div class="col l-3 m-3 c-3">
-                    <div class="detail-show__items">
-                        <img  class="detail-show__items-img" src="./assets/img/product-1/product-8.jpg" alt="">
-                    </div>
-                </div>
-
-                <div class="col l-3 m-3 c-3">
-                    <div class="detail-show__items">
-                        <img  class="detail-show__items-img" src="./assets/img/product-1/product-1.jpg" alt="">
-                    </div>
-                </div>
+                {% endfor %}
+                
               </div>
 
               <i class="bi bi-chevron-left detail-pre-btn"></i>
@@ -104,52 +66,77 @@
                 {%- when 'price' -%}
                   <span class="detail-info__cost mt-20"> {{ product.price_max | money }}</span>
 
-                <div class="detail-info__size">
-                  <span>SIZE</span>
-                  <div class="detail-info__size-icon df">
-                      <img src="./assets/icon/detail-icon/size-icon.svg" alt="">
-                      <span>Find your size</span>
-                  </div>
-                </div>
+                <form action="" method="post" action="/cart/add">
 
-                <form action="" class="mt-20">
-                    <div class="select">
-                        <select class="form-chose__size" name="" id="">
-                            <option selected value="50">50</option>
-                            <option value="48">48</option>
-                            <option value="46">46</option>
-                        </select>
+                  {%- when 'select' -%}
+                    {% for product_option in product.options_with_values %}
+                    <div class="product-select {% if product_option.name == 'Title' %} hidden {% endif %}">
+                        <label>
+                          <div class="detail-info__size mb-20">
+                            <span>{{ product_option.name }}</span>
+                            <div class="detail-info__size-icon df">
+                              {% render 'icon-ruler' %}
+                              <span>Find your {{ product_option.name }}</span>
+                            </div>
+                          </div>
+
+                          <div class="select">
+                            <select class="form-chose__size">
+                              {% for value in product_option.values %}
+                                <option {% if product_option.selected_value == value %}selected{% endif %}>
+                                  {{ value }} 
+                                </option> 
+                              {% endfor %}
+                            </select>
+                          </div>
+                        </label>
                     </div>
-
+                  {% endfor %}
+                    
+                  {%- when 'buynow' -%}
                     <div class="form-option">
-                        <div class="option-amount ">
-                            <i class="bi bi-dash dash-icon"></i>
-                            <span>1</span> 
-                            <i class="bi bi-plus plus-icon"></i>
-                        </div>
+                      <div class="option-amount ">
+                          <i class="bi bi-dash dash-icon" onclick="this.parentNode.querySelector('.product__quantity-input').stepDown()"></i>
+                          <input class="product__quantity-input" min="1" type="number"  value="1"> 
+                          <i class="bi bi-plus plus-icon" onclick="this.parentNode.querySelector('.product__quantity-input').stepUp()" ></i>
+                      </div>
 
-                        <button class="option-add-cart btn ">ADD TO CART</button>
+                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                   
+                      <button class="option-add-cart btn " type="submit">ADD TO CART</button>
 
-                        <div class="option-like">
-                            <i class="bi bi-suit-heart option-like__icon active"></i>
-                            <i class="bi bi-suit-heart-fill option-like__icon-fill"></i>
-                        </div>
+                      <div class="option-like">
+                          <i class="bi bi-suit-heart option-like__icon active"></i>
+                          <i class="bi bi-suit-heart-fill option-like__icon-fill"></i>
+                      </div>
                     </div>
-                    <button class="btn btn-buy-now background-primary">  BUY NOW </button>
+
+                    
+                     
+                    <button class="btn btn-buy-now background-primary" >  BUY NOW </button>
 
                     
                 </form>
-                <p class="detail-comment">
-                  GET THIS PRODUCT BY 1ST APR !
-                </p>
+                {%- when 'review' -%} 
+                  <p class="detail-comment">
+                    GET THIS PRODUCT BY 1ST APR !
+                  </p>
+                  <div id="shopify-product-reviews" data-id="{{ product.id }}">{{ product.metafields.spr.reviews }}</div>
 
-                <p class="detail-descript">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudanm, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo</p>
-
-                <h3 class="detail-heading__gift">
-                  OUR GIFT BOX EXCLUSIVELY FOR YOU
-                </h3>
-
-                <img class="detail-heading__gift-img" src="./assets/img/product-detail-img/detail-img-5.jpg" alt="">
+                {%- when 'descript' -%}
+                  <p class="detail-descript">
+                    {{ product.description }}
+                  </p>
+                
+                {%- when 'gift' -%}
+                  <h3 class="detail-heading__gift">
+                    OUR GIFT BOX EXCLUSIVELY FOR YOU
+                  </h3>
+                  {% if block.settings.image_picker != bank %}
+                    <img class="detail-heading__gift-img" src="{{ block.settings.image_picker | product_img_url: 'master' }}" alt="">
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag: "detail-heading__gift-img"}}
+                  {% endif %}
               {%- endcase -%}
             {%- endfor -%}
           </div>
@@ -159,6 +146,8 @@
     </div>
   </div>
 </div>
+
+<script src="{{ 'detail.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
 {
@@ -177,20 +166,28 @@
       "name": "Select Size"
     },
     {
-      "type": "quantity",
-      "name": "Quantity product"
+      "type": "buynow",
+      "name": "Buy Buttons"
     },
     {
-      "type": "addToCart",
-      "name": "Buy Btn"
-    } ,
-    {
-        "type": "descript",
-        "name": "Description"
+      "type": "descript",
+      "name": "Description"
     },
     {
       "type": "review",
       "name": "Review"
+    },
+    {
+      "type": "gift",
+      "name": "Gift",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_picker",
+          "label": "Choose image gift"
+        }
+      ]
+
     }
   ],
   "presets": [
