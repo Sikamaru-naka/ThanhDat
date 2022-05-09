@@ -90,144 +90,49 @@
         "collection": "bracelets"
       }
     },
-    "16516525813a36b150": {
-      "type": "image-banner",
+    "1651739822d007a044": {
+      "type": "dealer",
+      "settings": {
+        "heading": "BECOME OFFICIAL DE CARLO DEALER",
+        "subheading": "Exclusive jewels with a contemporary design, handcrafted finished and able to arouse emotions"
+      }
+    },
+    "16517398597eb9d367": {
+      "type": "collection",
       "blocks": {
-        "1651652580bfcaf377-0": {
-          "type": "heading",
+        "3bf3a251-3407-4fef-b69d-4d7e9e749fb9": {
+          "type": "collection",
           "settings": {
-            "heading": "NEW COLLECTION 2021"
+            "collection": ""
           }
         },
-        "1651652580bfcaf377-1": {
-          "type": "Description",
+        "15b8a984-6c1b-429e-a944-3574c935718d": {
+          "type": "collection",
           "settings": {
-            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu"
+            "collection": ""
           }
         },
-        "1651652580bfcaf377-2": {
-          "type": "Link",
+        "f35243ea-d9d4-47ec-99ae-52e0feeb98b7": {
+          "type": "collection",
           "settings": {
-            "Link": "SEE MORE"
+            "collection": ""
+          }
+        },
+        "c55a67cb-db19-47c1-8505-aa17410f7e03": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
           }
         }
       },
       "block_order": [
-        "1651652580bfcaf377-0",
-        "1651652580bfcaf377-1",
-        "1651652580bfcaf377-2"
+        "3bf3a251-3407-4fef-b69d-4d7e9e749fb9",
+        "15b8a984-6c1b-429e-a944-3574c935718d",
+        "f35243ea-d9d4-47ec-99ae-52e0feeb98b7",
+        "c55a67cb-db19-47c1-8505-aa17410f7e03"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/collection-inmg_2e730b63-e313-4ebb-8eca-febfa942ad0a.jpg",
-        "options": "left"
-      }
-    },
-    "1651634794ad66c639": {
-      "type": "service-shipping",
-      "blocks": {
-        "165163479457025766-0": {
-          "type": "column",
-          "settings": {
-            "heading": "FREE SHIPPING IN ITALY",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            "link": "SEE MORE"
-          }
-        },
-        "165163479457025766-1": {
-          "type": "column",
-          "settings": {
-            "heading": "FREE SHIPPING IN ITALY",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            "link": "SEE MORE"
-          }
-        },
-        "165163479457025766-2": {
-          "type": "column",
-          "settings": {
-            "heading": "FREE SHIPPING IN ITALY",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            "link": "SEE MORE"
-          }
-        },
-        "165163479457025766-3": {
-          "type": "column",
-          "settings": {
-            "heading": "FREE SHIPPING IN ITALY",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            "link": "SEE MORE"
-          }
-        }
-      },
-      "block_order": [
-        "165163479457025766-0",
-        "165163479457025766-1",
-        "165163479457025766-2",
-        "165163479457025766-3"
-      ],
-      "settings": {
-        "heading": "OUR SERVICES"
-      }
-    },
-    "16516525938fd71a5f": {
-      "type": "contact",
-      "blocks": {
-        "1651652593e79dd076-0": {
-          "type": "column",
-          "settings": {
-            "options_icon": "email",
-            "description": "SEND US AN EMAIL",
-            "detail": "Fill in the form"
-          }
-        },
-        "1651652593e79dd076-1": {
-          "type": "column",
-          "settings": {
-            "options_icon": "Phone-around",
-            "description": "SEND US AN EMAIL",
-            "detail": "Fill in the form"
-          }
-        },
-        "1651652593e79dd076-2": {
-          "type": "column",
-          "settings": {
-            "options_icon": "Phone",
-            "description": "SEND US AN EMAIL",
-            "detail": "Fill in the form"
-          }
-        },
-        "1651652593e79dd076-3": {
-          "type": "column",
-          "settings": {
-            "options_icon": "Chat",
-            "description": "SEND US AN EMAIL",
-            "detail": "Fill in the form"
-          }
-        },
-        "1651652593e79dd076-4": {
-          "type": "time",
-          "settings": {
-            "description": "CUSTOMER SERVICE OPENING HOURS",
-            "daily_time": "Monday-Friday: 09: 00-18: 30",
-            "weekend": "Saturday: 09: 00-12: 30"
-          }
-        }
-      },
-      "block_order": [
-        "1651652593e79dd076-0",
-        "1651652593e79dd076-1",
-        "1651652593e79dd076-2",
-        "1651652593e79dd076-3",
-        "1651652593e79dd076-4"
-      ],
-      "settings": {
-        "heading": "OUR CONSULTANTS WILL BE HAPPY TO HELP YOU",
-        "description": "Before contacting us we recommend that you read the frequently asked questions"
-      }
-    },
-    "165165262667919641": {
-      "type": "sub-headings",
-      "settings": {
-        "heading": "CONTACT US"
+        "heading": "SHOP BY CATEGOR"
       }
     }
   },
@@ -235,9 +140,7 @@
     "1651203086568e7a1c",
     "16512287608aa91b17",
     "1651586826e3fbf794",
-    "16516525813a36b150",
-    "1651634794ad66c639",
-    "16516525938fd71a5f",
-    "165165262667919641"
+    "1651739822d007a044",
+    "16517398597eb9d367"
   ]
 }

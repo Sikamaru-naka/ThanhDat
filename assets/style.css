@@ -342,7 +342,7 @@
 .history-vid,
 .discover-vid {
   width: 100%;
-  /* min-height: 590px; */
+  min-height: 590px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -584,6 +584,21 @@
 .service-heading {
     margin-top: 0;
     
+}
+
+.product__quantity-input::-webkit-outer-spin-button,
+.product__quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.product__quantity-input {
+  color: #000;
+  font-size: 1.4rem;
+  width: 50px;
+  text-align: center;
+  border: none;
+
 }
 
 .service-box {
