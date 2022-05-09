@@ -1,8 +1,4 @@
 
-{{ 'history.css' | asset_url | stylesheet_tag }}
-{{ 'res-his.css' | asset_url | stylesheet_tag }}
-
-
 
 <div class="feature background_secondary">
   <div class="featured-wrap grid wide1 "><div class="row no-gutters df">
@@ -24,9 +20,9 @@
             {% when 'subheading' %}
               <h3 class="featured-subheading color-text-primary">{{ block.settings.subheading }}</h3> 
             {% when 'description' %}
-              <div class="featured-descript">
-                {{ block.settings.richtext }}
-              </div>
+            <div class="featured-descript colors-text-secondary">
+              {{ block.settings.richtext }}
+            </div>
           {% endcase %}
         {% endfor %}
       </div>
@@ -62,9 +58,9 @@
             {% when 'subheading' %}
               <h3 class="featured-subheading color-text-primary">{{ block.settings.subheading }}</h3> 
             {% when 'description' %}
-              <div class="featured-descript">
-                {{ block.settings.richtext }}
-              </div>
+            <div class="featured-descript colors-text-secondary">
+              {{ block.settings.richtext }}
+            </div>
           {% endcase %}
         {% endfor %}
       </div>

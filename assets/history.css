@@ -58,7 +58,7 @@
 .featured-row {
     /* justify-content: center; */
     align-items: center;
-    padding-top: 100px;
+    /* padding-top: 100px; */
 
 }
 
@@ -71,20 +71,20 @@
     font-weight: 600;
 }
 
+.featured-subheading ,
 .featured-descript {
     font-size: var(--font-size-regular);
     font-weight: 500;
-    color: var(--text-color-secondary);
     line-height: var(--line-height-regular);
     width: 100%;
     max-width: 497px;
 
 }
 
-
 .featured-subheading  {
   /* color: var(--text-color); */
   font-weight: 600;
+  margin: 0;
 }
 
 .reasons-heading {

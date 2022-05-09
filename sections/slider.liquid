@@ -13,8 +13,8 @@
               {{ block.settings.heading }}
             </h1>
             <div class="button">
-              <a href="./shop.html" class="btn">
-                {{ block.settings.buttom }}
+              <a href=" {{ block.settings.link }} " class="btn">
+                {{ block.settings.button }}
               </a>
             </div>
           </div>
@@ -71,9 +71,15 @@
         },
         {
           "type": "text",
-          "id": "buttom",
+          "id": "button",
           "default": "Show Now",
           "label": "Text insite buttom"
+        }
+        ,
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
         }
       ]
     }
