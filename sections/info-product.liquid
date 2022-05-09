@@ -53,7 +53,11 @@
                 </div>
 
                 <div class="col c-6 m-6 c-12">
-                    <img class="detail-product__info-img" src="https://thanh991999.github.io/Decaclo_figma/assets/img/product-detail-img/detail-img-6.jpg" alt="">
+                  {% if block.settings.img != blank %}
+                  <img class="service-img" src="{{ block.settings.img | img_url: "master" }}" alt="">
+                  {% else %}
+                  {{ 'collection-1' | placeholder_svg_tag: 'service-img bg-gray ' }}
+                  {% endif %}
                 </div>
             </div>
         </div>
@@ -127,6 +131,11 @@
           "label": "Title",
           "id": "title",
           "default": "PRODUCT INFORMATION"
+        },
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "img"
         }
       ]
     },

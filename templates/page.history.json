@@ -1,6 +1,5 @@
 {
   "sections": {
-    
     "165206148171f6bc7a": {
       "type": "sub-header",
       "settings": {
@@ -75,7 +74,8 @@
         "1652061608b378b673-4"
       ],
       "settings": {
-        "layout": "left"
+        "layout": "left",
+        "width": "full"
       }
     },
     "16520616211a79a79a": {
@@ -120,7 +120,8 @@
         "1652061621f342caf5-4"
       ],
       "settings": {
-        "layout": "right"
+        "layout": "right",
+        "width": "full"
       }
     },
     "165206162687e77b6e": {
@@ -165,7 +166,8 @@
         "16520616267dc415ad-4"
       ],
       "settings": {
-        "layout": "left"
+        "layout": "left",
+        "width": "full"
       }
     },
     "1652061632b170b2f5": {
@@ -174,7 +176,8 @@
         "1652061632eea00db8-0": {
           "type": "heading",
           "settings": {
-            "heading": "WHY CHOOSE US ?"
+            "heading": "WHY CHOOSE US ?",
+            "optionSize": "large"
           }
         },
         "1652061632eea00db8-1": {
@@ -186,7 +189,8 @@
         "1652061632eea00db8-3": {
           "type": "Button",
           "settings": {
-            "Button": "BACK TO SHOPPING NOW"
+            "Button": "BACK TO SHOPPING NOW",
+            "Botton_url": "shopify:\/\/pages\/history"
           }
         }
       },
