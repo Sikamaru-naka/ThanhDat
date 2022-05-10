@@ -1,10 +1,29 @@
 <div class="category featured">
   <div class="category-wrap grid wide1 container__large ">
-    <h2 class="heading category-heading featured-heading">{{ section.settings.heading }}</h2> 
+    <div class="collection__options df">
+      <div class="collection__options-item">
+        <span>There are {{ collection.all_products_count }} products</span>
+      </div>
+      <div class="collection__options-item df">
+        <div class="collection__sort df df__center">
+          <span>SORT BY :</span>
+          <select id="sort-by" class="collection__select">
+            {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+              {% for option in collection.sort_options %}
+                <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
+                  {{ option.name }}
+                </option>
+              {% endfor %}
+          </select>
+        </div>
+          <p>FILTER</p>
+      </div>
+    </div>
+
     <div class="row featured-row">
-      {%- if section.settings.collection.products == blank -%}
-       {%- for i in (1..4) -%}
-       <div class="col l-3 m-3">
+      {%- if collection.products == blank -%}
+        {%- for i in (1..4) -%}
+        <div class="col l-3 m-3">
         <div class="feature-product category-product ">
             <i class="bi bi-suit-heart feature-icon "></i>
             <i class="bi bi-suit-heart-fill feature-icon--active "></i>
@@ -32,10 +51,10 @@
             </form>
         </div>
       </div>
-       {%- endfor -%}
+        {%- endfor -%}
 
-      {%- elsif section.settings.collection.products != blank -%}         
-        {%- for product in section.settings.collection.products -%}   
+      {%- elsif collection.products != blank -%}         
+        {%- for product in collection.products -%}
           <div class="col l-3 m-3">
             <div class="feature-product category-product mb100">
                 <i class="bi bi-suit-heart feature-icon "></i>
@@ -70,26 +89,16 @@
   </div>
 </div>
 
-{% schema %}
-{
-  "name" : "FEATURED PRODUCT",
-  "settings": [
-    { 
-      "type": "text",
-      "label": "Heading",
-      "id": "heading",
-      "default" : "FEATURED PRODUCT"
-    },
-    {
-      "type": "collection",
-      "id": "collection",
-      "label": "Collection"
-    }
-  ],
-  "presets":[
-    {
-      "name" : "Featured product"    
-    }
-  ]
-}
-{% endschema %}
+  {% schema %}
+  {
+    "name" : "Main Collection",
+    "settings": [
+      
+    ],
+    "presets":[
+      {
+        "name" : "Main collecion"    
+      }
+    ]
+  }
+  {% endschema %}
