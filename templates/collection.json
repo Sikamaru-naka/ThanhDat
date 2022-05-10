@@ -28,9 +28,6 @@
     "main": {
       "type": "main-collection",
       "settings": {
-        "options": "filter",
-        "heading": "PRODUCTS",
-        "collection": "all-product"
       }
     }
   },
