@@ -2,12 +2,40 @@
 <form action="{{ routes.cart_url }}" method="post" id="cart">
   <div class="container">
   
+<<<<<<< HEAD
     <div class="cart">
       <div class="cart-open dfs">
         <h1 class="cart-open__heading">
           Your cart ({{ cart.item_count }})
         </h1>
         <a href="{{ routes.all_products_collection_url }}" class="cart-open__link">Continue shopping</a>
+=======
+              <div class="cart-item__totals">
+                {{- item.original_line_price | money -}}
+              </div>
+              
+              
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="cart__bottom">
+      <div class="cart__bottom-total">
+    
+        <p class="cart__bottom-subtotal">
+          Subtotal: 
+          <span>{{ cart.total_price | money_with_currency }}</span>
+        </p>
+        
+        <div class="cart__bottom-btn">
+          <a href="#" class="cart__bottom-checkout">
+            checkout
+          </a>
+        </div>
+>>>>>>> 21c39a21a5e4746039b86b9f000bf91f3d34c8fa
       </div>
   
       <table class="cart-items">
