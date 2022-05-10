@@ -71,14 +71,14 @@
                   <img src="{{ product.featured_image | image_url: width: 300 }}">
                 </div>
                 <div class="product-name">
-                  <a href="./product_detail.html" class="">
+                  <a href="{{ product.url }}" class="">
                     {{ product.title }}
                   </a>
                 </div>
-                <div class="product-cost">
-                    <a href="./product_detail.html" class="">
+                <div class="product-cost"> 
+                  <a href="{{ product.url }}" class="">
                     {{ product.price | money }}
-                    </a>
+                  </a>
                 </div>
                 <form method="post" action="/cart/add">
                   <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
