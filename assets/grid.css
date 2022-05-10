@@ -18,6 +18,13 @@
     grid+wide ko full width
 */
 
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+
+}
 .grid {
     width: 100%;
     display: block;
