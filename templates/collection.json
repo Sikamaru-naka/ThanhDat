@@ -26,7 +26,7 @@
       }
     },
     "main": {
-      "type": "featured-product",
+      "type": "main-collection",
       "settings": {
         "options": "filter",
         "heading": "PRODUCTS",
