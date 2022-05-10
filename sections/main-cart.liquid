@@ -62,7 +62,7 @@
     
         <p class="cart__bottom-subtotal">
           Subtotal: 
-          <span>6.900.000 VND</span>
+          <span>{{ cart.total_price | money_with_currency }}</span>
         </p>
         
         <div class="cart__bottom-btn">
