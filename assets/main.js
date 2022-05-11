@@ -72,7 +72,7 @@ menuOpen.addEventListener('click',function() {
     document.querySelector('.header-list').style.height = '367px';
     menuOpen.classList.add('disabled');
     menuClose.classList.add('active');
-    document.querySelector('.overlay').style.display='block';
+    // document.querySelector('.overlay').style.display='block';
 
 })
 
@@ -80,28 +80,28 @@ menuClose.addEventListener('click',function() {
     document.querySelector('.header-list').style.height = '0';
     menuOpen.classList.remove('disabled');
     menuClose.classList.remove('active');
-    document.querySelector('.overlay').style.display='none';
+    // document.querySelector('.overlay').style.display='none';
 
 })
 
 // open-menu-2
 
-const iconArrowDown = $('.header-items__icon');
+const iconArrowDown = $('.header-items svg');
 const menuHeight = $('.product-option-1');
 
+console.log(menuHeight)
 
-console.log()
 
 if(iconArrowDown){
     
     iconArrowDown.addEventListener('click',function() {
         if(menuHeight.offsetHeight === 0) {
             iconArrowDown.classList.add('icon-rotate');
-            document.querySelector('.product-option-1').style.height = '80px';
+            menuHeight.style.height = '80px';
         }
         else {
             iconArrowDown.classList.remove('icon-rotate');
-            document.querySelector('.product-option-1').style.height = '0px';
+            menuHeight.style.height = '0px';
         }
         
     });

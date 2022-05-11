@@ -1,14 +1,17 @@
 
-const nextBtn = $('.next-btn');
-const preBtn= $('.pre-btn');
-const boxImages = $$('.slider__items');
-const mainSlide = $('.slider__wrap');
-const size = boxImages[0].offsetWidth;
 
-console.log(boxImages.length)
 
-function silderCustomer() {
-    let counter = 0;
+
+function silderCustomer(container) {
+
+  let nextBtn = $(`#shopify-section-${container} .next-btn`);
+  let preBtn= $(`#shopify-section-${container} .pre-btn`);
+  let mainSlide = $(`#shopify-section-${container} .slider__wrap`);
+  let boxImages = $$( `#shopify-section-${container} .slider__items`);
+  let size = boxImages[0].offsetWidth;
+  console.log(typeof(boxImages));
+
+    let counter = 0;      
 
     // mainSlide.style.transform = `translateX(${-size * counter}px)`;
     

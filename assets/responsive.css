@@ -94,11 +94,7 @@
     }  
 
     .collection-content {
-        padding: 75px 0;
-    }
-
-    .collection-wrap {
-        background: url('../img/Homepage/Rectangle\ 154.png')  no-repeat center center / cover;
+        padding: 75px 25px;
     }
 
     .service-heading {
@@ -220,9 +216,7 @@
 
 @media (max-width: 1023px) {
 
-    .mb-20-mb-tab {
-        margin-bottom: 20px;
-    }
+    
 
     .header-logo {
         margin: 15px 0;
@@ -431,3 +425,10 @@
         display: none!important;
     }
 }
+
+@media (max-width: 1112px) {
+  .mb-20-mb-tab {
+    margin-bottom: 20px;
+  }
+}
+

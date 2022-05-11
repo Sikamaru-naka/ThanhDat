@@ -1537,13 +1537,9 @@ tr {
     text-align: initial;
 }
 
-.blog__post-content p{
-    display: flex;
-}
-
 .blog__post-content img{
     margin: 25px auto;
-
+    display: block;
 }
 
 .blog__post-back{

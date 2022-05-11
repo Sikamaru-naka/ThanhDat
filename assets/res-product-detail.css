@@ -50,9 +50,12 @@
     }
     .form-option {
         flex-wrap: wrap;
+        margin-top: 20px;
+
     }
     .option-amount {
         flex: 1 0 100%;
+        margin-bottom: 20px;
     }
 
     .mb-20 {
@@ -95,8 +98,10 @@
 
 /* pc */
 
-@media (min-width: 1024px) {
-    
+@media (max-width: 1110px) {
+  .detail-info {
+    margin-left: 0;
+  }
 }
 
 /* pc resolution */
