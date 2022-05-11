@@ -10,13 +10,15 @@
         </a>
       {% endif %}           
 
-        <ul class="header-list">
+        <ul class="header-list background-third">
           {% for link in section.settings.menu.links %}
             <li class="header-items">
-              <a class="header-link color-text-primary" href="{{ link.url }}">{{ link.title }}</a>
-                {% if link.links.size > 0 %}
-                  {% render 'icon-arrow-down-black' %}
-                {% endif %}
+              <div class="header-link--wrap df">
+                <a class="header-link color-text-primary" href="{{ link.url }}">{{ link.title }}</a>
+                  {% if link.links.size > 0 %}
+                    {% render 'icon-arrow-down-black' %}
+                  {% endif %}
+              </div>
                 {% if link.links.size > 0 %}
                   <div class="product-option background-third">
                     <ul class="select-product__option">
@@ -80,6 +82,8 @@
         </ul>
     </div>
 </div>
+
+<div class="overlay"></div>
 
 <script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'openFunctionNav.js' | asset_url }}" defer="defer"></script>

@@ -94,7 +94,7 @@
     }  
 
     .collection-content {
-        padding: 75px 0;
+        padding: 75px 25px;
     }
 
     .collection-wrap {
@@ -192,6 +192,31 @@
         left: 0;
         top: 100%;
     }
+
+    .collection__options{
+        display: block;
+    }
+
+    .collection__options-item{
+        display: block;
+    }
+
+    .collection__options-item p{
+        margin-left: 0;
+    }
+
+    .collection__sort {
+        justify-content: unset;
+        margin: 15px 0;
+    }
+
+    .feature-product form {
+        margin-bottom: 10px;
+    }
+
+    .heading.large{
+        font-size: 2.5rem;
+    }
 }
 
 /* tablet */
@@ -211,6 +236,12 @@
 
     .discover-content {
         padding: 0 60px;
+    }
+    .collection-content{
+        padding: 125px 0;
+    }
+    .featured-subheading, .featured-descript{
+        max-width: unset;
     }
 }
 
@@ -279,14 +310,14 @@
     .header-nav{
         position: relative;
         box-shadow: inset 0px -1px 0px #ECECEC;
+        z-index: 10;
     }
 
     .header-list {
         position: absolute;
         display: block;
-        top:70px;
+        top: 90px;
         left: 0;
-        background-color: var(--white-color);
         z-index: 3;
         width: 100%;
         box-shadow: inset 0px -1px 0px #ECECEC; 
@@ -297,6 +328,7 @@
     .header-items {
         padding: 15px;
         margin: 0;
+        overflow: hidden;
     }
 
     .header-link::after {
@@ -322,7 +354,7 @@
         left: 0;
         right: 0;
         background-color: rgba(0, 0, 0, 0.4);
-        z-index: 2;
+        z-index: 5;
         display: none;
     }
 
@@ -354,20 +386,21 @@
        display: none;
     }
 
-    .header-items:nth-child(3) {
+    /* .header-items:nth-child(3) {
         display: flex;
         align-items: center;
         justify-content: space-between;
-    }
+    } */
 
     .product-option {
         top: 96%;
         left: 0;
-        width: 100%;;
+        width: 100%;
+        transition: all 0.5s ease;
     }
 
     .product-option {
-        display: none !important;
+        /* display: none !important; */
     }
 
     .product-option-1 {
@@ -391,6 +424,10 @@
     .header-link {
         display: block;
         width: 100%;
+    }
+
+    .product-option{
+        height: 0;
     }
     
    
@@ -427,7 +464,22 @@
 }
 
 @media (min-width: 1024px) {
-    .product-option-1 {
-        display: none!important;
+    .product-option{
+        display: none
+    }
+    .header-items:hover .product-option {
+        display: block;
+    }
+    .product-option {
+        position: absolute;
+        top: 100%;
+        width: 110%;
+        left: -5%;
+        margin-top: 2px;
+        padding: 10px 0;
+        box-shadow: 0 1px 1px 0 rgb(0 0 0 / 5%);
+        /* display: none; */
+        z-index: 2;
+        border: 1px solid rgba(233, 220, 220, 0.466);  
     }
 }

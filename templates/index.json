@@ -106,7 +106,7 @@
           "type": "link",
           "settings": {
             "btn": "DISCOVER THE STORY",
-            "link": "shopify:\/\/pages\/history"
+            "link": "shopify:\/\/blogs\/news"
           }
         }
       },
@@ -124,7 +124,6 @@
     "1651586826e3fbf794": {
       "type": "featured-product",
       "settings": {
-        "options": "center",
         "heading": "FEATURED PRODUCT",
         "collection": "bracelets"
       }

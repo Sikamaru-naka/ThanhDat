@@ -86,8 +86,8 @@ menuClose.addEventListener('click',function() {
 
 // open-menu-2
 
-const iconArrowDown = $('.header-items__icon');
-const menuHeight = $('.product-option-1');
+const iconArrowDown = $('.header-items svg');
+const menuHeight = $('.product-option');
 
 
 console.log()
@@ -97,11 +97,11 @@ if(iconArrowDown){
     iconArrowDown.addEventListener('click',function() {
         if(menuHeight.offsetHeight === 0) {
             iconArrowDown.classList.add('icon-rotate');
-            document.querySelector('.product-option-1').style.height = '80px';
+            document.querySelector('.product-option').style.height = '80px';
         }
         else {
             iconArrowDown.classList.remove('icon-rotate');
-            document.querySelector('.product-option-1').style.height = '0px';
+            document.querySelector('.product-option').style.height = '0px';
         }
         
     });
