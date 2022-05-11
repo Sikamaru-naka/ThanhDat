@@ -33,8 +33,6 @@
 
     {% endfor %}
   </div>
-
-
     
   <button class="next-btn">
       <i class="bi bi-chevron-right"></i>
@@ -47,15 +45,6 @@
 </div>
 
 <script src="{{ 'slider.js' | asset_url }}" defer="defer"></script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    silderCustomer(`{{ section.id }}`);
-  })
-  
-</script>
-
-
 
 {% schema %}
 {
