@@ -23,7 +23,6 @@
     }
     .login-form a{
       font-size: 1.6rem;
-      text-decoration: underline;
       margin-bottom: 20px;
     }
     .login-form button {
@@ -47,7 +46,11 @@
           <input type="text" placeholder="Last name" name="customer[last_name]" id="RegisterForm-LastName" {% if form.last_name %}value="{{ form.last_name }}"{% endif %}>
           <input type="email" placeholder="Email" name="customer[email]" id="RegisterForm-email" {% if form.email %}value="{{ form.email }}"{% endif %}>
           <input type="password" placeholder="Password" name="customer[password]" id="RegisterForm-password" {% if form.password %}value="{{ form.password }}"{% endif %}>
-          <button class="btn">Creat</button> 
+          <button class="btn">
+            <a href="{{ routes.root_url }}">
+              Creat
+            </a>
+          </button> 
       </div>
     {% endform %}
 </div>
