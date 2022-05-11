@@ -4,7 +4,7 @@
   <div class="featured-wrap grid wide1 ">
     <div class="row no-gutters df {% if section.settings.width == 'large' %} featured-options--bgc {% endif %}">
     {% if section.settings.layout == 'left' %}
-      <div class="col c-12 m-12 l-6 oder-tab-mb-2 mt-30 f1">
+      <div class="col c-12 m-12 l-6 oder-tab-mb-2 mt-30">
         <div class="featured-options discover-content ">
           {% for block in section.blocks %}
             {% case block.type %}
@@ -34,7 +34,7 @@
       </div>
     {% endif %}
           
-    <div class="col c-12 m-12 l-6 oder-tab-mb-1 {% if section.settings.layout == 'left' %} dfe {% endif %} f1">
+    <div class="col c-12 m-12 l-6 oder-tab-mb-1 {% if section.settings.layout == 'left' %} dfe {% endif %}">
       {% for block in section.blocks %}
         {% case block.type %}
         {% when 'image' %}
@@ -48,31 +48,33 @@
     </div>
 
     {% if section.settings.layout == 'right' %}
-      <div class="col c-12 m-12 l-6 oder-tab-mb-2 mt-30 f1">
-        {% for block in section.blocks %}
-          {% case block.type %}
-            {% when "icon"%}
-              {% if block.settings.options_icon == 'icon1' %}
-                {% render 'icon-bracelet' %}
-              {% elsif block.settings.options_icon == 'icon2' %}
-                {% render 'icon-diamond' %}
-              {% else %}
-                {% render 'icon-candle-heart' %}
-              {% endif %}
-            {% when 'heading' %}
-              <div class="featured-title">{{ block.settings.heading }}</div>
-            {% when 'subheading' %}
-              <h3 class="featured-subheading color-text-primary">{{ block.settings.subheading }}</h3> 
-            {% when 'description' %}
-            <div class="featured-descript colors-text-secondary">
-              {{ block.settings.richtext }}
-            </div>
-            {% when 'button' %}
-              <a href="{{ block.settings.link }}" class="btn featured-btn">
-                {{ block.settings.button }}
-              </a>
-          {% endcase %}
-        {% endfor %}
+      <div class="col c-12 m-12 l-6 oder-tab-mb-2 mt-30">
+        <div class="featured-options discover-content">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when "icon"%}
+                {% if block.settings.options_icon == 'icon1' %}
+                  {% render 'icon-bracelet' %}
+                {% elsif block.settings.options_icon == 'icon2' %}
+                  {% render 'icon-diamond' %}
+                {% else %}
+                  {% render 'icon-candle-heart' %}
+                {% endif %}
+              {% when 'heading' %}
+                <div class="featured-title">{{ block.settings.heading }}</div>
+              {% when 'subheading' %}
+                <h3 class="featured-subheading color-text-primary">{{ block.settings.subheading }}</h3> 
+              {% when 'description' %}
+              <div class="featured-descript colors-text-secondary">
+                {{ block.settings.richtext }}
+              </div>
+              {% when 'button' %}
+                <a href="{{ block.settings.link }}" class="btn featured-btn">
+                  {{ block.settings.button }}
+                </a>
+            {% endcase %}
+          {% endfor %}        
+        </div>
       </div>
     {% endif %}
     
