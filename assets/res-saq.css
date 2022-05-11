@@ -20,11 +20,7 @@
     .fqa-menu__list::-webkit-scrollbar {
         display: none;
     }
-
-    .fqa-menu__item {
-        margin: 0 20px;
-    }
-
+    
     .list-questions__title {
         padding: 20px 0;
     }

@@ -88,6 +88,7 @@ menuClose.addEventListener('click',function() {
 
 const iconArrowDown = $('.header-items svg');
 const menuHeight = $('.product-option');
+const headerItem = $$('.header-items');
 
 
 console.log()
@@ -97,11 +98,15 @@ if(iconArrowDown){
     iconArrowDown.addEventListener('click',function() {
         if(menuHeight.offsetHeight === 0) {
             iconArrowDown.classList.add('icon-rotate');
-            document.querySelector('.product-option').style.height = '80px';
+            menuHeight.style.height = '80px';
+            menuHeight.style.marginTop = '10px';
+            headerItem[2].style.paddingBottom = '0'
         }
         else {
             iconArrowDown.classList.remove('icon-rotate');
-            document.querySelector('.product-option').style.height = '0px';
+            menuHeight.style.height = '0px';
+            menuHeight.style.marginTop = '0px';
+            headerItem[2].style.paddingBottom = '15px'
         }
         
     });
