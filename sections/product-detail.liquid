@@ -66,7 +66,7 @@
                 {%- when 'price' -%}
                   <span class="detail-info__cost mt-20"> {{ product.price_max | money }}</span>
 
-                <form action="" method="post" action="/cart/add">
+                <form method="post" action="/cart/add">
 
                   {%- when 'select' -%}
                     {% for product_option in product.options_with_values %}
@@ -113,7 +113,11 @@
 
                     
                      
-                    <button class="btn btn-buy-now background-primary" >  BUY NOW </button>
+                    <button type="submit" class="btn btn-buy-now background-primary" >  BUY NOW </button>
+
+                    {%- form 'product', product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                  
+                {%- endform -%}
 
                     
                 </form>
