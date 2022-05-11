@@ -87,7 +87,11 @@ menuClose.addEventListener('click',function() {
 // open-menu-2
 
 const iconArrowDown = $('.header-items svg');
+<<<<<<< HEAD
 const menuHeight = $('.product-option-1');
+=======
+const menuHeight = $('.product-option');
+>>>>>>> c158c383522194d63bb157d5498427f6e7609fc7
 
 console.log(menuHeight)
 
@@ -97,11 +101,19 @@ if(iconArrowDown){
     iconArrowDown.addEventListener('click',function() {
         if(menuHeight.offsetHeight === 0) {
             iconArrowDown.classList.add('icon-rotate');
+<<<<<<< HEAD
             menuHeight.style.height = '80px';
         }
         else {
             iconArrowDown.classList.remove('icon-rotate');
             menuHeight.style.height = '0px';
+=======
+            document.querySelector('.product-option').style.height = '80px';
+        }
+        else {
+            iconArrowDown.classList.remove('icon-rotate');
+            document.querySelector('.product-option').style.height = '0px';
+>>>>>>> c158c383522194d63bb157d5498427f6e7609fc7
         }
         
     });

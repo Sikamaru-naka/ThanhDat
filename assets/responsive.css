@@ -276,6 +276,7 @@
     }
 
     .header-list {
+      
         position: absolute;
         display: block;
         top:70px;
