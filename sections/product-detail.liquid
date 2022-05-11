@@ -11,12 +11,12 @@
         <i class="bi bi-dot detail-text__icon" ></i>
       </p>
       <p class="detail-text df">
-        <span>RING</span>
+        <span> RING </span>
         <i class="bi bi-dot detail-text__icon"></i>
 
       </p>
       <p class="detail-text">
-        <span>PRODUCT NAME {{ collection }}</span>
+        <span>{{ product.title }}</span>
       </p>
     </div>
 
@@ -66,7 +66,7 @@
                 {%- when 'price' -%}
                   <span class="detail-info__cost mt-20"> {{ product.price_max | money }}</span>
 
-                <form action="" method="post" action="/cart/add">
+                <form method="post" action="/cart/add">
 
                   {%- when 'select' -%}
                     {% for product_option in product.options_with_values %}
@@ -103,7 +103,8 @@
 
                       <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                    
-                      <button class="option-add-cart btn " type="submit">ADD TO CART</button>
+                      <button class="option-add-cart btn " name="add"  type="submit">ADD TO CART</button>
+                      
 
                       <div class="option-like">
                           <i class="bi bi-suit-heart option-like__icon active"></i>
@@ -114,9 +115,9 @@
                     
                      
                     <button class="btn btn-buy-now background-primary" >  BUY NOW </button>
-
                     
                 </form>
+                  
                 {%- when 'review' -%} 
                   <p class="detail-comment">
                     GET THIS PRODUCT BY 1ST APR !
