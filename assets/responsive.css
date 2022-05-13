@@ -178,10 +178,6 @@
         max-width: 300px;
     }
 
-    .header-nav {
-        position: relative;
-    }
-
     .tool-search {
         position: initial;
     }
@@ -277,10 +273,7 @@
     .featured-subheading, .featured-descript{
         max-width: unset;
     }
-    .search-form{
-        left: -570px;
-        width: 570px;
-    }
+    
     
 }
 
@@ -480,11 +473,6 @@
         padding-right: 25px !important;
 
     }
-
-    .search-form {
-        width: 650px;
-        left: -665px;
-    }
     
 }
 
@@ -512,4 +500,24 @@
     .mb-20-mb-tab {
       margin-bottom: 20px;
     }
+} 
+
+@media (max-width: 1362px) {
+
+  .tool-search {
+    position: initial;
+    
   }
+
+  .header-nav {
+    position: relative;
+    box-shadow: inset 0px -1px 0px #ececec;
+    z-index: 10;
+  }
+
+  .search-form {
+    left: 0;
+    width: 100%;
+    top: 100px;
+}
+}
