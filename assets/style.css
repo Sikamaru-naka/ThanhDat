@@ -956,6 +956,18 @@
     position: relative;
 }
 
+.cart__number{
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    background-color: #171719;
+    width: 15px;
+    height: 20px;
+    border-radius: 100%;
+    font-size: 1.3rem;
+    color: white;
+}
+
 .header__cart-list {
     position: absolute;
     top: calc(100% + 19px);
@@ -1551,5 +1563,10 @@ tr {
 
 .pl-0 {
   padding-left: 0;
+}
+
+.subscribe__success{
+    font-size: 1.8rem;
+    color: #fff;
 }
 
