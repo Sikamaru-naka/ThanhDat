@@ -763,8 +763,8 @@
 .search-form {
     position: absolute;
     z-index: 10;
-    left: -1000px;
-    top: -34px;
+    left: -1065px;
+    top: 55px;
     width: 1000px;
     background: #fff;
     height: 90px;
@@ -1537,5 +1537,10 @@ tr {
 
 .blog__post-back a span{
     text-decoration: underline;
+}
+
+.main__collection{
+    flex-wrap: wrap;
+    overflow: unset;
 }
 
