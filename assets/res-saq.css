@@ -30,7 +30,7 @@
         max-width: 288px;
     }
 
-    .questtions-more {
+    .questions-more {
         padding: 60px 0 40px;
     }
 
@@ -39,7 +39,6 @@
         --line-height-heading-mb: 2.7rem;
         
     }
-
 }
 
 /* tablet */

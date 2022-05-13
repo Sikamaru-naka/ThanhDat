@@ -1539,3 +1539,8 @@ tr {
     text-decoration: underline;
 }
 
+.main__collection{
+    flex-wrap: wrap;
+    overflow: unset;
+}
+
