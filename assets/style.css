@@ -1355,11 +1355,12 @@ tr {
   flex-direction: column;
 }
 
-.cart-item__quantity span {
+.button--tertiary {
   text-decoration: underline;
   margin-top: 30px;
   font-size: 1.5rem;
   color: #807e7e;
+  display: block;
 }
 
 .cart-item__totals {
