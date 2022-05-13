@@ -18,6 +18,19 @@
           </div>
         </div>
       </div>
+      {% form 'localization' %}
+  <select name="language_code">
+    {% for language in localization.available_languages %}
+      <option value="{{ language.iso_code }}"
+        {%- if language == localization.language %} selected="selected"{% endif %}
+      >
+        {{ language.endonym_name }}
+      </option>
+    {% endfor %}
+  </select>
+
+  <input type="submit" value="Update">
+{% endform %}
   {% endcase %}
 {% endfor %}
     

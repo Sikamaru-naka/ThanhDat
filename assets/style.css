@@ -1274,6 +1274,7 @@
 .heading.large {
   font-size: var(--font-size-bold);
   line-height: var(--line-height-bold);
+  text-shadow: 0 0 1px #000;
 }
 
 .heading.medium  {
