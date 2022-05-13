@@ -1,7 +1,6 @@
 
 @media (max-width: 767px) {
     
-    
     .mb-40 {
         margin-bottom: 40px;
     }
@@ -31,14 +30,24 @@
     }
 
     .questions-more {
+<<<<<<< HEAD:assets/res-saq.css
         padding: 60px 0 40px;
+=======
+      padding: 60px 0 40px;
+      display: block;
+>>>>>>> eaea779d63e549712373aad2f39591a0235f554d:assets/res-faq.css
     }
 
     .heading {
         --font-size-heading-mb: 1.7rem;
         --line-height-heading-mb: 2.7rem;
-        
     }
+<<<<<<< HEAD:assets/res-saq.css
+=======
+
+    
+
+>>>>>>> eaea779d63e549712373aad2f39591a0235f554d:assets/res-faq.css
 }
 
 /* tablet */
