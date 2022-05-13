@@ -88,6 +88,10 @@ menuClose.addEventListener('click',function() {
 
 const iconArrowDown = $('.header-items svg');
 const menuHeight = $('.product-option');
+<<<<<<< HEAD
+=======
+const headerItem = $$('.header-items');
+>>>>>>> 9f68367df918fbd96a908a5b2e963a801346de6a
 
 
 console.log()
@@ -97,11 +101,23 @@ if(iconArrowDown){
     iconArrowDown.addEventListener('click',function() {
         if(menuHeight.offsetHeight === 0) {
             iconArrowDown.classList.add('icon-rotate');
+<<<<<<< HEAD
             document.querySelector('.product-option').style.height = '80px';
         }
         else {
             iconArrowDown.classList.remove('icon-rotate');
             document.querySelector('.product-option').style.height = '0px';
+=======
+            menuHeight.style.height = '80px';
+            menuHeight.style.marginTop = '10px';
+            headerItem[2].style.paddingBottom = '0'
+        }
+        else {
+            iconArrowDown.classList.remove('icon-rotate');
+            menuHeight.style.height = '0px';
+            menuHeight.style.marginTop = '0px';
+            headerItem[2].style.paddingBottom = '15px'
+>>>>>>> 9f68367df918fbd96a908a5b2e963a801346de6a
         }
         
     });

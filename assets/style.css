@@ -92,6 +92,7 @@
     margin-left: 3px;
 }
 
+<<<<<<< HEAD
 /* .product-option {
     position: absolute;
     top: 100%;
@@ -105,6 +106,8 @@
     border: 1px solid rgba(233, 220, 220, 0.466);  
 } */
 
+=======
+>>>>>>> 9f68367df918fbd96a908a5b2e963a801346de6a
 .header-items:nth-child(3) .header-link::after {
     display: none;
 }
@@ -147,10 +150,13 @@
     top: -14px;
 }
 
+<<<<<<< HEAD
 /* .header-items:hover .product-option {
     display: block;
 } */
 
+=======
+>>>>>>> 9f68367df918fbd96a908a5b2e963a801346de6a
 .header-link {
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
@@ -1321,6 +1327,7 @@
   display: flex;
   font-size: 2rem;
   line-height: 2.5rem;
+  align-items: center;
 }
 
 tr {
