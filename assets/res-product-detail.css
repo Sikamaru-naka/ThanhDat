@@ -53,6 +53,7 @@
     }
     .option-amount {
         flex: 1 0 100%;
+        margin-bottom: 20px;
     }
 
     .mb-20 {
@@ -83,20 +84,15 @@
 /* tab-mobile */
 
 @media (max-width: 1023px) {
-    
-
     .detail-info {
-        margin-left: 0;
         margin-top: 40px;
-    }
-
-    
+    } 
 }
 
-/* pc */
-
-@media (min-width: 1024px) {
-    
+@media (max-width: 1100px) {
+    .detail-info{
+        margin-left: 0;
+    }
 }
 
 /* pc resolution */

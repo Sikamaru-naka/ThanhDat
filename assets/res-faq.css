@@ -1,7 +1,6 @@
 
 @media (max-width: 767px) {
     
-    
     .mb-40 {
         margin-bottom: 40px;
     }
@@ -20,11 +19,7 @@
     .fqa-menu__list::-webkit-scrollbar {
         display: none;
     }
-
-    .fqa-menu__item {
-        margin: 0 20px;
-    }
-
+    
     .list-questions__title {
         padding: 20px 0;
     }
@@ -34,15 +29,17 @@
         max-width: 288px;
     }
 
-    .questtions-more {
-        padding: 60px 0 40px;
+    .questions-more {
+      padding: 60px 0 40px;
+      display: block;
     }
 
     .heading {
         --font-size-heading-mb: 1.7rem;
         --line-height-heading-mb: 2.7rem;
-        
     }
+
+    
 
 }
 
