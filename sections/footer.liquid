@@ -66,12 +66,24 @@
                 {{ block.settings.heading }}
               </div>
 
-                <form action="">
+                <form action="" class="hidden">
                     <div class="form-email">
                         <input required type="email" name="" class="colors-text-secondary" id="inputEmail" placeholder="Your Email">
                         <button class="text-color">Subscribe</button>
                     </div>
                 </form>
+
+                {% form 'customer' %}
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <div class="form-email">
+                    <input required type="email" name="contact[email]" value="{{ form.email }}" aria-describedby="ContactFooter-success" class="colors-text-secondary" id="inputEmail" placeholder="Your Email">
+                    <button type="submit" class="text-color">Subscribe</button>
+                  </div>
+                  {%- if form.posted_successfully? -%}
+                    <h3>thanh cong</h3>
+                  {%- endif -%}
+                {% endform %}
+
                 <div class="footer-social text-color">
                     SOCIAL
                 </div>

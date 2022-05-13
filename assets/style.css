@@ -948,6 +948,10 @@
 
 /* cart-has-product */
 
+.product {
+  padding-bottom: 100px;;
+}
+
 .cart-has-product {
     position: relative;
 }
@@ -1542,5 +1546,9 @@ tr {
 .main__collection{
     flex-wrap: wrap;
     overflow: unset;
+}
+
+.pl-0 {
+  padding-left: 0;
 }
 
