@@ -18,13 +18,28 @@
                 </option>
               {% endfor %}
             </select>         
-            <input type="submit" value="Update" class="background-primary text-color localization__input">
+
+            <input hidden type="submit" value="Update" class="background-primary text-color localization__input">
+
+
           </div>
           {% endform %}
         </div>
       </div>
   {% endcase %}
 {% endfor %}
+
+<script>
+  let optionsLanguage = document.querySelector('.laguage-select');
+
+  let inputSubmit = document.querySelector('input[type="submit"]');
+  
+  optionsLanguage.onchange = function() {
+
+    inputSubmit.click();
+  }
+</script>
+
     
 
 {% schema %}
