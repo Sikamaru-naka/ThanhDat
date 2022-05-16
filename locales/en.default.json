@@ -11,6 +11,10 @@
       "forgot": "Forgot your password",
       "login": "Sign in",
       "account": "Create account"
+    },
+    "name": {
+      "first_name": "First Name",
+      "last_name": "Last Name"
     }
   }
 }

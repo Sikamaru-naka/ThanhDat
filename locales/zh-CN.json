@@ -11,6 +11,10 @@
       "forgot": "忘记密码了吗",
       "login": "登入",
       "account": "创建帐号"
+    },
+    "name": {
+      "first_name": "名",
+      "last_name": "姓"
     }
   }
 }
