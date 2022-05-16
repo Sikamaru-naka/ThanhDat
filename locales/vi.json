@@ -11,6 +11,10 @@
       "forgot": "Quên mật khẩu",
       "login": "Đăng nhập",
       "account": "Tạo tài khoản"
+    },
+    "name": {
+      "first_name": "Họ",
+      "last_name": "Tên"
     }
   }
 }

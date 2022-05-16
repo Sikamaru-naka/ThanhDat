@@ -268,6 +268,7 @@
 
 .category-product__img {
     position: relative;
+    height: 100%;
 }
 
 .category-product__img img{
@@ -1576,3 +1577,12 @@ tr {
     font-size: 14px;
 }
 
+.collection-text.light,
+.heading.light{
+    color: #fff;
+}
+
+.collection-text.dark,
+.heading.dark{
+    color: #84848E;
+}
