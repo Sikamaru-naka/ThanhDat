@@ -8,14 +8,15 @@
         <div class="featured-options discover-content ">
           {% for block in section.blocks %}
             {% case block.type %}
-              {% when "icon"%}
-                {% if block.settings.options_icon == 'icon1' %}
-                  {% render 'icon-bracelet' %}
-                {% elsif block.settings.options_icon == 'icon2' %}
-                  {% render 'icon-diamond' %}
-                {% else %}
-                  {% render 'icon-candle-heart' %}
-                {% endif %}
+              {% when "icon" %}
+                {% liquid
+                  if block.settings.options_icon == 'icon1' 
+                    render 'icon-bracelet' 
+                  elsif block.settings.options_icon == 'icon2' 
+                    render 'icon-diamond' 
+                  else 
+                    render 'icon-candle-heart' 
+                  endif %}
               {% when 'heading' %}
                 <div class="featured-title">{{ block.settings.heading }}</div>
               {% when 'subheading' %}
@@ -39,7 +40,7 @@
         {% case block.type %}
         {% when 'image' %}
             {%- if block.settings.image != blank -%}
-              <img class="featured-img {% if section.settings.width == 'large' %} featured-img-mw {% endif %}" src="{{ block.settings.image | img_url: "master" }}" alt="">
+              <img loading="lazy" class="featured-img {% if section.settings.width == 'large' %} featured-img-mw {% endif %}" src="{{ block.settings.image | img_url: "master" }}" alt="">
             {%- else -%}
               {{ 'collection-1' | placeholder_svg_tag: 'featured-img bg-gray ' }}
             {%- endif -%} 
@@ -52,14 +53,16 @@
         <div class="featured-options discover-content pl-0">
           {% for block in section.blocks %}
             {% case block.type %}
-              {% when "icon"%}
-                {% if block.settings.options_icon == 'icon1' %}
-                  {% render 'icon-bracelet' %}
-                {% elsif block.settings.options_icon == 'icon2' %}
-                  {% render 'icon-diamond' %}
-                {% else %}
-                  {% render 'icon-candle-heart' %}
-                {% endif %}
+              {% when "icon" %}
+                {% liquid 
+                  if block.settings.options_icon == 'icon1' 
+                    render 'icon-bracelet' 
+                  elsif block.settings.options_icon == 'icon2' 
+                    render 'icon-diamond' 
+                  else 
+                    render 'icon-candle-heart' 
+                  endif 
+                %}
               {% when 'heading' %}
                 <div class="featured-title">{{ block.settings.heading }}</div>
               {% when 'subheading' %}

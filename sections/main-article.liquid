@@ -5,7 +5,7 @@
     {%- case block.type -%}
       {%- when 'image_picker' -%}
         <div class="blog__post-img">
-          <img src="{{ article.image | img_url: 'master' }}"/>
+          <img loading="lazy" src="{{ article.image | img_url: 'master' }}"/>
         </div>
       {%- when 'title' -%}
         <div class="blog__post-title">
