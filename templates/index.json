@@ -148,7 +148,7 @@
           "type": "Link",
           "settings": {
             "Link": "SEE MORE",
-            "more_link": "shopify:\/\/collections"
+            "more_link": "shopify:\/\/collections\/all"
           }
         }
       },
