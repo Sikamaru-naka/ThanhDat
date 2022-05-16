@@ -1572,3 +1572,17 @@ tr {
     color: #fff;
 }
 
+.localization__input{
+    border: none;
+    font-size: 14px;
+}
+
+.collection-text.light,
+.heading.light{
+    color: #fff;
+}
+
+.collection-text.dark,
+.heading.dark{
+    color: #84848E;
+}

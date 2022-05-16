@@ -12,11 +12,11 @@
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'heading' %}
-            <h2 class="heading collection-heading text-color {{ block.settings.optionSize }}">
+            <h2 class="heading collection-heading {{ block.settings.optionSize }} {{ block.settings.optionColor }}">
               {{ collection.title }}
             </h2>
           {% when 'Description' %}
-            <div class="collection-text {% if section.settings.options == 'center' %} width-unset {% endif %}">
+            <div class="collection-text {% if section.settings.options == 'center' %} width-unset {% endif %} {{ block.settings.optionColor }}">
               {{ collection.description }}
             </div>
           {% when 'Link' %}
@@ -80,12 +80,44 @@
               "value": "small"
             }
           ]
+        },
+        {
+          "type": "select",
+          "label": "Options color heading",
+          "id": "optionColor",
+          "options": [
+            {
+              "label": "Dark color",
+              "value": "dark"
+            },
+            {
+              "label": "Light color",
+              "value": "light"
+            }
+          ]
         }
       ]
     },
     {
       "name": "Description",
-      "type": "Description"
+      "type": "Description",
+      "settings": [
+        {
+          "type": "select",
+          "label": "Options color description",
+          "id": "optionColor",
+          "options": [
+            {
+              "label": "Dark color",
+              "value": "dark"
+            },
+            {
+              "label": "Light color",
+              "value": "light"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Link",
