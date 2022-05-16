@@ -32,7 +32,11 @@
                 <div class="detail-show__main">
                   <div class="detail-show__main-slide">
                     {% for image in product.images %}
+<<<<<<< HEAD
                       <img loading="lazy" class="detail-show__main-img" src="{{ image | product_img_url: 'master' }}" alt="img1">
+=======
+                      <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="detail-show__main-img" src="{{ image | image_url: width: 720, height: 720 }}" alt="img1">
+>>>>>>> 16de1f0efe87d768d50e8aa78f0e19c546af3042
                     {% endfor %}
                   </div>
                 </div>
@@ -44,7 +48,7 @@
                 {% for image in product.images %}
                   <div class="col l-3 m-3 c-3 ">
                     <div class="detail-show__items active">
-                      <img loading="lazy" class="detail-show__main-img" src="{{ image | product_img_url: 'master' }}" alt="img1">
+                      <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="detail-show__main-img" src="{{ image | image_url: width: 720, height: 720 }}" alt="img1">
                     </div>
                   </div>
                 {% endfor %}
@@ -137,7 +141,11 @@
                     OUR GIFT BOX EXCLUSIVELY FOR YOU
                   </h3>
                   {% if block.settings.image_picker != blank %}
+<<<<<<< HEAD
                     <img loading="lazy" class="detail-heading__gift-img" src="{{ block.settings.image_picker | product_img_url: 'master' }}" alt="">
+=======
+                    <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="detail-heading__gift-img" src="{{ block.settings.image_picker | image_url: width: 720, height: 720 }}" alt="">
+>>>>>>> 16de1f0efe87d768d50e8aa78f0e19c546af3042
                   {% else %}
                     {{ 'image' | placeholder_svg_tag: "detail-heading__gift-img" }}
                   {% endif %}
