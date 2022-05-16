@@ -8,17 +8,6 @@
           <div class="heading-header text-color">
             {{ block.settings.text }}
           </div>
-<<<<<<< HEAD
-
-          
-          <div class="language">
-            <select class="laguage-select text-color background-primary">
-              <option selected>Italian</option>
-              <option >English</option>
-              <option >Vietnamese</option>
-              <option >Thailand</option>
-            </select>
-=======
           {% form 'localization' %}
           <div class="language df">
             <select name="language_code" class="laguage-select text-color background-primary">
@@ -30,7 +19,6 @@
               {% endfor %}
             </select>         
             <input type="submit" value="Update" class="background-primary text-color localization__input">
->>>>>>> 14b9eabd7e99b28db322cbcf7e590d61864a4cea
           </div>
           {% endform %}
         </div>
