@@ -55,17 +55,6 @@
           {% for block in section.blocks %}
             {% case block.type %}
               {% when "icon" %}
-<<<<<<< HEAD
-                {% liquid 
-                  if block.settings.options_icon == 'icon1' 
-                    render 'icon-bracelet' 
-                  elsif block.settings.options_icon == 'icon2' 
-                    render 'icon-diamond' 
-                  else 
-                    render 'icon-candle-heart' 
-                  endif 
-                %}
-=======
                 {%- liquid
                   if block.settings.options_icon == 'icon1'
                     render 'icon-bracelet'
@@ -75,7 +64,6 @@
                     render 'icon-candle-heart'
                   endif
                 -%}
->>>>>>> 2e8bd3a3e0b509e1f29567261d4eaf1970f86c88
               {% when 'heading' %}
                 <div class="featured-title">{{ block.settings.heading }}</div>
               {% when 'subheading' %}
