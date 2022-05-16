@@ -9,13 +9,15 @@
           {% for block in section.blocks %}
             {% case block.type %}
               {% when "icon"%}
-                {% if block.settings.options_icon == 'icon1' %}
-                  {% render 'icon-bracelet' %}
-                {% elsif block.settings.options_icon == 'icon2' %}
-                  {% render 'icon-diamond' %}
-                {% else %}
-                  {% render 'icon-candle-heart' %}
-                {% endif %}
+                {%- liquid
+                  if block.settings.options_icon == 'icon1'
+                    render 'icon-bracelet'
+                  elsif block.settings.options_icon == 'icon2' 
+                    render 'icon-diamond'
+                  else 
+                    render 'icon-candle-heart'
+                  endif
+                -%}
               {% when 'heading' %}
                 <div class="featured-title">{{ block.settings.heading }}</div>
               {% when 'subheading' %}
@@ -52,14 +54,16 @@
         <div class="featured-options discover-content pl-0">
           {% for block in section.blocks %}
             {% case block.type %}
-              {% when "icon"%}
-                {% if block.settings.options_icon == 'icon1' %}
-                  {% render 'icon-bracelet' %}
-                {% elsif block.settings.options_icon == 'icon2' %}
-                  {% render 'icon-diamond' %}
-                {% else %}
-                  {% render 'icon-candle-heart' %}
-                {% endif %}
+              {% when "icon" %}
+                {%- liquid
+                  if block.settings.options_icon == 'icon1'
+                    render 'icon-bracelet'
+                  elsif block.settings.options_icon == 'icon2' 
+                    render 'icon-diamond'
+                  else 
+                    render 'icon-candle-heart'
+                  endif
+                -%}
               {% when 'heading' %}
                 <div class="featured-title">{{ block.settings.heading }}</div>
               {% when 'subheading' %}
