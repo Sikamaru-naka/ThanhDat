@@ -12,7 +12,7 @@
                       
                   </a>
                   <div class="category-product__img">
-                    <img loading="lazy" src="{{ block.settings.collection.featured_image | img_url: 'master' }}" alt="">
+                    <img 	width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ block.settings.collection.featured_image | image_url: width: 720, height: 720 }}" alt="">
                   </div>
               </div>
           </div>
@@ -21,7 +21,7 @@
           <div class="category-product category-product--placeholder">
               <a href="./product_detail.html" class="btn btn-category btn-category-placeholder">
                   
-                  {{ 'section.collection.title' | t }}
+                Collection title
               </a>
               <div class="category-product__img category-product__img--placeholder">
                   {{ 'collection-4' | placeholder_svg_tag: 'bg-gray ' }}

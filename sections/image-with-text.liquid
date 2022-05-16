@@ -8,15 +8,16 @@
         <div class="featured-options discover-content ">
           {% for block in section.blocks %}
             {% case block.type %}
-              {% when "icon" %}
-                {% liquid
-                  if block.settings.options_icon == 'icon1' 
-                    render 'icon-bracelet' 
+              {% when "icon"%}
+                {%- liquid
+                  if block.settings.options_icon == 'icon1'
+                    render 'icon-bracelet'
                   elsif block.settings.options_icon == 'icon2' 
-                    render 'icon-diamond' 
+                    render 'icon-diamond'
                   else 
-                    render 'icon-candle-heart' 
-                  endif %}
+                    render 'icon-candle-heart'
+                  endif
+                -%}
               {% when 'heading' %}
                 <div class="featured-title">{{ block.settings.heading }}</div>
               {% when 'subheading' %}
@@ -40,7 +41,7 @@
         {% case block.type %}
         {% when 'image' %}
             {%- if block.settings.image != blank -%}
-              <img loading="lazy" class="featured-img {% if section.settings.width == 'large' %} featured-img-mw {% endif %}" src="{{ block.settings.image | img_url: "master" }}" alt="">
+              <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="featured-img {% if section.settings.width == 'large' %} featured-img-mw {% endif %}" src="{{ block.settings.image | image_url: width: 720, height: 720 }}" alt="">
             {%- else -%}
               {{ 'collection-1' | placeholder_svg_tag: 'featured-img bg-gray ' }}
             {%- endif -%} 
@@ -54,15 +55,15 @@
           {% for block in section.blocks %}
             {% case block.type %}
               {% when "icon" %}
-                {% liquid 
-                  if block.settings.options_icon == 'icon1' 
-                    render 'icon-bracelet' 
+                {%- liquid
+                  if block.settings.options_icon == 'icon1'
+                    render 'icon-bracelet'
                   elsif block.settings.options_icon == 'icon2' 
-                    render 'icon-diamond' 
+                    render 'icon-diamond'
                   else 
-                    render 'icon-candle-heart' 
-                  endif 
-                %}
+                    render 'icon-candle-heart'
+                  endif
+                -%}
               {% when 'heading' %}
                 <div class="featured-title">{{ block.settings.heading }}</div>
               {% when 'subheading' %}
