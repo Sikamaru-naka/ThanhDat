@@ -544,6 +544,7 @@
     cursor: pointer;
     display: block;
     margin-bottom: 15px;
+    width: 115px;
 }
 
 .collection-more svg {
