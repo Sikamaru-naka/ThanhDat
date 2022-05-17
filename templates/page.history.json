@@ -27,7 +27,7 @@
         "16520615046ece331d-1"
       ],
       "settings": {
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=kk-1bEP-7CA&t=1s",
         "imagevid": "shopify:\/\/shop_images\/img1.jpg",
         "position": "above"
       }
@@ -190,7 +190,7 @@
           "type": "Button",
           "settings": {
             "Button": "BACK TO SHOPPING NOW",
-            "Botton_url": "shopify:\/\/pages\/history"
+            "Botton_url": "shopify:\/\/collections\/all"
           }
         }
       },

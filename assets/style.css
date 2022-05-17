@@ -650,7 +650,10 @@
 
 .footer-item {
     margin-bottom: 15px;
+}
 
+.footer-item:hover a{
+    color: #fff
 }
 
 .footer-link {

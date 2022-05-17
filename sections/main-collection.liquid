@@ -69,8 +69,12 @@
                 <i class="bi bi-suit-heart-fill feature-icon--active "></i>
               </div>
               <div class="category-product__img feature-img">
-                <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ product.featured_image | image_url: width: 300 }}">
-              </div>
+                {% if product.featured_image != blank %}
+                  <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ product.featured_image | image_url: width: 300 }}">
+                {% else %}
+                  {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
+                </div>
               <div class="product-name">
                 <a href="{{ product.url }}" class="">
                   {{ product.title }}
