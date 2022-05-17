@@ -395,6 +395,11 @@
     margin: 20px 0 10px;
     color: var(--text-color);
     letter-spacing: var(--letter-spacing);
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }
 
 .product-name a{
