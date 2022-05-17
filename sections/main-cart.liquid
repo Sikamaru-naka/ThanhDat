@@ -45,9 +45,6 @@
                   </div>
 
                 <quantity-input class="quantity cart-item__quantity">
-                  <button class="quantity__button no-js-hidden hidden" name="minus" type="button">
-                    -
-                  </button>
                   <input class="quantity__input"
                     type="number"
                     name="updates[]"
@@ -55,11 +52,7 @@
                     min="0"
                     aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
                     id="Quantity-{{ item.index | plus: 1 }}"
-                    data-index="{{ item.index | plus: 1 }}"
-                  >
-                  <button class="quantity__button no-js-hidden hidden" name="plus" type="button">
-                    +
-                  </button>
+                    data-index="{{ item.index | plus: 1 }}">
                 </quantity-input>
 
                  
