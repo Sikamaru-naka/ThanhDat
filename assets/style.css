@@ -1427,11 +1427,14 @@ tr {
   font-size: 2rem;
   line-height: 3rem;
   display: block;
-  padding: 10px 5px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: #000 1px solid;
+  cursor: pointer;
 }
 
 .cart__bottom-btn {
-  
+  display: flex;
   margin-top: 30px;
 }
 
@@ -1588,4 +1591,26 @@ tr {
     outline: none;
     font-size: 1.4rem;
     margin-right: 16px;
+}
+
+.quantity__button {
+  border: none;
+  background: none;
+}
+
+.quantity__button {
+  font-size: 2rem;
+  color: #000;
+}
+
+.option-amount.quantity  {
+  width: initial;
+}
+
+.update-cart {
+  margin-right: 45px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: #000 1px solid;
+  cursor: pointer;
 }
