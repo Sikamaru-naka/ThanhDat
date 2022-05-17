@@ -15,7 +15,6 @@
         margin-bottom: 15px;
     }
 
-
     .heading {
         font-size: var(--font-size-heading-mb);
         line-height: var(--line-height-heading-mb);
@@ -161,7 +160,6 @@
     .container__large {
         padding-left: 15px !important;
         padding-right: 15px !important;
-
     }
 
     .header__notify {
@@ -246,6 +244,24 @@
     }
     .cart-item__quantity span{
         margin-top: 15px;
+    }
+    .announcement__form{
+        display: block;
+    }
+    .localization__price,
+    .language {
+        justify-content: flex-end;
+    }
+    .localization__price select{
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    .localization__price{
+        display: flex;
+    }
+    .header-above__contain{
+        height: 100px;
+        display: block;
     }
 }
 
