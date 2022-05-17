@@ -44,13 +44,8 @@
                       <i class="bi bi-plus plus-icon" onclick="this.parentNode.querySelector('.product__quantity-input').stepUp()" ></i>
                   </div>
 
-
-                <label class="visually-hidden" for="Quantity-{{ item.index | plus: 1 }}">
-                  hello
-                </label>
-
-                <quantity-input class="quantity">
-                  <button class="quantity__button no-js-hidden" name="minus" type="button">
+                <quantity-input class="quantity cart-item__quantity">
+                  <button class="quantity__button no-js-hidden hidden" name="minus" type="button">
                     -
                   </button>
                   <input class="quantity__input"
@@ -62,7 +57,7 @@
                     id="Quantity-{{ item.index | plus: 1 }}"
                     data-index="{{ item.index | plus: 1 }}"
                   >
-                  <button class="quantity__button no-js-hidden" name="plus" type="button">
+                  <button class="quantity__button no-js-hidden hidden" name="plus" type="button">
                     +
                   </button>
                 </quantity-input>
