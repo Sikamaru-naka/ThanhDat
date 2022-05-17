@@ -51,10 +51,12 @@
     object-fit: cover;
     height: 672px;
     display: block;
+    border: 1px solid #a89a9a;
 }
 
 .detail-show__main-img {
     width: 100%;
+    border: 1px solid #a89a9a;
     /* display: none; */
 }
 

@@ -487,7 +487,10 @@
     .container-pc-low {
         padding-left: 25px !important;
         padding-right: 25px !important;
+    }
 
+    .pl-0{
+        padding: 0 90px;
     }
     
 }

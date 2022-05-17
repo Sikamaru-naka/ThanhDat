@@ -270,12 +270,18 @@
     height: 100%;
 }
 
+.category-product__img svg{
+    background: silver;
+}
+
+.category-product__img svg,
 .category-product__img img{
   width: 100%;
-  transition: all 0.8s ease-out;
+  transition: all 1s ease-out;
   display: block;
   height: 360px;
   object-fit: cover;
+  border: 1px solid #a89a9a;
 }
 
 
@@ -1395,6 +1401,7 @@ tr {
 
 .cart-item__detail img {
   margin-right: 20px;
+  border: 1px solid #a89a9a;
 }
 
 .cart-open__heading {
