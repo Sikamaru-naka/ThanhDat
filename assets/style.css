@@ -542,9 +542,8 @@
     line-height: var(--line-height-regular);
     letter-spacing: var(--letter-spacing);
     cursor: pointer;
-    display: block;
+    display: inline-block;
     margin-bottom: 15px;
-    width: 115px;
 }
 
 .collection-more svg {
