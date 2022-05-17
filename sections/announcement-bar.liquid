@@ -11,13 +11,12 @@
           <div class="announcement__form df">
             {% form 'localization' %}
             <div class="localization__price">
-              <select name="country_code" class="price-select background-primary text-color">
-                {% for country in localization.available_countries %}
-                  <option value="{{ country.currency.iso_code }}"
-                    {%- if country == localization.country %} selected="selected"{% endif %}>
-                    {{ country.name }} ({{ country.currency.iso_code }}) - {{ country.currency.symbol }}
+              <select name="country_code" class="price-select background-primary text-color" >
+                {%- for country in localization.available_countries -%}
+                  <option value="{{ country.iso_code }}" {%- if country.iso_code == localization.country.iso_code %} selected{% endif %}>
+                    {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
                   </option>
-                {% endfor %}
+                {%- endfor -%}
               </select>
               <input hidden type="submit" value="Update" class="price__input">
             </div>
@@ -36,6 +35,8 @@
               <input hidden type="submit" value="Update" class="language__input background-primary text-color localization__input">
             </div>
             {% endform %}
+
+  
           </div>
 
         </div>
