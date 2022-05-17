@@ -75,7 +75,9 @@
                     {% render 'icon-bag' %}
                   </a>
                   <div class="cart__number df">
-                    {{ cart.item_count }}
+                    <a href="{{ routes.cart_url }}">
+                      {{ cart.item_count }}
+                    </a>
                   </div>
                 </div>
             </li>

@@ -47,7 +47,6 @@
 }
 
 .header-above__contain span{
-    width: 100px;
     display: block;
 }
 
@@ -542,7 +541,7 @@
     line-height: var(--line-height-regular);
     letter-spacing: var(--letter-spacing);
     cursor: pointer;
-    display: block;
+    display: inline-block;
     margin-bottom: 15px;
 }
 
@@ -658,10 +657,6 @@
 .footer-link {
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
-}
-
-.footer-item:hover .footer-link {
-    color: #fff;
 }
 
 .footer-addres {
@@ -1259,6 +1254,7 @@
     line-height: 19px;
     letter-spacing: 2px;
     border: none;
+    cursor: pointer;
 }
 
 .collection__options-item p {
@@ -1585,4 +1581,11 @@ tr {
 .collection-text.dark,
 .heading.dark{
     color: #84848E;
+}
+
+.localization__price select{
+    border: none;
+    outline: none;
+    font-size: 1.4rem;
+    margin-right: 16px;
 }
