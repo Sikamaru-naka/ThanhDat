@@ -304,8 +304,7 @@
 }
 
 .btn-category:hover ~.category-product__img::after,
-.feature-icon:hover ~.category-product__img::after,
-.category-product__img:hover::after {
+.feature-icon:hover ~.category-product__img::after{
     display: block;
 }
 
@@ -315,7 +314,7 @@
 
 
 .btn-category:hover ~.category-product__img>img,
-.category-product__img:hover >img {
+.category-product__img:hover img {
     transform: scale(1.2);
 }
 
