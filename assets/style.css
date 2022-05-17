@@ -1254,6 +1254,7 @@
     line-height: 19px;
     letter-spacing: 2px;
     border: none;
+    cursor: pointer;
 }
 
 .collection__options-item p {
