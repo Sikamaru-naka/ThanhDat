@@ -408,6 +408,7 @@
 
 .product-name a{
     text-transform: uppercase;
+    font-weight: 600;
 }
 
 .product-cost {
@@ -1625,4 +1626,12 @@ tr {
   border-radius: 5px;
   border: #000 1px solid;
   cursor: pointer;
+}
+
+.discover-content__text p {
+  color: rgb(var(--colors-text-secondary));
+}
+
+.collection-content a {
+  margin-top: 11px;
 }
