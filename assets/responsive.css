@@ -153,7 +153,7 @@
     /* menu */
     .search-form__btn,
     .search-form__control {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
    
     .container__small,
@@ -370,7 +370,7 @@
     }
 
     .header-items {
-        padding: 15px;
+        padding: 14px;
         margin: 0;
         overflow: hidden;
     }
