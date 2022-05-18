@@ -136,7 +136,6 @@
 .header-link {
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
-    color: var(--text-color);
     letter-spacing: var(--letter-spacing);
     position: relative;
 }
@@ -281,7 +280,6 @@
   display: block;
   height: 360px;
   object-fit: cover;
-  border: 1px solid #a89a9a;
 }
 
 
@@ -410,6 +408,7 @@
 
 .product-name a{
     text-transform: uppercase;
+    font-weight: 600;
 }
 
 .product-cost {
@@ -1627,4 +1626,12 @@ tr {
   border-radius: 5px;
   border: #000 1px solid;
   cursor: pointer;
+}
+
+.discover-content__text p {
+  color: rgb(var(--colors-text-secondary));
+}
+
+.collection-content a {
+  margin-top: 11px;
 }
