@@ -108,7 +108,7 @@
     content: "";
     position: absolute;
     bottom: -5px;
-    height: 3px;
+    height: 2px;
     background-color: rgb(var(--dark-bgc));
     width: 0;
     left: 0%;
@@ -445,6 +445,7 @@
     z-index: 1;
     padding: 10px;
     cursor: pointer;
+    color: red;
 }
 
 .feature-icon.disable {
@@ -604,6 +605,7 @@
     --font-size-bold: 1.6rem;
     line-height: var(--line-height-regular);
     color: var(--text-color);
+    margin-top: 30px;
 
 }
 
@@ -965,7 +967,7 @@
 }
 
 .cart__number{
-    position: absolute;
+    /* position: absolute;
     top: -7px;
     right: -7px;
     background-color: #171719;
@@ -973,6 +975,17 @@
     height: 20px;
     border-radius: 100%;
     font-size: 1.3rem;
+    color: white; */
+
+
+    position: absolute;
+    top: -7px;
+    right: -8px;
+    background-color: #171719;
+    width: 18px;
+    height: 20px;
+    border-radius: 100%;
+    font-size: 1rem;
     color: white;
 }
 
@@ -1251,17 +1264,17 @@
 }
 
 .collection__sort span{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #171719;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgb(var(--colors-text-primary));
 }
 
 .collection__options-item p,
 .collection__select {
-    font-weight: 400;
+    font-weight: 600;
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 2px;
@@ -1269,7 +1282,7 @@
     cursor: pointer;
 }
 
-.collection__options-item p {
+.collection__options-item button {
     margin-left: 68px;
 }
 
@@ -1437,13 +1450,10 @@ tr {
 }
 
 .cart__bottom-checkout {
-  font-size: 2rem;
-  line-height: 3rem;
-  display: block;
-  padding: 10px 15px;
-  border-radius: 5px;
   border: #000 1px solid;
   cursor: pointer;
+  text-transform: uppercase;
+
 }
 
 .cart__bottom-btn {
@@ -1622,10 +1632,9 @@ tr {
 
 .update-cart {
   margin-right: 45px;
-  padding: 10px 15px;
-  border-radius: 5px;
   border: #000 1px solid;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 .discover-content__text p {
