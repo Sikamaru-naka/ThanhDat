@@ -106,7 +106,7 @@ if(iconArrowDown){
             iconArrowDown.classList.remove('icon-rotate');
             menuHeight.style.height = '0px';
             menuHeight.style.marginTop = '0px';
-            headerItem[2].style.paddingBottom = '15px'
+            headerItem[2].style.paddingBottom = '14px'
         }
         
     });
