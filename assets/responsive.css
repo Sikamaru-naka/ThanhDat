@@ -82,6 +82,10 @@
         padding: 60px 30px;
     }
 
+    .p-0{
+        padding:  0;
+    }
+
     .featured-heading {
         margin-top: 80px;
         margin-bottom: 25px;
@@ -422,7 +426,7 @@
     }
 
     .header-items:first-child {
-        margin-top: 15px;
+        margin-top: 30px;
     }
 
     .overlay {
