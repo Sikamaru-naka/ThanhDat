@@ -1261,6 +1261,7 @@
     color: #84848E;
     text-transform: none;
     letter-spacing: 0;
+    margin-right: 30px;
 }
 
 .collection__sort span{
@@ -1283,7 +1284,7 @@
 }
 
 .collection__options-item button {
-    margin-left: 68px;
+    margin-right: 28px;
 }
 
 .category__info-name{
@@ -1644,3 +1645,64 @@ tr {
 .collection-content a {
   margin-top: 11px;
 }
+
+.filter-group-display__header,
+.filter-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.6rem;
+}
+
+.filter-group-display__submit input{
+    border: 1px solid #171719;
+    letter-spacing: 0;
+    padding: 0px 10px;
+}
+
+.filter-group{
+    position: relative;
+}
+
+.filter-group-display{
+    position: absolute;
+    z-index: 3;
+    background: #fff;
+    padding: 15px;
+    right: -22px;
+    box-shadow: -1px 1px 4px 0px #decccc;
+    width: 200px;
+}
+
+.filter-group-summary{
+    display: flex;
+    margin-right: 15px;
+}
+
+.filter-group-summary span{
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.filter-group-display__submit{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.filter-group-display__list-item{
+    margin-top: 5px;
+}
+
+.filter-group-display__price-range-to span,
+.filter-group-display__price-range-from span{
+    margin-right: 5px;
+}
+
+.active-filters a{
+    font-weight: 600;
+}
+
+.active-filters__remove-filter{
+    margin-left: 10px;
+}
+
