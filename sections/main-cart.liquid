@@ -32,7 +32,9 @@
                     height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}">
   
                   <div class="cart-item__detail-info">
-                    {{ item.product.title | escape }}
+                    <a href="{{ item.url }}">
+                      {{ item.product.title | escape }}
+                    </a>
                   </div>
                 </div>
                 
@@ -62,12 +64,8 @@
                 </div>
     
                 <div class="cart-item__totals">
-                  {{ item.final_line_price | money }}
-                  
-                </div>
-
-                  
-                
+                  {{ item.final_line_price | money }}                 
+                </div>               
               </td>
             </tr>
           {% endfor %}
