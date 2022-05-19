@@ -57,7 +57,8 @@
 .detail-show__main-img {
     width: 100%;
     border: 1px solid #a89a9a;
-    /* display: none; */
+    height: 150px;
+    object-fit: cover;
 }
 
 .detail-show__main-img.active{
