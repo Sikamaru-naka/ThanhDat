@@ -774,9 +774,8 @@
     position: absolute;
     z-index: 10;
     left: -1065px;
-    top: 55px;
+    top: 67px;
     width: 1000px;
-    background: #fff;
     height: 90px;
     display: none;
     
@@ -787,7 +786,12 @@
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    padding: 0 5%;
+    padding: 1%;
+    margin: auto;
+    width: 60%;
+    background-color: rgb(255, 255, 255);
+    height: 70px;
+    border: 1px solid;
 }
 
 .search-form__control {
@@ -804,34 +808,18 @@
 
 }
 
-.nav-form::after {
-    content: "";
-    position: absolute;
-    width: 96%;
-    background: url('https://thanh991999.github.io/Decaclo_figma/assets/img/double-dotted.png');
-    height: 3px;
-    top: 15%;
-    left: 2%;
-}
-
-.nav-form::before {
-    content: '';
-    position: absolute;
-    width: 96%;
-    background: url('https://thanh991999.github.io/Decaclo_figma/assets/img/double-dotted.png');
-    height: 3px;
-    bottom: 15%;
-    left: 2%;
-}
 
 .search-form__btn {
-    border-style: none;
-    color: #e34444;
-    text-transform: uppercase;
-    background-color: #fff;
-    font-weight: 700;
-    font-size: 1.9rem;
-    cursor: pointer;
+  border-style: none;
+  color: #ffffff;
+  text-transform: capitalize;
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 1.9rem;
+  cursor: pointer;
+  padding: 10px 20px;
+  background: #312828;
+  border: 1px solid;
 }
 
 .notify {
