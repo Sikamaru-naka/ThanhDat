@@ -110,7 +110,7 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   line-height: 1.8rem;
-  font-family: lato, sans-serif;
+  font-family: var(--font-body-family) , sans-serif;
   font-weight: 400;
   color: rgb(var(--colors-text-primary));
 }
