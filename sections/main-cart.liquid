@@ -18,7 +18,7 @@
             <th class="cart-item__heading-total" > Total</th>
           </tr>
         </thead>
-  
+        
         <tbody>
           {% for item in cart.items %}
             <tr>
@@ -64,6 +64,7 @@
     
                 <div class="cart-item__totals">
                   {{ item.final_line_price | money }}
+                  
                 </div>
 
                   

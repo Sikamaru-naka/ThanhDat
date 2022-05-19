@@ -50,8 +50,7 @@
             "type": "logo",
             "settings": {
               "nameshop": "Name Shop",
-              "logo": "shopify:\/\/shop_images\/logo-white.png",
-              "menu": "footer-second"
+              "logo": "shopify:\/\/shop_images\/logo-white.png"
             }
           },
           "e17e78fd-b9b9-4c4b-a344-fac5bc6a883f": {
