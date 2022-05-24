@@ -3,7 +3,18 @@
     <h2 class="heading category-heading service-heading">{{ section.settings.heading }}</h2>
     <div class="row">
       {% for block in section.blocks %}
-        <div class="col l-3 m-6 c-12 mb-20-mb-tab">
+        {%- liquid
+          if section.blocks.size == 4
+            assign footer_grid_class = 'l-3'
+          elsif section.blocks.size == 3
+            assign footer_grid_class = 'l-4'
+          elsif section.blocks.size == 2
+            assign footer_grid_class = 'l-6'
+          elsif section.blocks.size == 1
+            assign footer_grid_class = 'l-12'
+          endif
+        -%}
+        <div class="col c-12 {{ footer_grid_class }} mb-20">
           <div class="service-box background-third">
             {% render 'icon-box' %}
             <h3 class="heading service-title {% if block.settings.heading == blank %} hidden {% endif %}">

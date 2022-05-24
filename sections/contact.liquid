@@ -1,59 +1,57 @@
 
 <div class="contact-container">
-    
-    <div class="container__large ">
-      <div class="grid wide1">
-        <div class="form-title ">
-          <h2 class="heading">
-            {{ section.settings.heading }}
-          </h2>
-          <p class="form-text colors-text-secondary">
-            {{ section.settings.description }}   
-          </p>
-        </div>
-
-        <div class="row">
-          {% for block in section.blocks %}
-            {% case block.type %}
-              {% when 'column' %}
-                <div class="col l-3 c-12 mb-20">
-                  <div class="service-box contact-box">
-                    {%- liquid
-                      if block.settings.options_icon == 'email'
-                        render 'icon-email'
-                      elsif block.settings.options_icon == 'Phone-around' 
-                        render 'icon-phone-around'
-                      elsif block.settings.options_icon == 'Phone' 
-                        render 'icon-phone'
-                      else 
-                        render 'icon-chat'
-                      endif
-                    -%}
-                    <h3 class="product-title contact-title " >
-                      {{ block.settings.description }}
-                    </h3>
-                    <a href="tel: {{ block.settings.detail }}" class="service-descript colors-text-secondary">
-                      {{ block.settings.detail }}
-                    </a>
-                  </div>
-                </div>
-            {% endcase %}
-          {% endfor %}
+  <div class="container__large ">
+    <div class="grid wide1">
+      <div class="form-title ">
+        <h2 class="heading">
+          {{ section.settings.heading }}
+        </h2>
+        <div class="form-text colors-text-secondary">
+          {{ section.settings.description }}   
         </div>
       </div>
-    </div>
 
-    <div class="hours-open">
-      {% for block in section.blocks %}
-        {% case block.type %}
-          {% when 'time' %}
-            <h2 class="hours-open__heading">{{ block.settings.description }}</h2>
-            <span class="{% if block.settings.daily_time == blank %} hidden {% endif %}">{{ block.settings.daily_time }}</span>
-            <span class="{% if block.settings.weekend == blank %} hidden {% endif %}">{{ block.settings.weekend }}</span>
-        {% endcase %}
-      {% endfor %}
+      <div class="row">
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'column' %}
+              {%- liquid
+                if section.blocks.size == 4
+                  assign footer_grid_class = 'l-3'
+                elsif section.blocks.size == 3
+                  assign footer_grid_class = 'l-4'
+                elsif section.blocks.size == 2
+                  assign footer_grid_class = 'l-6'
+                elsif section.blocks.size == 1
+                  assign footer_grid_class = 'l-12'
+                endif
+              -%}
+              <div class="col c-12 mb-20 {{ footer_grid_class }}">
+                <div class="service-box contact-box">
+                 
+                  {% render 'list-icon', list-icon: block.settings.options_icon %}
+                  <h3 class="product-title contact-title " >
+                    {{ block.settings.description }}
+                  </h3>
+                  <a href="tel: {{ block.settings.detail }}" class="service-descript colors-text-secondary">
+                    {{ block.settings.detail }}
+                  </a>
+                </div>
+              </div>
+          {% endcase %}
+        {% endfor %}
+      </div>
     </div>
- </div> 
+  </div>
+
+  <div class="hours-open">
+    {% if section.settings.enable_time == true %}
+      <h2 class="hours-open__heading">{{ section.settings.time_description }}</h2>
+      <span class="{% if section.settings.daily_time == blank %} hidden {% endif %}">{{ section.settings.daily_time }}</span>
+      <span class="{% if section.settings.weekend == blank %} hidden {% endif %}">{{ section.settings.weekend }}</span>
+    {% endif %}
+  </div>
+</div> 
 
 {% schema %}
 {
@@ -66,16 +64,40 @@
       "default": "OUR CONSULTANTS WILL BE HAPPY TO HELP YOU"
     },
     {
-      "type": "text",
+      "type": "richtext",
       "label": "Description",
       "id": "description",
-      "default": "Before contacting us we recommend that you read the frequently asked questions"
+      "default": "<p> Before contacting us we recommend that you read the frequently asked questions </p>"
+    },
+    {
+      "type": "checkbox",
+      "label": "Enable time",
+      "id": "enable_time",
+      "default": true
+    }, 
+    {
+      "type": "text",
+      "label": "Time description",
+      "id": "time_description",
+      "default": "CUSTOMER SERVICE OPENING HOURS"
+    },
+    {
+      "type": "text",
+      "label": "Daily Time",
+      "id": "daily_time",
+      "default": "Monday-Friday: 09: 00-18: 30"
+    },
+    {
+      "type": "text",
+      "label": "Weekend",
+      "id": "weekend",
+      "default": "Saturday: 09: 00-12: 30"
     }
   ],
   "blocks": [
     {
       "type": "column",
-      "name": "Column",
+      "name": "Contact",
       "limit": 4,
       "settings":[
         {
@@ -114,30 +136,6 @@
           "default": "Fill in the form"
         }
       ]
-    },
-    {
-      "type": "time",
-      "name": "Time",
-      "settings": [
-        {
-          "type": "text",
-          "label": "Description",
-          "id": "description",
-          "default": "CUSTOMER SERVICE OPENING HOURS"
-        },
-        {
-          "type": "text",
-          "label": "Daily Time",
-          "id": "daily_time",
-          "default": "Monday-Friday: 09: 00-18: 30"
-        },
-        {
-          "type": "text",
-          "label": "Weekend",
-          "id": "weekend",
-          "default": "Saturday: 09: 00-12: 30"
-        }
-      ]
     }
   ],
   "presets": [
@@ -155,9 +153,6 @@
         },
         {
           "type": "column"
-        },
-        {
-          "type": "time"
         }
       ]
     }
