@@ -303,6 +303,9 @@
         font-size: 2.5rem;
         line-height: 3rem;
     }
+    .slide-text{
+        padding: 0;
+    }
 }
 
 /* tablet */
@@ -332,7 +335,10 @@
     .blog__post-title h2{
         font-size: 3rem;
     }
-
+    .slide-text{
+        padding-top: 100px;
+    }
+    
     
 }
 

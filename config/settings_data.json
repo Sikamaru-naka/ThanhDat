@@ -1,36 +1,22 @@
 {
   "current": {
-    "colors_text": "#fff",
-    "colors_text_primary": "#171719",
-    "colors_text_secondary": "#84848E",
-    "background_primary": "#171719",
-    "background_secondary": "#F5F5F5",
-    "background_third": "#fff",
-    "background_btn": "#EE4D2D",
-    "background_btn_secondary": "#fff",
-    "type_page_font": "lato_n4",
-    "social_twitter_link": "",
     "social_facebook_link": "https:\/\/facebook.com\/shopify",
     "social_linkedin_link": "https:\/\/linkedin.com\/",
-    "social_pinterest_link": "",
     "social_instagram_link": "http:\/\/instagram.com\/shopify",
-    "social_tiktok_link": "",
-    "social_snapchat_link": "",
     "social_youtube_link": "https:\/\/www.youtube.com\/shopify",
-    "favicon": "shopify:\/\/shop_images\/green-eyed-kitten.jpg",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
         "blocks": {
-          "announcement-bar-0": {
+          "26a9a5cd-2cc2-4985-9d2b-4d8456ea9b85": {
             "type": "announcement",
             "settings": {
-              "text": "FREE SHIPPING IN ITALY"
+              "text": "Welcome to our store"
             }
           }
         },
         "block_order": [
-          "announcement-bar-0"
+          "26a9a5cd-2cc2-4985-9d2b-4d8456ea9b85"
         ],
         "settings": {
         }
@@ -45,27 +31,28 @@
       "footer": {
         "type": "footer",
         "blocks": {
-          "18e426c1-3426-40b1-8b6c-c46b517ab6da": {
+          "abfdf22f-c804-4b8e-ba4d-16f47a22d283": {
             "type": "link_menu",
             "settings": {
-              "Column_heading": "CUSTOMER CARE:",
+              "Column_heading": "CUSTOMER CARE",
               "menu": "footer"
             }
           },
-          "19efaeff-b7a6-41f2-aaac-a89b1f799a75": {
-            "type": "link_menu",
-            "settings": {
-              "Column_heading": "CUSTOMER CARE:",
-              "menu": "footer"
-            }
-          },
-          "8a3f58ca-4348-417f-ad76-c75f6f8a0638": {
+          "77a81196-45ec-4280-9e39-68f236a5b199": {
             "type": "infomation_lagel",
             "settings": {
-              "heading": "LEGAL INFORMATION:"
+              "heading": "LEGAL INFORMATION:",
+              "descript": "<p>Company name: De Carlo Nicholas<\/p><p>VAT number: 07020260480<\/p> <p>REA: FI-674952<\/p> <p>Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy<\/p>"
             }
           },
-          "27b728b8-0157-47b8-a278-d4d9e1c9fac9": {
+          "80a95a05-084a-43fe-b68b-7a6e27d8adf1": {
+            "type": "link_menu",
+            "settings": {
+              "Column_heading": "CUSTOMER CARE:",
+              "menu": "footer-second"
+            }
+          },
+          "0cde8ec5-5799-4f3a-8ea1-0100e7035255": {
             "type": "contact",
             "settings": {
               "heading": "SUBSCRIBE FOR NEWSLETTER"
@@ -73,15 +60,15 @@
           }
         },
         "block_order": [
-          "18e426c1-3426-40b1-8b6c-c46b517ab6da",
-          "19efaeff-b7a6-41f2-aaac-a89b1f799a75",
-          "8a3f58ca-4348-417f-ad76-c75f6f8a0638",
-          "27b728b8-0157-47b8-a278-d4d9e1c9fac9"
+          "abfdf22f-c804-4b8e-ba4d-16f47a22d283",
+          "77a81196-45ec-4280-9e39-68f236a5b199",
+          "80a95a05-084a-43fe-b68b-7a6e27d8adf1",
+          "0cde8ec5-5799-4f3a-8ea1-0100e7035255"
         ],
         "settings": {
-          "show_logo": false,
-          "show_social": false,
-          "descript": "<p>Company name: De Carlo Nicholas<\/p><p>VAT number: 07020260480<\/p><p>REA: FI-674952<\/p><p>Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy<\/p>",
+          "logo": "shopify:\/\/shop_images\/logo-white.png",
+          "show_logo": true,
+          "show_social": true,
           "note_footer": "<p>De Carlo Nicholas- VAT number: 07020260480- REA: FI-674952 - Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy<\/p>"
         }
       }
@@ -89,48 +76,5 @@
     "content_for_index": [
 
     ]
-  },
-  "presets": {
-    "Default": {
-      "colors_text": "#fff",
-      "colors_text_primary": "#171719",
-      "colors_text_secondary": "#84848E",
-      "background_primary": "#171719",
-      "background_secondary": "#F5F5F5",
-      "background_third": "#fff",
-      "background_btn": "#EE4D2D",
-      "background_btn_secondary": "#fff",
-      "type_page_font": "lato_n4",
-      "social_twitter_link": "",
-      "social_facebook_link": "",
-      "social_pinterest_link": "",
-      "social_instagram_link": "",
-      "social_tiktok_link": "",
-      "social_snapchat_link": "",
-      "social_youtube_link": "",
-      "sections": {
-        "announcement-bar": {
-          "type": "announcement-bar",
-          "blocks": {
-            "announcement-bar-0": {
-              "type": "announcement",
-              "settings": {
-                "text": "Welcome to our store"
-              }
-            }
-          },
-          "block_order": [
-            "announcement-bar-0"
-          ],
-          "settings": {
-          }
-        },
-        "header": {
-          "type": "header",
-          "settings": {
-          }
-        }
-      }
-    }
   }
 }
