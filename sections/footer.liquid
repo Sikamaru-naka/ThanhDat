@@ -1,23 +1,19 @@
-<div class="footer background-primary container__large">
-    <div class="footer-grap grid wide1">
-
+<div class="footer background-primary container__large {% if section.settings.show_logo == blank %} pt-100 {% endif %}">
+  <div class="footer-grap grid wide1">
+    <div class="footer-logo {% if section.settings.show_logo == blank %} hidden {% endif %}">
+      {% if section.settings.logo != blank %}
+        <a href="{{ routes.root_url }}">
+          <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ section.settings.logo | image_url: width: 200, height: 200 }}" alt="">
+        </a>
+      {% else %}
+        <a href="{{ routes.root_url }}" class="text-color">{{ shop.name }}</a>
+      {% endif %}
+    </div>
+    
+    <div class="row ">
       {% for block in section.blocks %}
         {% case block.type %}
-          {% when "logo" %}
-            <div class="footer-logo">
-              {% if block.settings.logo == blank and block.settings.nameshop != blank %}
-                <a href="{{ routes.root_url }}" class="text-color">{{ block.settings.nameshop }}</a>
-              {% elsif block.settings.logo == blank and block.settings.nameshop == blank %}  
-                {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
-              {% else %}
-                <a href="{{ routes.root_url }}">
-                  <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ block.settings.logo | image_url: width: 720, height: 720 }}" alt="">
-                </a>
-              {% endif %}
-            </div>
-                
-        <div class="row">
-          {% when "Column" %}
+          {% when "link_menu" %}
             <div class="col l-3 m-6 c-12 mb-60 mb-order mb-50-tab">
               <p class="footer-title text-color mb-20">
                 {{ block.settings.Column_heading }}
@@ -31,33 +27,14 @@
               </ul>
             </div>
 
-          {% when "detail" %}         
+          {% when "infomation_lagel" %}         
             <div class="col l-3 m-6 c-12 mb-60 mb-order mb-50-tab">
                 <div class="footer-title text-color mb-20">
                     {{ block.settings.heading }}
                 </div>
-                <ul class="footer-list">
-                    <li class="footer-item">
-                      <p class="footer-link colors-text-secondary">
-                        {{ block.settings.name_company }}
-                      </p>
-                    </li>
-                    <li class="footer-item">
-                      <p class="footer-link colors-text-secondary">
-                        {{ block.settings.vat }}
-                      </p>
-                    </li>
-                    <li class="footer-item">
-                      <p class="footer-link colors-text-secondary">
-                        {{ block.settings.rea }}
-                      </p>
-                    </li>
-                    <li class="footer-item">
-                      <p class="footer-link footer-addres colors-text-secondary">
-                        {{ block.settings.Registered }}
-                      </p>
-                    </li>
-                </ul>
+                <div class="footer-list colors-text-secondary">
+                  {{ section.settings.descript }}
+                </div>
             </div>
 
           {% when "contact" %}
@@ -77,84 +54,107 @@
                   {%- endif -%}
                 {% endform %}
 
-                <div class="footer-social text-color">
+                {%- if section.settings.show_social != blank -%} 
+                  <div class="footer-social text-color">
                     SOCIAL
-                </div>
-                <ul class="footer-social__list">
-                    <li>
-                      {%- if settings.social_facebook_link != blank -%}
-                        <a href="{{ settings.social_facebook_link | escape }}" class="footer-icon">
+                  </div>
+                  <ul class="footer-social__list">
+                    {%- if settings.social_facebook_link != blank -%}
+                      <li>
+                          <a href="{{ settings.social_facebook_link | escape }}" class="footer-icon">
                             {% render 'icon-facebook' %}
-                        </a>
+                          </a>
+                      </li>
                       {%- endif -%}
-                    </li>
 
-                    <li>
-                      {%- if settings.social_facebook_link != blank -%}
+                    {%- if settings.social_instagram_link != blank -%}
+                      <li>
                         <a href="{{ settings.social_instagram_link | escape }}" class="footer-icon">
                           {% render 'icon-instagram' %}
                         </a>
-                      {%- endif -%}
-                    </li>
+                      </li>
+                    {%- endif -%}
 
-                    <li>
-                      {%- if settings.social_linkedin_link != blank -%}
+                    {%- if settings.social_linkedin_link != blank -%}
+                      <li>
                         <a href="{{ settings.social_linkedin_link | escape }}" class="footer-icon">
                             {% render 'icon-linkedin' %}
                         </a>
-                      {%- endif -%}
-                    </li>
+                      </li>
+                    {%- endif -%}
 
-                    <li>
-                      {%- if settings.social_youtube_link != blank -%}
+                    {%- if settings.social_youtube_link != blank -%}
+                      <li>
                         <a href="{{ settings.social_youtube_link | escape }}" class="footer-icon">
                             {% render 'icon-youtube' %}
                         </a>
-                      {%- endif -%}
-                    </li>
-                </ul>
+                      </li>
+                    {%- endif -%}
+                  </ul>
+                {%- endif -%}
+
                 
             </div>
-        </div>
-          {% when "creat" %}
-            <p class="footer-ifo colors-text-secondary">
-                {{ block.settings.description }}
-            </p>
-            <p class="author colors-text-secondary">{{ block.settings.Producted }}</p>
-          
           {% endcase %}
         {% endfor %}
-    
+    </div>
+
+    {%- if section.settings.note_footer != blank -%}
+
+      <div class="footer-ifo colors-text-secondary">
+        {{ section.settings.note_footer }}
       </div>
+
+    {%- endif -%}
+
+    <div class="author">
+      <small class="colors-text-secondary">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
+      <small class=" colors-text-secondary">{{ powered_by_link }}</small>
+    </div>
+
+    
+
+  </div>
 </div>
 
 {% schema %}
 {
   "name": "footer",
   "settings":[
+    { 
+      "type": "image_picker",
+      "label": "Logo Image",
+      "id": "logo"
+    },
+    { 
+      "type": "checkbox",
+      "label": "Show footer logo",
+      "id": "show_logo"
+    },
+    { 
+      "type": "checkbox",
+      "label": "Show social icon",
+      "id": "show_social"
+    },
+    { 
+      "type": "richtext",
+      "label": "Description Legal Infomation",
+      "id": "descript",
+      "default": "<p>Company name: De Carlo Nicholas</p><p>VAT number: 07020260480</p> <p>REA: FI-674952</p> <p>Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy</p>"
+      
+    },
+    { 
+      "type": "richtext",
+      "label": "Description Note Footer",
+      "id": "note_footer",
+      "default": "<p>De Carlo Nicholas- VAT number: 07020260480- REA: FI-674952 - Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy</p>"
 
+    }
   ],
     "blocks":[
     {
-      "type": "logo",
-      "name": "Logo Shop",
-      "settings": [
-        {
-          "type": "text",
-          "label": "Type name shop",
-          "default": "Name Shop",
-          "id": "nameshop"
-        },
-        {
-          "type": "image_picker",
-          "label": "Image logo",
-          "id": "logo"
-        }
-      ] 
-    },
-    {
-      "type": "Column",
-      "name": "Column",
+      "type": "link_menu",
+      "name": "Link Menu",
       "limit": 2,
       "settings":[
         {
@@ -172,39 +172,15 @@
       ]
     },
     {
-      "type": "detail",
+      "type": "infomation_lagel",
       "name": "Infomation",
       "limit": 1,
-      "settings": [
+      "settings":[
         {
           "type": "text",
+          "label": "Heading",
           "id": "heading",
-          "label": "Infomation Heading",
           "default": "LEGAL INFORMATION:"
-        },
-        {
-          "type": "text",
-          "id": "name_company",
-          "label": "Name Company",
-          "default": "Company name: De Carlo Nicholas:"
-        },
-        {
-          "type": "text",
-          "id": "vat",
-          "label": "VAT number",
-          "default": "VAT number: 07020260480"
-        },
-        {
-          "type": "text",
-          "id": "rea",
-          "label": "REA",
-          "default": "REA: FI-674952"
-        },
-        {
-          "type": "text",
-          "id": "Registered",
-          "label": "Registered office",
-          "default": "Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy"
         }
       ]
     },
@@ -217,24 +193,6 @@
           "label": "Heading",
           "id": "heading",
           "default": "SUBSCRIBE FOR NEWSLETTER"
-        }
-      ]
-    },
-    {
-      "type": "creat",
-      "name": "Description",
-      "settings": [
-        {
-          "type": "text",
-          "label": "Description",
-          "id": "description",
-          "default": "De Carlo Nicholas- VAT number: 07020260480- REA: FI-674952 - Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy"
-        },
-        {
-          "type": "text",
-          "label": "Producted",
-          "id": "Producted",
-          "default": "© 2022 created Thành Đạt"
         }
       ]
     }
