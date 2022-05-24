@@ -17,13 +17,13 @@
       {
         "type": "color",
         "id": "colors_text",
-        "default": "#171719",
+        "default": "#fff",
         "label": "Text color"
       },
       {
         "type": "color",
         "id": "colors_text_primary",
-        "default": "#fff",
+        "default": "#171719",
         "label": "Text color primary"
       },
       {
