@@ -10,10 +10,10 @@
     "background_btn_secondary": "#fff",
     "type_page_font": "lato_n4",
     "social_twitter_link": "",
-    "social_facebook_link": "https:\/\/facebook.com\/shopify",
-    "social_linkedin_link": "https:\/\/linkedin.com\/",
+    "social_facebook_link": "",
+    "social_linkedin_link": "",
     "social_pinterest_link": "",
-    "social_instagram_link": "http:\/\/instagram.com\/shopify",
+    "social_instagram_link": "",
     "social_tiktok_link": "",
     "social_snapchat_link": "",
     "social_youtube_link": "https:\/\/www.youtube.com\/shopify",
@@ -48,10 +48,10 @@
         "blocks": {
           "9db6d01d-0bc4-44a3-87f3-7847c7eebc6b": {
             "type": "logo",
+            "disabled": true,
             "settings": {
               "nameshop": "Name Shop",
-              "logo": "shopify:\/\/shop_images\/logo-white.png",
-              "menu": "footer-second"
+              "logo": "shopify:\/\/shop_images\/logo-white.png"
             }
           },
           "e17e78fd-b9b9-4c4b-a344-fac5bc6a883f": {
@@ -68,7 +68,7 @@
               "name_company": "Company name: De Carlo Nicholas:",
               "vat": "VAT number: 07020260480",
               "rea": "REA: FI-674952",
-              "Registered": "Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy"
+              "Registered": ""
             }
           },
           "be3e7634-b4cb-42df-bcfd-dc54a9609341": {
