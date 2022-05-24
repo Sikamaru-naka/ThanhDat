@@ -193,7 +193,6 @@
 
 .slide-text{
     padding-top: 448px;
-    padding-bottom: 20px;
 }
 
 .slider-img {
@@ -208,6 +207,7 @@
 
 .hero-heading {
     display: block;
+    padding-bottom: 20px;
 }
 
 .button{
