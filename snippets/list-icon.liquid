@@ -1,0 +1,13 @@
+{% liquid
+  case list-icon
+    when 'email'
+      render 'icon-email'
+    when 'Phone-around'
+      render 'icon-phone-around'
+    when 'Phone'
+      render 'icon-phone'
+    else
+      render 'icon-chat'
+  endcase
+%}
+

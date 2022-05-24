@@ -141,35 +141,35 @@
       {%- if collection.products == blank -%}
         {%- for i in (1..4) -%}
         <div class="col l-3 m-3">
-        <div class="feature-product category-product ">
-          <div class="feature__icon-heart">
-            <i class="bi bi-suit-heart feature-icon "></i>
-            <i class="bi bi-suit-heart-fill feature-icon--active "></i>
-          </div>
-          <div class="category-product__img feature-img feature-img--placeholder">
-            {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
-          </div>
-          <div class="product-name">
-            <a href="./product_detail.html" class="">
-              PRODUCT NAME
-            </a>
-          </div>
-          <div class="product-cost">
+          <div class="feature-product category-product ">
+            <div class="feature__icon-heart">
+              <i class="bi bi-suit-heart feature-icon "></i>
+              <i class="bi bi-suit-heart-fill feature-icon--active "></i>
+            </div>
+            <div class="category-product__img feature-img feature-img--placeholder">
+              {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+            <div class="product-name">
               <a href="./product_detail.html" class="">
-              $99.99
+                PRODUCT NAME
               </a>
+            </div>
+            <div class="product-cost">
+                <a href="./product_detail.html" class="">
+                $99.99
+                </a>
+            </div>
+            <form method="post" action="/cart/add">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+              <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
+              <button type="submit" name="add" class="btn btn-feature">
+                <span class="">
+                  ADD TO CART
+                </span>
+              </button>
+            </form>
           </div>
-          <form method="post" action="/cart/add">
-            <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-            <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
-            <button type="submit" name="add" class="btn btn-feature">
-              <span class="">
-                ADD TO CART
-              </span>
-            </button>
-          </form>
         </div>
-      </div>
         {%- endfor -%}
 
       {%- elsif collection.products != blank -%}         
@@ -186,7 +186,7 @@
                 {% else %}
                   {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
                 {% endif %}
-                </div>
+              </div>
               <div class="product-name">
                 <a href="{{ product.url }}" class="">
                   {{ product.title }}
