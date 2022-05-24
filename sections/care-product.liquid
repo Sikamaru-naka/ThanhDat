@@ -12,7 +12,18 @@
 
     <div class="row">
       {% for block in section.blocks %}
-        <div class="col l-4 m-12 c-12 mb-20 ">
+        {%- liquid
+          if section.blocks.size == 4
+            assign footer_grid_class = 'l-3'
+          elsif section.blocks.size == 3
+            assign footer_grid_class = 'l-4'
+          elsif section.blocks.size == 2
+            assign footer_grid_class = 'l-6'
+          elsif section.blocks.size == 1
+            assign footer_grid_class = 'l-12'
+          endif
+        -%}
+        <div class="col m-12 c-12 mb-20 {{footer_grid_class}}">
             <div class="service-box product-box">
               {% if block.settings.options_icon == 'icon1' %}
                 {% render 'icon-water' %}

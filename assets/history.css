@@ -8,6 +8,7 @@
     padding: 82px 0;
     --font-size-bold : 2.4rem;
     --line-height-bold: 3.6rem;
+    text-transform: uppercase;
 }
 
 .birthday {
