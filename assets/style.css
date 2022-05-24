@@ -727,10 +727,21 @@
 }
 
 .author {
-    font-size: var(--font-size-regular);
-    line-height: var(--line-height-regular);
-    text-align: center;
-    padding-bottom: 20px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.author small {
+  font-size: var(--font-size-regular);
+  line-height: var(--line-height-regular);
+}
+
+.footer-list p {
+  font-size: var(--font-size-regular);
+  line-height: var(--line-height-regular);
+  margin-bottom: 15px;
+  max-width: 200px;
+  max-width: 215px;
 }
 
 .hidden-pc {
