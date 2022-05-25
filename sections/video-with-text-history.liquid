@@ -4,7 +4,7 @@
   {% if section.settings.position == 'above' %}
     <div class="history-vid">
         
-      <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | image_url: width: 1720, height: 1720 }}" alt="">
+      <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | image_url: width: 1720, height: 1720 }}" alt="discover-img">
       {% render 'play-vid' %}        
         
       {%- if section.settings.video_url.type == 'youtube' -%}
@@ -34,7 +34,6 @@
       <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | image_url: width: 720, height: 720 }}" alt="picture">
 
       {% render 'play-vid' %}
-      
         
       {%- if section.settings.video_url.type == 'youtube' -%}
         <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1" class="js-youtube control-video--his" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
