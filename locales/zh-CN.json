@@ -16,6 +16,61 @@
     "name": {
       "first_name": "名",
       "last_name": "姓"
+    },
+    "thanks": {
+      "thank": "感谢订阅!!!"
     }
+  },
+  "dealer": {
+    "label": {
+      "title": "标题",
+      "first_name": "名",
+      "sur_name": "姓",
+      "email": "电子邮件",
+      "phone": "电话",
+      "city": "城市",
+      "company": "公司",
+      "province": "省",
+      "vat_number": "增值税号",
+      "request": "要求",
+      "message": "信息",
+      "provision_check1": "我同意接收有关独家优惠、服务和新闻的通讯",
+      "provision_check2": "阅读隐私政策后，我同意处理我的个人数据。",
+      "submit": "发送询问"
+    }
+  },
+  "socials_media": {
+    "socials":{
+      "social_title":"社会的"
+    }
+  },
+  "products": {
+    "product": {
+      "add_cart": "添加到购物车",
+      "product": "产品名称"
+
+    }
+  },
+  "templates": {
+    "404": {
+      "title": "找不到网页",
+      "subtext": "404",
+      "back_shop": "ショッピングを続ける"
+    },
+    "article": {
+      "btn": "返回博客"
+    },
+    "main_cart": {
+      "message": "您的购物车是空的",
+      "title": " 您的购物车是空的",
+      "product": "S产品",
+      "quantity":"数量",
+      "total": " 全部的",
+      "back_shop": "继续购物",
+      "remove": "删除",
+      "subtotal": "小计",
+      "update_btn": "更新",
+      "checkout_btn": "查看" 
+    }   
   }
 }

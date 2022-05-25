@@ -16,6 +16,62 @@
     "name": {
       "first_name": "First Name",
       "last_name": "Last Name"
+    },
+    "thanks": {
+      "thank": "Thanks for subscribing !!!"
     }
+  },
+  "dealer": {
+    "label": {
+      "title": "TITLE",
+      "first_name": "FIRST NAME",
+      "sur_name": "SUR NAME",
+      "email": "EMAIL",
+      "phone": "PHONE",
+      "city": "CITY",
+      "company": "COMPANY",
+      "province": "PROVINCE",
+      "vat_number": "VAT NUMBER",
+      "request": "REQUEST",
+      "message": "MESSAGE",
+      "provision_check1": "I agree to receive communications regarding exclusive offers, services and news.",
+      "provision_check2": "After reading the privacy policy , I consent to the processing of my personal data.",
+      "submit": "SEND INQUIRY"
+    }
+  },
+  "socials_media": {
+    "socials":{
+      "social_title":"SOCIAL"
+    }
+  },
+  "products": {
+    "product": {
+      "add_cart": "ADD TO CART",
+      "product_name": "PRODUCT NAME"
+
+    }
+  },
+  "templates": {
+    "404": {
+      "title": "Page not found",
+      "subtext": "404",
+      "back_shop": "Continue Shopping"
+    },
+    "article": {
+      "btn": "Back to blog"
+    },
+    "main_cart": {
+      "message": "Your cart is empty",
+      "title": " Your Cart",
+      "product": "Product",
+      "quantity":"Quantity",
+      "total": "Total",
+      "back_shop": "Continue shopping",
+      "remove": "Remove",
+      "subtotal": "Subtotal",
+      "update_btn": "UPDATE",
+      "checkout_btn": "CHECKOUT"
+    }
+
   }
 }
