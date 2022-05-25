@@ -4,7 +4,9 @@
     <div class="row featured-row">
       {%- if section.settings.collection.products == blank -%}
        {%- for i in (1..4) -%}
-          {% render 'product' , placeholder: product %}
+       {% render 'cart-product',
+          product: product,
+        %}
        {%- endfor -%}
 
       {%- elsif section.settings.collection.products != blank -%}         
