@@ -17,7 +17,7 @@
     {%- form 'contact' -%}
       <div class="row">
         <div class="col l-6 c-12 m-6 mb-40">
-            <label class="form-label" for="title">TITLE</label>
+            <label class="form-label" for="title">{{ 'dealer.label.title' | t }}</label>
             <div class="select">
               <select id="title" class="form-select colors-text-secondary" name="contact[title]">
                 <option selected value="Miss">Miss</option>
@@ -28,31 +28,31 @@
             </div>
         </div>
         <div class="col l-6 c-12 m-6 mb-40">
-          <label class="form-label" for="fname">FIRST NAME*</label>
+          <label class="form-label" for="fname">{{ 'dealer.label.first_name' | t }}*</label>
           <input class="form-input colors-text-secondary" required type="text" name="contact[fname]" id="fname" placeholder='Insert your name' >
         </div>
         <div class="col l-6 c-12 m-6 mb-40">
-          <label class="form-label" for="sname">SUR NAME*</label>
+          <label class="form-label" for="sname">{{ 'dealer.label.sur_name' | t }}*</label>
           <input class="form-input colors-text-secondary" required type="text" name="contact[lname]" id="sname" placeholder='Insert your name' >
         </div>
         <div class="col l-6 c-12 m-6 mb-40">
-          <label class="form-label" for="email">EMAIL*</label>
+          <label class="form-label" for="email">{{ 'dealer.label.email' | t }}*</label>
           <input class="form-input colors-text-secondary" required type="email" name="contact[email]" id="email" placeholder='Insert your Email'>
         </div>
         <div class="col l-6 c-12 m-6 mb-40">
-          <label class="form-label" for="phone">PHONE</label>
+          <label class="form-label" for="phone">{{ 'dealer.label.phone' | t }}</label>
           <input class="form-input colors-text-secondary" type="text" name="contact[phone]" id="phone" placeholder='Insert your phone'>
         </div>
         <div class="col l-6 c-12 m-6 mb-40">
-          <label class="form-label" for="city">CITY</label>
+          <label class="form-label" for="city">{{ 'dealer.label.city' | t }}</label>
           <input class="form-input colors-text-secondary" type="text" name="contact[city]" id="city" placeholder='Insert your  city'>
         </div>
         <div class="col l-6 c-12 m-6 mb-40">
-          <label class="form-label" for="company">COMPANY</label>
+          <label class="form-label" for="company">{{ 'dealer.label.company' | t }}</label>
           <input class="form-input colors-text-secondary" type="text" name="contact[company]" id="company" placeholder='Insert your company here'>
         </div>
         <div class="col l-6 c-12 m-6 mb-40">
-          <label class="form-label" >PROVINCE</label>
+          <label class="form-label" >{{ 'dealer.label.province' | t }}</label>
           <div class="select">
             <select class="form-select" name="contact[province]" >
               <option selected value="Agriento">Agriento</option>
@@ -64,12 +64,12 @@
         </div>
 
         <div class="col l-6 c-12 m-6 mb-40">
-          <label class="form-label" for="company">VAT NUMBER</label>
+          <label class="form-label" for="company">{{ 'dealer.label.vat_number' | t }}</label>
           <input class="form-input colors-text-secondary" type="text" name="contact[VAT NUMBER]" id="company" placeholder='Insert your VAT number'>
         </div>
       
         <div class="col l-6 c-12 m-6 mb-40">
-            <label class="form-label" >REQUEST</label>
+            <label class="form-label" >{{ 'dealer.label.request' | t }}</label>
             <div class="select">
               <select class="form-select" name="contact[request]">
                 <option selected value="Dealer">Dealer</option>
@@ -79,22 +79,22 @@
         </div>
 
         <div class="col l-12 c-12 mb-50">
-          <label class="form-label" for="company">MESSAGE</label>
+          <label class="form-label" for="company">{{ 'dealer.label.request' | t }}</label>
           <input class="form-input colors-text-secondary form-mess" type="text" name="contact[MESSAGE]" id="company" placeholder='Write your message here'>
         </div>
 
         <div class="form-choose col l-12 c-12 mb-20">
           <input required type="checkbox" name="" id="checked1" >
-          <label for="checked1">I agree to receive communications regarding exclusive offers, services and news</label>
+          <label for="checked1">{{ 'dealer.label.provision_check1' | t }}</label>
         </div>
         <div class="form-choose col l-12 c-12 mb-50">
             <input required type="checkbox" name="" id="checked2">
-            <label for="checked2">After reading the privacy policy , I consent to the processing of my personal data.</label>
+            <label for="checked2">{{ 'dealer.label.provision_check2' | t }}</label>
         </div>
         <div class="form-choose col l-12 c-12">
           <!-- <input class="btn btn-submit col" type="submit" value="SEND INQUIRY"> -->
           <button class="btn btn-submit col" type="submit">
-            SEND INQUIRY
+            {{ 'dealer.label.submit' | t }}
           </button>
         </div>
 

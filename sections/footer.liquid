@@ -50,13 +50,13 @@
                     <button type="submit" class="text-color">{{ 'user.interactive.subscribe' | t }}</button>
                   </div>
                   {%- if form.posted_successfully? -%}
-                    <h3 class="subscribe__success">Thanks for subscribing !!!</h3>
+                    <h3 class="subscribe__success">{{ 'user.thanks.thank' | t }}</h3>
                   {%- endif -%}
                 {% endform %}
 
                 {%- if section.settings.show_social != blank -%} 
                   <div class="footer-social text-color">
-                    SOCIAL
+                    {{ socials_media.socialssocial_title }}
                   </div>
                   <ul class="footer-social__list">
                     {%- if settings.social_facebook_link != blank -%}
@@ -179,7 +179,6 @@
           "label": "Description Legal Infomation",
           "id": "descript",
           "default": "<p>Company name: De Carlo Nicholas</p><p>VAT number: 07020260480</p> <p>REA: FI-674952</p> <p>Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy</p>"
-          
         }
       ]
     },

@@ -151,7 +151,7 @@
             </div>
             <div class="product-name">
               <a href="./product_detail.html" class="">
-                PRODUCT NAME
+                {{ "products.product.product_name" | t }}
               </a>
             </div>
             <div class="product-cost">
@@ -164,7 +164,7 @@
               <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
               <button type="submit" name="add" class="btn btn-feature">
                 <span class="">
-                  ADD TO CART
+                  {{ "products.product.add_cart" | t }}
                 </span>
               </button>
             </form>
@@ -202,7 +202,7 @@
                 <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
                 <button type="submit" name="add" class="btn btn-feature">
                   <span class="">
-                    ADD TO CART
+                    {{ "products.product.add_cart" | t }}
                   </span>
                 </button>
               </form>

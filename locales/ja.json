@@ -16,6 +16,62 @@
     "name": {
       "first_name": "ファーストネーム",
       "last_name": "苗字"
+    },
+    "thanks": {
+      "thank": "購読していただきありがとうございます!!!"
+    }
+  }
+  ,
+  "dealer": {
+    "label": {
+      "title": "タイトル",
+      "first_name": "ファーストネーム",
+      "sur_name": "家系の名前",
+      "email": "Eメール",
+      "phone": "電話",
+      "city": "街",
+      "company": "会社",
+      "province": "州",
+      "vat_number": "VAT番号",
+      "request": "リクエスト",
+      "message": "メッセージ",
+      "provision_check1": "独占オファー、サービス、ニュースに関する連絡を受け取ることに同意します",
+      "provision_check2": "プライバシーポリシーを読んだ後、私は自分の個人データの処理に同意します。",
+      "submit": "お問い合わせを送信"
+    }
+  },
+  "socials_media": {
+    "socials":{
+      "social_title":"ソーシャル"
+    }
+  },
+  "products": {
+    "product": {
+      "add_cart": "カートに追加",
+      "product": "商品名"
+
+    }
+  },
+  "templates": {
+    "404": {
+      "title": "ページが見つかりません",
+      "subtext": "404",
+      "back_shop": "ショッピングを続ける"
+    },
+    "article": {
+      "btn": "ブログに戻る"
+    },
+    "main_cart": {
+      "message": "あなたのカートは空です",
+      "title": " あなたのカートは空です",
+      "product": "製品",
+      "quantity":"量",
+      "total": "合計",
+      "back_shop": "ショッピングを続ける",
+      "remove": "削除する",
+      "subtotal": "小計",
+      "update_btn": "アップデート",
+      "checkout_btn": "小切手"
     }
   }
 }

@@ -16,6 +16,63 @@
     "name": {
       "first_name": "Họ",
       "last_name": "Tên"
+    },
+    "thanks": {
+      "thank": "Cảm Ơn Đã Đăng Kí"
+    }
+  },
+  "dealer": {
+    "label": {
+      "title": "TIÊU ĐỀ",
+      "first_name": "HỌ",
+      "sur_name": "TÊN ",
+      "email": "THƯ ĐIỆN TỬ",
+      "phone": "ĐIỆN THOẠI",
+      "city": "THÀNH PHỐ",
+      "company": "CÔNG TY",
+      "province": "TỈNH ",
+      "vat_number": "THUẾ VAT",
+      "request": "YÊU CẦU",
+      "message": "TIN NHẮN",
+      "provision_check1": "TÔI ĐỒNG Ý NHẬN THÔNG BÁO LIÊN QUAN ĐẾN CÁC ƯU ĐÃI, DỊCH VỤ VÀ CÁC TIN TỨC ĐỘC QUYỀN.",
+      "provision_check2": "SAU KHI ĐỌC CHÍNH SÁCH BẢO MẬT, TÔI ĐỒNG Ý VỚI VIỆC XỬ LÝ DỮ LIỆU CÁ NHÂN CỦA MÌNH.",
+      "submit": "GỬI YÊU CẦU"
+    }
+  },
+  "socials_media": {
+    "socials":{
+      "social_title":"PHƯƠNG TIỆN XÃ HỘI"
+    }
+  },
+  "products": {
+    "product": {
+      "add_cart": "THÊM VÀO GIỎ HÀNG",
+      "product_name": "TÊN SẢN PHẨM"
+
+    }
+  },
+  "templates": {
+    "404": {
+      "title": "Không Tìm Thấy Trang",
+      "subtext": "404",
+      "back_shop": "Tiếp tục mua sắm"
+    },
+    "article": {
+      "btn": "Quay Về Trang Blog"
+    },
+    "main_cart": {
+      "message": "Giỏ Hàng Của Bạn Hiện Đang Trống",
+      "title": " Giỏ Hàng Của Bạn",
+      "product": "Sản Phẩm",
+      "quantity":"Số Lượng",
+      "total": "Tổng",
+      "back_shop": "Tiếp tục mua sắm",
+      "remove": "Xóa",
+      "subtotal": "Tổng Số Tiền",
+      "update_btn": "CẬP NHẬT",
+      "checkout_btn": "THANH TOÁN"
+
     }
   }
+
 }
