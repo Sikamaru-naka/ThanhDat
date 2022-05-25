@@ -31,7 +31,7 @@
   {% if section.settings.position == 'below' %}
     <div class="history-vid">
         
-      <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | image_url: width: 720, height: 720 }}" alt="">
+      <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | image_url: width: 720, height: 720 }}" alt="picture">
 
       {% render 'play-vid' %}
       
