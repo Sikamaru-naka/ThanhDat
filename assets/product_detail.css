@@ -312,6 +312,11 @@
     margin-left: 20px;
 }
 
+.detail-product__list span{
+    margin-bottom: 15px;
+    display: block;
+}
+
 .detail-product__info {
     width: 100%;
 
