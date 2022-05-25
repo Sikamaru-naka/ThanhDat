@@ -140,20 +140,12 @@
     <div class="row main__collection">
       {%- if collection.products == blank -%}
         {%- for i in (1..4) -%}
-        <div class="col l-3 m-3">
-          {% render 'cart-product',
-              product: product,
-            %}
-        </div>
+        {% render 'product' , placeholder: product %}
         {%- endfor -%}
 
       {%- elsif collection.products != blank -%}        
         {%- for product in collection.products -%}
-          <div class="col l-3 m-6 c-6">
-            {% render 'cart-product',
-              product: product,
-            %}
-          </div>
+          {% render 'product' , product: product %}
         {%- endfor -%}
       {%- endif -%}
     </div>
