@@ -2,9 +2,9 @@
   <div class="collection-wrap">
     <div class="collection-img">
       {%- if collection.image != blank -%}
-        <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ collection.image | image_url: width: 720, height: 720 }}"/>
+        <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ collection.image | image_url: width: 720, height: 720 }}" alt="image collection"/>
       {%- elsif collection.image == blank -%}
-        <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ section.settings.img | image_url: width: 1720, height: 1720 }}"/>
+        <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ section.settings.img | image_url: width: 1720, height: 1720 }}" alt="image collection"/>
       {%- endif -%}
     </div>
 

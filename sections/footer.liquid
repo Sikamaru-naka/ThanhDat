@@ -3,7 +3,7 @@
     <div class="footer-logo {% if section.settings.show_logo == blank %} hidden {% endif %}">
       {% if section.settings.logo != blank %}
         <a href="{{ routes.root_url }}">
-          <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ section.settings.logo | image_url: width: 200, height: 200 }}" alt="">
+          <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ section.settings.logo | image_url: width: 200, height: 200 }}" alt="image logo">
         </a>
       {% else %}
         <a href="{{ routes.root_url }}" class="text-color">{{ shop.name }}</a>

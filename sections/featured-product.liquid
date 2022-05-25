@@ -44,7 +44,7 @@
               </div>
               <div class="category-product__img feature-img">
                 {% if product.featured_image != blank %}
-                  <img class="feature-img__contain" width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ product.featured_image | image_url: width: 300 }}">
+                  <img class="feature-img__contain" width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ product.featured_image | image_url: width: 300 }}" alt="img product">
                 {% else %}
                   {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
                 {% endif %}
