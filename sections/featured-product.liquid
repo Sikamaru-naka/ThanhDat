@@ -1,3 +1,4 @@
+
 <div class="category featured">
   <div class="category-wrap grid wide1 container__large ">
     <h2 class="heading category-heading featured-heading color-text-primary">{{ section.settings.heading }}</h2> 
@@ -5,7 +6,7 @@
       {%- if section.settings.collection.products == blank -%}
        {%- for i in (1..4) -%}
        {% render 'cart-product',
-          product: product,
+          product: product
         %}
        {%- endfor -%}
 
@@ -14,6 +15,7 @@
           <div class="col l-3 m-3 ">
             {% render 'cart-product',
               product: product,
+              show_secondary_image: section.settings.checkbox_show_image
             %}
           </div>
         {%- endfor -%}
@@ -36,6 +38,11 @@
       "type": "collection",
       "id": "collection",
       "label": "Collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "checkbox_show_image",
+      "label": "Show second image on hover"
     }
   ],
   "presets":[
