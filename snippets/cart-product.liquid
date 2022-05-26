@@ -40,6 +40,11 @@
       {% else %}
         {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
       {% endif %}
+      {% if product.available == false %}
+        <span class="product-badge">Sold out</span>
+      {% else %}
+        <span class="product-badge">Sale</span>
+      {% endif %}
     </div>
     <div class="product-name">
       <a href="{{ product.url }}" class="">

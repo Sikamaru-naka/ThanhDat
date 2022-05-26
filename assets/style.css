@@ -193,10 +193,6 @@
 
 .slide-text{
     padding-top: 448px;
-<<<<<<< HEAD
-    padding-bottom: 20px;
-=======
->>>>>>> a411c9f494a3a51f22e4ab81eb1bf732f9b782e2
 }
 
 .slider-img {
@@ -1741,4 +1737,15 @@ tr {
 .price-select::-webkit-scrollbar-thumb {
   background-color: #cccccc82; /* Màu của thanh cuộn (scroll thumb) */
   border-radius: 8px;
+}
+
+.product-badge{
+    position: absolute;
+    bottom: 18px;
+    left: 15px;
+    font-size: 1.6rem;
+    background: #000000;
+    color: #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
 }
