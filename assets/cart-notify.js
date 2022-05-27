@@ -1,17 +1,20 @@
 const cartBtn = document.querySelector('.option-add-cart');
 const cartBlock = document.querySelector('cart-notification');
-const CartBack = document.querySelector('.cart-notify__links > button');
-const viewCart = document.querySelector('.cart-notify__links a')
+const cartBack = document.querySelector('.cart-notify__links > button');
+const viewCart = document.querySelector('.cart-notify__links div')
 
 cartBtn.addEventListener('click', () => {
   cartBlock.style.display = 'block';
+
 })
 
-CartBack.addEventListener('click', () => {
+cartBack.addEventListener('click', () => {
   cartBlock.style.display = 'none';
 })
 
 viewCart.addEventListener('click', () => {
-  cartBtn.style.type = 'submit';
-  cartBtn.onclick()
+  cartBtn.setAttribute('type', "submit");
+  cartBtn.click()
 })
+
+cartBtn.setAttribute('type', "button");
