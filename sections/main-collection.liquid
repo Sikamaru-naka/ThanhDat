@@ -14,8 +14,8 @@
         {{ collection.title }}
       </h2>
     </div>
-    <div class="collection__options df {% if section.settings.sorting == false %} hidden {% endif %}">
-      <div class="collection__options-wrap df">
+    <div class="collection__options df ">
+      <div class="collection__options-wrap df {% if section.settings.sorting == false %} hidden {% endif %}">
         <div class="collection__options-item">
           <span>There are {{ collection.all_products_count }} products</span>
         </div>
