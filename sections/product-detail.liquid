@@ -1,4 +1,5 @@
 
+
 <div class="detail-container ">
   <div class="container__large grid wide1">
     <div class="detail-folder">
@@ -20,6 +21,8 @@
         <span>{{ product.title }}</span>
       </p>
     </div>
+
+    {% render 'cart-notify-product' %}
 
     <div class="detail-wraper">
       <div class="row">
@@ -95,24 +98,22 @@
                   {%- when 'buynow' -%}
 
                   <form method="post" action="/cart/add">
+                    <div class="form-option">
+                      <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
 
-                      <div class="form-option">
-                        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                      <div class="option-amount ">
+                        <i class="bi bi-dash dash-icon" onclick="this.parentNode.querySelector('.product__quantity-input').stepDown()"></i>
+                        <input class="product__quantity-input" min="1" type="number"  value="1" name="quantity"> 
+                        <i class="bi bi-plus plus-icon" onclick="this.parentNode.querySelector('.product__quantity-input').stepUp()" ></i>
+                      </div>
 
-                        <div class="option-amount ">
-                          <i class="bi bi-dash dash-icon" onclick="this.parentNode.querySelector('.product__quantity-input').stepDown()"></i>
-                          <input class="product__quantity-input" min="1" type="number"  value="1" name="quantity"> 
-                          <i class="bi bi-plus plus-icon" onclick="this.parentNode.querySelector('.product__quantity-input').stepUp()" ></i>
-                        </div>
-
-                        <button class="option-add-cart btn " name="add"  type="submit">ADD TO CART</button>
-                        
-                        <div class="option-like">
-                            <i class="bi bi-suit-heart option-like__icon active"></i>
-                            <i class="bi bi-suit-heart-fill option-like__icon-fill"></i>
-                        </div>
+                      <button class="option-add-cart btn " name="add"  type="reset">ADD TO CART</button>
+                      
+                      <div class="option-like">
+                        <i class="bi bi-suit-heart option-like__icon active"></i>
+                        <i class="bi bi-suit-heart-fill option-like__icon-fill"></i>
+                      </div>
                     </div>
-                    
                   </form>
 
                   <form action="{{ routes.cart_url }}" method="post" id="cart">
@@ -151,7 +152,13 @@
   </div>
 </div>
 
+
+
+
+
+
 <script src="{{ 'detail.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'cart-notify.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
 {

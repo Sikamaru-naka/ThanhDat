@@ -15,7 +15,6 @@ function silderCustomer() {
     let subCount = 0;
 
     // mainSlide.style.transform = `translateX(${-size * counter}px)`;
-    console.log(boxImages.length  )
     nextBtn.addEventListener('click', function() {
         if(counter >= boxImages.length-1) return;
         mainSlide.style.transition = "transform 0.4s ease-in-out";

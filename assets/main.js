@@ -97,12 +97,7 @@ const headerItem = $$('.header-items');
 const amountSubMenu = $$('.select-product__option-level').length
 const amountSubMenuHeight = $('.select-product__option-level').offsetHeight
 const totalSubMenuHeight = amountSubMenu * amountSubMenuHeight
-console.log(amountSubMenu)
-console.log(totalSubMenuHeight)
 
-
-
-console.log()
 
 if(iconArrowDown){
     
@@ -111,7 +106,6 @@ if(iconArrowDown){
         if(subMenuHeight.offsetHeight === 0) {
             document.querySelector('.header-list').style.height = `${menuHeight + totalSubMenuHeight }px`;
             iconArrowDown.classList.add('icon-rotate');
-            console.log(totalSubMenuHeight)
             subMenuHeight.style.height = `${ totalSubMenuHeight }px`;
             subMenuHeight.style.marginTop = '10px';
             headerItem[2].style.paddingBottom = '0'

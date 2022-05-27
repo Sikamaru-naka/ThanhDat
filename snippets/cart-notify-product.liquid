@@ -1,0 +1,118 @@
+<style>
+
+  cart-notification {
+    display: none;
+    position: relative;
+    width: 100%;
+  }
+
+  .cart-notify {
+    background: #fff;
+    border: 1px solid #7f7f7f;
+    height: 365px;
+    width: 390px; 
+    position: absolute;
+    right: 0;
+    top: 115px;
+    z-index: 20;
+    padding: 25px 35px;
+  }
+
+  .cart-notify__header svg {
+    width: 20px;
+  }
+
+  .cart-notify__header {
+    display: flex;
+    align-items: center;
+  }
+
+  .cart-notify__header span {
+    margin-left: 10px;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .cart-notify__content {
+    padding: 20px 0 30px;
+    display: flex;
+  }
+
+  .cart-notify__product-image {
+    margin-right: 16px;
+  }
+  
+  .cart-notify__see-cart {
+    border: 1px solid #000;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    background: #171717;
+    color: #fff;
+  }
+
+  #cart-notification-form {
+    width: 100%;
+  }
+
+  .cart-notify__links button {
+    width: 100%;
+    display: block;
+  }
+
+  .cart-notify-info__name {
+    margin-top: 0;
+    margin-bottom: 6px;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+
+  .cart-notify-info__cost {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+  .cart-notify-info {
+    flex: 1;
+  }
+
+  .cart-notify__product-image img {
+    display: block;
+  }
+
+</style>
+
+<cart-notification>
+  <div class="cart-notify">
+    <h3 class="cart-notify__header cart-notify__message--success">
+      {% render 'check-cart'  %}
+      <span>
+        Product add to cart successfully!
+      </span>
+    </h3>
+
+    <div class="cart-notify__content">
+      <div class="cart-notify__product-image">
+        <img src="{{ product.images[0] | image_url: width: 70, height: 70  }}" alt="">
+      </div>
+      <div class="cart-notify-info">
+        <h3 class="cart-notify-info__name">
+          {{ product.title }}
+        </h3>
+        <div class="cart-notify-info__cost">
+          99$
+        </div>
+      </div>
+    </div>
+    
+    <div class="cart-notify__links">
+      <a href="{{ routes.cart_url }}" class="cart-notify__see-cart btn">View My Cart</a>
+      <form action="{{ routes.cart_url }}" method="post" id="cart-notification-form">
+        <button class="btn" name="checkout">Checkout</button>
+      </form>
+      <button type="button" class="btn">Continue shopping</button>
+    </div>
+
+  </div>
+</cart-notification>
