@@ -183,14 +183,14 @@ p {
   margin: 0;
 }
 
-.hidden {
-  display: none;
-}
-
 .df {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hidden {
+  display: none;
 }
 
 .dfs {

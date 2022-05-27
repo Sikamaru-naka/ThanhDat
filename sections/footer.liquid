@@ -12,9 +12,20 @@
     
     <div class="row ">
       {% for block in section.blocks %}
+        {%- liquid
+          if section.blocks.size == 4
+            assign footer_grid_class = 'l-3'
+          elsif section.blocks.size == 3
+            assign footer_grid_class = 'l-4'
+          elsif section.blocks.size == 2
+            assign footer_grid_class = 'l-6'
+          elsif section.blocks.size == 1
+            assign footer_grid_class = 'l-12'
+          endif
+        -%}
         {% case block.type %}
           {% when "link_menu" %}
-            <div class="col l-3 m-6 c-12 mb-60 mb-order mb-50-tab">
+            <div class="col {{ footer_grid_class }} m-6 c-12 mb-60 mb-order mb-50-tab">
               <p class="footer-title text-color mb-20">
                 {{ block.settings.Column_heading }}
               </p>
@@ -28,7 +39,7 @@
             </div>
 
           {% when "infomation_lagel" %}         
-            <div class="col l-3 m-6 c-12 mb-60 mb-order mb-50-tab">
+            <div class="col {{ footer_grid_class }} m-6 c-12 mb-60 mb-order mb-50-tab">
                 <div class="footer-title text-color mb-20">
                     {{ block.settings.heading }}
                 </div>
@@ -38,7 +49,7 @@
             </div>
 
           {% when "contact" %}
-            <div class="col l-3 m-6 c-12 mb-60 mb-order mb-50-tab">
+            <div class="col {{ footer_grid_class }} m-6 c-12 mb-60 mb-order mb-50-tab">
               <div class="footer-title text-color mb-20">
                 {{ block.settings.heading }}
               </div>

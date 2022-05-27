@@ -193,6 +193,10 @@
 
 .slide-text{
     padding-top: 448px;
+<<<<<<< HEAD
+    padding-bottom: 20px;
+=======
+>>>>>>> a411c9f494a3a51f22e4ab81eb1bf732f9b782e2
 }
 
 .slider-img {
@@ -276,26 +280,37 @@
   display: block;
   height: 360px;
   object-fit: cover;
+  position: absolute;
 }
 
+.category-product__img-position svg,
+.category-product__img-position img{
+  position: static;
+}
+
+.feature-img__contain-second {
+  opacity: 0;
+}
 
 .btn-category {
-    position: absolute;
-    bottom: 30px;
-    padding: 13px 0;
-    width: 125px;
-    z-index: 1;
+  position: absolute;
+  bottom: 30px;
+  padding: 13px 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  margin: 0px 27.7%;
 }
 
 .category-product__img::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.11);
-    top: 0;
-    left: 0;
-    display: none;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.11);
+  top: 0;
+  left: 0;
+  display: none;
 }
 
 .category-product--placeholder {
@@ -315,7 +330,8 @@
 
 .btn-category:hover ~.category-product__img>img,
 .category-product__img:hover img {
-    transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: 1;
 }
 
 /* discovery */
@@ -412,7 +428,10 @@
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
     color: #555562;
+}
 
+.product-vendor a{
+    font-size: 1.4rem;
 }
 
 .btn-feature {
@@ -423,6 +442,7 @@
 .feature-img {
     overflow: hidden;
     border: #ab9f9f 3px solid;
+    height: 360px;
 }
 
 .feature-img--placeholder{
@@ -1273,7 +1293,6 @@
 }
 
 .category__info-name{
-    margin-top: 80px;
     font-size: 2.5rem;
     font-style: italic;
     color: #84848E;
@@ -1740,12 +1759,13 @@ tr {
 }
 
 .product-badge{
-    position: absolute;
-    bottom: 18px;
-    left: 15px;
-    font-size: 1.6rem;
-    background: #000000;
-    color: #fff;
-    border-radius: 20px;
-    padding: 5px 10px;
+  position: absolute;
+  bottom: 18px;
+  left: 15px;
+  font-size: 1.6rem;
+  background: #000000;
+  color: #fff;
+  border-radius: 20px;
+  padding: 5px 10px;
+  border: 0.1px solid #ffffff47;
 }

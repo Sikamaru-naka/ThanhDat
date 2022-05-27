@@ -16,10 +16,10 @@ const menuClose = $('.close-icon');
 
 
 // căn giữa btn category
-btnCategory.forEach(function(ele)
-{
-    ele.style.left = `calc(50% - ${ele.clientWidth/2}px)`;
-})
+// btnCategory.forEach(function(ele)
+// {
+//     ele.style.left = `calc(50% - ${ele.clientWidth/2}px)`;
+// })
 
 // icon heart
 productsHeart.forEach(function(ele, index)

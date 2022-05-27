@@ -1,11 +1,20 @@
-<div class="category featured">
+{% style %}
+  .options__padding{
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    margin-bottom: 0
+  }
+
+{% endstyle %}
+
+<div class="category featured options__padding">
   <div class="category-wrap grid wide1 container__large ">
     <div class="category__info">
       <h2 class="category__info-name">
         {{ collection.title }}
       </h2>
     </div>
-    <div class="collection__options df">
+    <div class="collection__options df {% if section.settings.sorting == false %} hidden {% endif %}">
       <div class="collection__options-wrap df">
         <div class="collection__options-item">
           <span>There are {{ collection.all_products_count }} products</span>
@@ -22,7 +31,7 @@
           </select>
         </div>
       </div>
-      <div class="collection__options-filter collection__options-item df">
+      <div class="collection__options-filter collection__options-item df {% if section.settings.filter == false %} hidden {% endif %}">
         <button>FILTER: </button>
         <form class="filter-form">
           {%- for filter in collection.filters -%}
@@ -149,9 +158,21 @@
 
       {%- elsif collection.products != blank -%}        
         {%- for product in collection.products -%}
-          <div class="col l-3 m-6 c-6">
+          {%- liquid
+            if section.settings.collums_product == 1
+              assign collumns_product = 'l-12'
+            elsif section.settings.collums_product == 2
+              assign collumns_product = 'l-6'
+            elsif section.settings.collums_product == 3
+              assign collumns_product = 'l-4'
+            elsif section.settings.collums_product == 4
+              assign collumns_product = 'l-3'
+            endif
+          -%}
+          <div class="col {{ collumns_product }} m-6 c-6">
             {% render 'cart-product',
               product: product,
+              show_secondary_image: section.settings.checkbox_show_image,
             %}
           </div>
         {%- endfor -%}
@@ -164,7 +185,70 @@
   {
     "name" : "Main Collection",
     "settings": [
-      
+      {
+        "type": "header",
+        "content": "Product"
+      },
+      {
+        "type": "range",
+        "label": "Number of collums product on desktop",
+        "id": "collums_product",
+        "min": 1,
+        "max": 4,
+        "step": 1,
+        "default": 4
+      },
+      {
+        "type": "checkbox",
+        "id": "checkbox_show_image",
+        "label": "Show second image on hover"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_vender",
+        "label": "Show vendor",
+        "default": false
+      },
+      {
+        "type" : "header",
+        "content": "FILTERING AND SORTING"
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable filtering",
+        "id": "filter",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "label": "Enable sorting",
+        "id": "sorting",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "SECTION PADDING"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "unit": "px",
+        "label": "Top padding",
+        "default": 80
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 120,
+        "step": 4,
+        "unit": "px",
+        "label": "Bottom padding",
+        "default": 100
+      }
     ],
     "presets":[
       {

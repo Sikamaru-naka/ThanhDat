@@ -28,6 +28,7 @@
     {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
+
 {% if product %}
   <div class="feature-product category-product mb100 mb-0">
     <div class="feature__icon-heart">
@@ -37,18 +38,29 @@
     <div class="category-product__img feature-img">
       {% if product.featured_image != blank %}
         <img class="feature-img__contain" width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ product.featured_image | image_url: width: 300 }}" alt="img product">
+        {% if product.media[1] != nil and show_secondary_image %}
+          <img class="feature-img__contain-second" width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ product.media[1] | image_url: width: 533 }}" alt="img product">
+        {% endif %}
+        {% if product.available == false %}
+          <span class="product-badge">Sold out</span>
+        {% else %}
+          <span class="product-badge hidden">Sale</span>
+        {% endif %}
+
       {% else %}
         {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
-      {% endif %}
-      {% if product.available == false %}
-        <span class="product-badge">Sold out</span>
-      {% else %}
-        <span class="product-badge">Sale</span>
       {% endif %}
     </div>
     <div class="product-name">
       <a href="{{ product.url }}" class="">
         {{ product.title }}
+      </a>
+    </div>
+    <div class="product-vendor {% if section.settings.show_vender == false %} hidden {% endif %}" >
+      <a href="{{ product.url }}" class="">
+        {% if product.vendor %}
+          {{ product.vendor }}
+        {% endif %}
       </a>
     </div>
     <div class="product-cost"> 
