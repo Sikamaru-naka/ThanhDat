@@ -249,7 +249,7 @@
 /* category */
 
 .category {
-    margin-bottom: 203px;
+    margin-bottom: 193px;
 }
 
 .category-heading {
@@ -262,6 +262,7 @@
     position: relative;
     overflow: hidden;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .category-product__img {
@@ -588,6 +589,7 @@
 
 .service-wrap {
     padding: 100px 0;
+    text-align: center;
 }
 
 .service-heading {
@@ -1768,4 +1770,12 @@ tr {
   border-radius: 20px;
   padding: 5px 10px;
   border: 0.1px solid #ffffff47;
+}
+
+.mb0{
+    margin-bottom: 0;
+}
+
+.border{
+    border: 1px solid #ECECEC;
 }

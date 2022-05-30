@@ -1,7 +1,11 @@
-<div class="service background_secondary">
+
+<div class="service {% if section.settings.bgc == "gray" %}  background_secondary {% endif %} ">
   <div class="service-wrap grid wide1 container__large">
-    <h2 class="heading category-heading service-heading">{{ section.settings.heading }}</h2>
-    <div class="row">
+    <h2 class="heading category-heading service-heading mb0">{{ section.settings.heading }}</h2>
+    <p class="form-text title-product--text colors-text-secondary {% if section.settings.subheading == blank %} hidden {% endif %}">
+      {{ section.settings.subheading }}
+    </p>
+    <div class="row pt-100">
       {% for block in section.blocks %}
         {%- liquid
           if section.blocks.size == 4
@@ -15,8 +19,8 @@
           endif
         -%}
         <div class="col c-12 {{ footer_grid_class }} mb-20">
-          <div class="service-box background-third">
-            {% render 'icon-box' %}
+          <div class="service-box background-third {% if block.settings.border == 'border'%} border {% endif %} ">
+            {% render 'options-icon', options-icon: block.settings.options_icon %}
             <h3 class="heading service-title {% if block.settings.heading == blank %} hidden {% endif %}">
               {{ block.settings.heading }}
             </h3>
@@ -45,6 +49,27 @@
       "label": "Heading",
       "id": "heading",
       "default": "OUR SERVICES"
+    },
+    {
+      "type":"text",
+      "label":"subheading",
+      "id":"subheading",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
+    },
+    {
+      "type": "select",
+      "label": "Background color",
+      "id": "bgc",
+      "options": [
+        {
+          "label" : "Gray",
+          "value": "gray"
+        },
+        {
+          "label" : "Light",
+          "value": "light"
+        }
+      ]
     }
   ],
   "blocks": [
@@ -53,6 +78,21 @@
       "type": "column",
       "limit": 4,
       "settings": [
+        {
+          "type": "select",
+          "label": "Options Icon",
+          "id": "options_icon",
+          "options": [
+            {
+              "label": "Box",
+              "value": "box"
+            },
+            {
+              "label": "Water",
+              "value": "water"
+            }
+          ]
+        },
         {
           "type": "text",
           "label": "Heading",
@@ -75,6 +115,21 @@
           "type": "url",
           "id": "more_link",
           "label": "Link"
+        },
+        {
+          "type": "select",
+          "label": "Options Border",
+          "id": "border",
+          "options": [
+            {
+              "label": "Border",
+              "value": "border"
+            },
+            {
+              "label": "None",
+              "value": "none"
+            }
+          ]
         }
       ]      
     }
