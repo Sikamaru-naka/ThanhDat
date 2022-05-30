@@ -3,7 +3,9 @@ const cartBlock = document.querySelector('cart-notification');
 const cartBack = document.querySelector('.cart-notify__links > button');
 const viewCart = document.querySelector('.cart-notify__links div')
 
-cartBtn.addEventListener('click', () => {
+
+
+cartBtn.addEventListener('click', (e) => {
   cartBlock.style.display = 'block';
 
 })

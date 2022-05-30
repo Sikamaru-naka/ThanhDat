@@ -193,10 +193,7 @@
 
 .slide-text{
     padding-top: 448px;
-<<<<<<< HEAD
-    padding-bottom: 20px;
-=======
->>>>>>> a411c9f494a3a51f22e4ab81eb1bf732f9b782e2
+    padding-bottom: 50px;
 }
 
 .slider-img {
@@ -249,7 +246,7 @@
 /* category */
 
 .category {
-    margin-bottom: 203px;
+    margin-bottom: 193px;
 }
 
 .category-heading {
@@ -262,6 +259,7 @@
     position: relative;
     overflow: hidden;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .category-product__img {
@@ -588,6 +586,7 @@
 
 .service-wrap {
     padding: 100px 0;
+    text-align: center;
 }
 
 .service-heading {
@@ -1770,8 +1769,10 @@ tr {
   border: 0.1px solid #ffffff47;
 }
 
-.cart {
-  padding-top: 40px;
+.mb0{
+    margin-bottom: 0;
 }
 
-
+.border{
+    border: 1px solid #ECECEC;
+}
