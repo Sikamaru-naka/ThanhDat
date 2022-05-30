@@ -6,7 +6,8 @@
     width: 100%;
   }
   .category-product__img svg{
-    height: 165px;
+    /* height: 165px; */
+    height: 100%;
   }
   .cart-item__heading-total,
   .cart-item__heading-quantity {
@@ -241,7 +242,7 @@
     }
 
     .feature-product form {
-        margin-bottom: 10px;
+        margin-bottom: 40px;
     }
 
     .heading.large{
@@ -338,7 +339,9 @@
     .slide-text{
         padding-top: 100px;
     }
-    
+    .btn-category{
+        margin: 0px 16.7%;
+    }
     
 }
 

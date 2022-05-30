@@ -1,10 +1,15 @@
 
 <div class="service {% if section.settings.bgc == "gray" %}  background_secondary {% endif %} ">
   <div class="service-wrap grid wide1 container__large">
-    <h2 class="heading category-heading service-heading mb0">{{ section.settings.heading }}</h2>
-    <p class="form-text title-product--text colors-text-secondary {% if section.settings.subheading == blank %} hidden {% endif %}">
-      {{ section.settings.subheading }}
-    </p>
+    {% if section.settings.heading != blank %}
+      <h2 class="heading category-heading service-heading mb0">{{ section.settings.heading }}</h2>
+    {% endif %}
+
+    {% if section.settings.subheading != blank %}
+      <p class="form-text title-product--text colors-text-secondary ">
+        {{ section.settings.subheading }}
+      </p>
+    {% endif %}
     <div class="row pt-100">
       {% for block in section.blocks %}
         {%- liquid
@@ -19,20 +24,26 @@
           endif
         -%}
         <div class="col c-12 {{ footer_grid_class }} mb-20">
-          <div class="service-box background-third {% if block.settings.border == 'border'%} border {% endif %} ">
+          <div class="service-box background-third {% if block.settings.border == 'border' %} border {% endif %}">
             {% render 'options-icon', options-icon: block.settings.options_icon %}
-            <h3 class="heading service-title {% if block.settings.heading == blank %} hidden {% endif %}">
-              {{ block.settings.heading }}
-            </h3>
-            <p class="service-descript colors-text-secondary {% if block.settings.description == blank %} hidden {% endif %} ">
-              {{ block.settings.description }}
-            </p>
-            <a href="{{ block.settings.more_link }}" class="collection-more service-more">
-              {{ block.settings.link }}
-              {% if block.settings.link != blank %}
-                {% render 'icon-arrow-right-black' %}
-              {% endif %}
-            </a>
+            {% if block.settings.heading != blank %} 
+              <h3 class="heading service-title ">
+                {{ block.settings.heading }}
+              </h3>
+            {% endif %}
+            {% if block.settings.description != blank %}
+              <p class="service-descript colors-text-secondary">
+                {{ block.settings.description }}
+              </p>
+            {% endif %} 
+            {% if block.settings.link != blank %}
+              <a href="{{ block.settings.more_link }}" class="collection-more service-more">
+                {{ block.settings.link }}
+                {% if block.settings.link != blank %}
+                  {% render 'icon-arrow-right-black' %}
+                {% endif %}
+              </a>
+            {% endif %}
           </div>
         </div>
       {% endfor %}
