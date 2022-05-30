@@ -17,9 +17,9 @@
             {% endif %}
 
             {% if block.settings.button != blank %} 
-                <a href=" {{ block.settings.link }} " class="btn">
-                  {{ block.settings.button | escape }}
-                </a>
+              <a href=" {{ block.settings.link }} " class="btn">
+                {{ block.settings.button | escape }}
+              </a>
             {% endif %}
             
           </div>
@@ -29,7 +29,7 @@
       {% else %}
 
         <div class="slider__items ">
-          {{ 'lifestyle-2' | placeholder_svg_tag: 'slider-img bg-gray ' }}
+          {{ 'lifestyle-2' |  placeholder_svg_tag: 'bg-gray slider-img' }}
 
           <p class="placeholder-text">Slider</p>
         </div>
