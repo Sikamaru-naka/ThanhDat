@@ -65,43 +65,57 @@
                   {%- endif -%}
                 {% endform %}
 
-                {%- if section.settings.show_social != blank -%} 
-                  <div class="footer-social text-color">
-                    {{ 'socials_media.socials.social_title' | t }}
-                  </div>
-                  <ul class="footer-social__list">
-                    {%- if settings.social_facebook_link != blank -%}
-                      <li>
-                          <a href="{{ settings.social_facebook_link | escape }}" class="footer-icon">
-                            {% render 'icon-facebook' %}
+                {%- if section.settings.show_social != blank and 
+                  settings.social_twitter_link != blank
+                  or settings.social_facebook_link != blank
+                  or settings.social_pinterest_link != blank
+                  or settings.social_google_plus_link != blank
+                  or settings.social_instagram_link != blank
+                  or settings.social_tumblr_link != blank
+                  or settings.social_youtube_link != blank
+                  or settings.social_vimeo_link != blank
+                  or settings.social_fancy_link != blank
+                  or settings.social_snapchat_link != blank-%}
+
+                  
+                    <div class="footer-social text-color">
+                      {{ 'socials_media.socials.social_title' | t }}
+                    </div>
+
+                    <ul class="footer-social__list">
+                      {%- if settings.social_facebook_link != blank -%}
+                        <li>
+                            <a href="{{ settings.social_facebook_link | escape }}" class="footer-icon">
+                              {% render 'icon-facebook' %}
+                            </a>
+                        </li>
+                        {%- endif -%}
+  
+                      {%- if settings.social_instagram_link != blank-%}
+                        <li>
+                          <a href="{{ settings.social_instagram_link | escape }}" class="footer-icon">
+                            {% render 'icon-instagram' %}
                           </a>
-                      </li>
+                        </li>
                       {%- endif -%}
-
-                    {%- if settings.social_instagram_link != blank -%}
-                      <li>
-                        <a href="{{ settings.social_instagram_link | escape }}" class="footer-icon">
-                          {% render 'icon-instagram' %}
-                        </a>
-                      </li>
-                    {%- endif -%}
-
-                    {%- if settings.social_linkedin_link != blank -%}
-                      <li>
-                        <a href="{{ settings.social_linkedin_link | escape }}" class="footer-icon">
-                            {% render 'icon-linkedin' %}
-                        </a>
-                      </li>
-                    {%- endif -%}
-
-                    {%- if settings.social_youtube_link != blank -%}
-                      <li>
-                        <a href="{{ settings.social_youtube_link | escape }}" class="footer-icon">
-                            {% render 'icon-youtube' %}
-                        </a>
-                      </li>
-                    {%- endif -%}
-                  </ul>
+  
+                      {%- if settings.social_linkedin_link != blank -%}
+                        <li>
+                          <a href="{{ settings.social_linkedin_link | escape }}" class="footer-icon">
+                              {% render 'icon-linkedin' %}
+                          </a>
+                        </li>
+                      {%- endif -%}
+  
+                      {%- if settings.social_youtube_link != blank -%}
+                        <li>
+                          <a href="{{ settings.social_youtube_link | escape }}" class="footer-icon">
+                              {% render 'icon-youtube' %}
+                          </a>
+                        </li>
+                      {%- endif -%}
+                    </ul>
+                  
                 {%- endif -%}
 
                 

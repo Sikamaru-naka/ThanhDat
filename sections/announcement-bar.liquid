@@ -2,7 +2,7 @@
 {%- for block in section.blocks -%}
   {%- case block.type -%}
     {%- when 'announcement' -%}
-      <div class="background-primary container__large container-pc-low announcement">
+      <div class=" {% if block.settings.text == blank %} hidden {% endif %} background-primary container__large container-pc-low announcement">
         <div class="header-above__contain wide-header-above grid">
           <span></span>
           <div class="heading-header text-color">

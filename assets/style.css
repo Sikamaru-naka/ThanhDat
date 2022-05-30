@@ -215,7 +215,7 @@
 }
 
 .button{
-    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .pre-btn {
@@ -1769,3 +1769,9 @@ tr {
   padding: 5px 10px;
   border: 0.1px solid #ffffff47;
 }
+
+.cart {
+  padding-top: 40px;
+}
+
+
