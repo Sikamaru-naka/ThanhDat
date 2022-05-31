@@ -1772,13 +1772,23 @@ tr {
 }
 
 .mb0{
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .border{
-    border: 1px solid #ECECEC;
+  border: 1px solid #ECECEC;
 }
 
 .header-list.js-menu-height {
   height: 70vh !important;
+}
+
+.footer__payment{
+  margin-top: 40px;
+}
+
+.list-payment{
+  width: 495px;
+  flex-wrap: wrap;
+  margin: auto;
 }

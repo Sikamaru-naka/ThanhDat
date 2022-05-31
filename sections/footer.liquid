@@ -124,20 +124,28 @@
         {% endfor %}
     </div>
 
-    {%- if section.settings.note_footer != blank -%}
+    {%- if section.settings.payment_enable -%}
+      <div class="footer__payment">
+        <ul class=" list-payment dfs" role="list">
+          {%- for type in shop.enabled_payment_types -%}
+            <li class="list-payment__item">
+              {{ type | payment_type_svg_tag }}
+            </li>
+          {%- endfor -%}
+        </ul>
+    </div>
+    {%- endif -%}
 
+    {%- if section.settings.note_footer != blank -%}
       <div class="footer-ifo colors-text-secondary">
         {{ section.settings.note_footer }}
       </div>
-
     {%- endif -%}
 
     <div class="author">
       <small class="colors-text-secondary">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
       <small class=" colors-text-secondary">{{ powered_by_link }}</small>
     </div>
-
-    
 
   </div>
 </div>
@@ -161,12 +169,17 @@
       "label": "Show social icon",
       "id": "show_social"
     },
+    {
+      "type": "checkbox",
+      "id": "payment_enable",
+      "default": true,
+      "label": "Show payment icons"
+    },
     { 
       "type": "richtext",
       "label": "Description Note Footer",
       "id": "note_footer",
       "default": "<p>De Carlo Nicholas- VAT number: 07020260480- REA: FI-674952 - Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy</p>"
-
     }
   ],
     "blocks":[
