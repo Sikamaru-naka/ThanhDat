@@ -623,8 +623,6 @@
     --font-size-bold: 1.6rem;
     line-height: var(--line-height-regular);
     color: var(--text-color);
-    margin-top: 30px;
-
 }
 
 .service-descript {

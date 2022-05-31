@@ -1,4 +1,17 @@
 
+{% for block in section.blocks %}
+  {% if forloop.first == true %}
+  {% style %}
+    .options__padding--header{
+      padding-top: {{ block.settings.padding_top }}px;
+      padding-bottom: {{ block.settings.padding_bottom }}px;
+      margin-bottom: 0
+    }
+  {% endstyle %}
+{% endif %}
+{% endfor %}
+
+
 <div class="service {% if section.settings.bgc == "gray" %}  background_secondary {% endif %} ">
   <div class="service-wrap grid wide1 container__large">
     {% if section.settings.heading != blank %}
@@ -27,7 +40,7 @@
           <div class="service-box background-third {% if block.settings.border == 'border' %} border {% endif %}">
             {% render 'list-icon-shipping', options-icon: block.settings.options_icon %}
             {% if block.settings.heading != blank %} 
-              <h3 class="heading service-title ">
+              <h3 class="heading service-title options__padding--header">
                 {{ block.settings.heading }}
               </h3>
             {% endif %}
@@ -109,6 +122,26 @@
           "label": "Heading",
           "id": "heading",
           "default": "FREE SHIPPING IN ITALY"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "min": 0,
+          "max": 40,
+          "step": 5,
+          "unit": "px",
+          "label": "Heading top padding",
+          "default": 30
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "min": 0,
+          "max": 40,
+          "step": 5,
+          "unit": "px",
+          "label": "Heading bottom padding",
+          "default": 5
         },
         {
           "type": "text",
