@@ -13,8 +13,11 @@
           "settings": {
             "options_icon": "water",
             "heading": "NOT TO WET IT",
+<<<<<<< HEAD
             "padding_top": 40,
             "padding_bottom": 20,
+=======
+>>>>>>> ed06ccc3286274bbe428d3f894ac15dd750a5113
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte",
             "link": "",
             "more_link": "",
@@ -26,8 +29,11 @@
           "settings": {
             "options_icon": "water",
             "heading": "NOT TO WET IT",
+<<<<<<< HEAD
             "padding_top": 30,
             "padding_bottom": 5,
+=======
+>>>>>>> ed06ccc3286274bbe428d3f894ac15dd750a5113
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte",
             "link": "",
             "more_link": "",
@@ -39,8 +45,6 @@
           "settings": {
             "options_icon": "water",
             "heading": "NOT TO WET IT",
-            "padding_top": 30,
-            "padding_bottom": 5,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte",
             "link": "",
             "more_link": "",
