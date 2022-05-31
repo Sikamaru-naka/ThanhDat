@@ -66,66 +66,18 @@ function heart(){
 heart();
 
 // close-open menu mobile 
-
-const heightLine = document.querySelector('.header-items').offsetHeight;
-const amountLine = document.querySelectorAll('.header-items').length
-let menuHeight = heightLine * amountLine + 60
-
-
-menuOpen.addEventListener('click',function() {
-    document.querySelector('.header-list').style.transition = 'all 0.5s ease';
-    document.querySelector('.header-list').style.height = `${menuHeight}px`;
-    menuOpen.classList.add('disabled');
-    menuClose.classList.add('active');
-    document.querySelector('.overlay').style.display='block';
+menuOpen.addEventListener('click', function(){
+    document.querySelector('.header-list').classList.toggle('menu-active')
 })
 
-menuClose.addEventListener('click',function() {
-    document.querySelector('.header-list').style.height = '0';
-    menuOpen.classList.remove('disabled');
-    menuClose.classList.remove('active');
-    document.querySelector('.overlay').style.display='none';
+// click icon arrow open menu
+
+const iconArrow = document.querySelector('.header-link--wrap svg')
+const subMenu = document.querySelector('.product-option')
+
+iconArrow.addEventListener('click', () => {
+    subMenu.classList.toggle('h10vh')
 })
-
-
-
-if(menuOpen.offsetHeight === 0){
-    console.log(123)
-}
-
-// open-menu-2
-
-const iconArrowDown = $('.header-items svg');
-const subMenuHeight = $('.product-option');
-const headerItem = $$('.header-items');
-
-const amountSubMenu = $$('.select-product__option-level').length
-const amountSubMenuHeight = $('.select-product__option-level').offsetHeight
-const totalSubMenuHeight = amountSubMenu * amountSubMenuHeight
-
-
-if(iconArrowDown){
-    
-    iconArrowDown.addEventListener('click',function() {
-        console.log(subMenuHeight.offsetHeight)
-        if(subMenuHeight.offsetHeight === 0) {
-            document.querySelector('.header-list').style.height = `${menuHeight + totalSubMenuHeight }px`;
-            iconArrowDown.classList.add('icon-rotate');
-            subMenuHeight.style.height = `${ totalSubMenuHeight }px`;
-            subMenuHeight.style.marginTop = '10px';
-            headerItem[2].style.paddingBottom = '0'
-        }
-        else {
-            document.querySelector('.header-list').style.height = `${menuHeight}px`;
-            iconArrowDown.classList.remove('icon-rotate');
-            subMenuHeight.style.height = '0px';
-            subMenuHeight.style.marginTop = '0px';
-            headerItem[2].style.paddingBottom = '14px'
-        }
-        
-    });
-}
-
 
 
 

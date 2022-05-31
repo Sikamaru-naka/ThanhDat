@@ -8,16 +8,37 @@
   .page__gift h1{
     font-size: 3rem;
   }
-
   .page__gift h2{
     font-size: 2rem;
     margin: 40px 0;
-    margin-bottom: -85px;
   }
-
   .page__gift svg{
     margin: auto;
-    transform: scale(0.5);
+    transform: scale(0.7);
+  }
+  .page__gift--price p{
+    font-size: 3rem;
+    line-height: 3rem;
+    color: #f36262;
+  }
+  .page__gift--code p{
+    font-size: 2.4rem;
+    margin-top: 30px;
+  }
+  .page__gift--print{
+    margin-top: -50px;
+  }
+  .page__gift--print a,
+  .page__gift--print button{
+    border: 1px solid;
+    width: 230px;
+  }
+  .page__gift--print a{
+    color: #fff;
+    display: block;
+    background-color: #171719;
+    margin: auto;
+    margin-bottom: 20px;
   }
 </style>
 
@@ -25,9 +46,40 @@
   <h1>
    {{ shop.name }}
   </h1>
-  <h2>
-    Your gift card
-  </h2>
-  {% render 'img-gift-card' %}
+  <div class="page__gift--price">
+    <h2>
+      Your gift card
+    </h2>
+    <p>
+      {% if settings.currency_code_enabled %}
+        {{ gift_card.initial_value | money_with_currency }}
+      {% else %}
+        {{ gift_card.initial_value | money }}
+      {% endif %}
+    </p>
+  </div>
+
+  <div class="page__gift--code">
+    <p>
+      {{ gift_card.code | format_code }}
+    </p>
+  </div>
+
+  <div class="gift-card__qr-code" data-identifier="{{ gift_card.qr_identifier }}"></div>
+
+  <div class="page__gift--img">
+    {% render 'img-gift-card' %}
+  </div>
+
+  <div class="page__gift--print">
+    <a href="{{ shop.url }}" class="btn">Continue Shopping</a>
+    <button class="btn" onclick="window.print();">
+      Print
+    </button>
+  </div>
 
 </div>
+
+<script src="{{ 'gift-cart.js' | asset_url }}" defer="defer"></script>
+
+

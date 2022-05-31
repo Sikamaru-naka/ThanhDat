@@ -2,6 +2,7 @@
 /* mobile */
 
 @media (max-width: 767px) {
+
   .nav-form{
     width: 100%;
   }
@@ -418,9 +419,24 @@
         z-index: 3;
         width: 100%;
         box-shadow: inset 0px -1px 0px #ECECEC; 
-        height: 0;
         overflow: hidden;
+        /* height: 0; */
+        clip-path: polygon(100% 0, 0 0, 0 0, 100% 0);
+        transition: all 0.3s linear;
     }
+
+    .menu-active{
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    }
+
+
+
+
+
+
+
+
+
 
     .header-items {
         padding: 14px;
@@ -517,6 +533,14 @@
         height: 0;
     }
    
+    .h10vh{
+        height: 10vh;
+    }
+
+    .select-product__option-level:nth-child(1){
+        padding-top: 14px;
+    }
+
     .collection__options{
         flex-direction: column
     }
