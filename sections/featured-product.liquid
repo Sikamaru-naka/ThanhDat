@@ -32,6 +32,13 @@
         {%- endfor -%}
       {%- endif -%}
     </div>
+
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when '@app' -%}
+        {% render block %}
+      {% endcase -%}
+    {% endfor -%}
   </div>
 </div>
 
@@ -73,6 +80,11 @@
       "id": "show_vender",
       "label": "Show vendor",
       "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
     }
   ],
   "presets":[

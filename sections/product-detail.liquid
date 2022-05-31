@@ -63,6 +63,8 @@
           <div class="detail-info">
             {%- for block in section.blocks -%}
               {%- case block.type -%}
+                {%- when 'app'-%}
+                  {% render block %}
                 {%- when 'title' -%}
                   <h3 class="detail-info__name"> 
                     {{ product.title }}

@@ -1779,6 +1779,6 @@ tr {
     border: 1px solid #ECECEC;
 }
 
-.test {
+.header-list.js-menu-height {
   height: 70vh !important;
 }
