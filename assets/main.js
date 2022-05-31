@@ -65,9 +65,31 @@ function heart(){
 
 heart();
 
+// // close-open menu mobile 
+// menuOpen.addEventListener('click', function(){
+//     document.querySelector('.header-list').classList.toggle('menu-active')
+// })
+
+// // click icon arrow open menu
+
+// const iconArrow = document.querySelector('.header-link--wrap svg')
+// const subMenu = document.querySelector('.product-option')
+
+// iconArrow.addEventListener('click', () => {
+//     subMenu.classList.toggle('h10vh')
+// })
+
 // close-open menu mobile 
 menuOpen.addEventListener('click', function(){
-    document.querySelector('.header-list').classList.toggle('menu-active')
+  menuOpen.style.display = 'none';
+  menuClose.style.display = 'block';
+  document.querySelector('.header-list').classList.add('menu-active1')
+})
+
+menuClose.addEventListener('click', function(){
+  document.querySelector('.header-list').classList.remove('menu-active1')
+  menuOpen.style.display = 'block';
+  menuClose.style.display = 'none';
 })
 
 // click icon arrow open menu
@@ -76,7 +98,7 @@ const iconArrow = document.querySelector('.header-link--wrap svg')
 const subMenu = document.querySelector('.product-option')
 
 iconArrow.addEventListener('click', () => {
-    subMenu.classList.toggle('h10vh')
+  subMenu.classList.toggle('h10vh')
 })
 
 

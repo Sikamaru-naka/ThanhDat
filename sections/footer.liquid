@@ -26,33 +26,44 @@
         {% case block.type %}
           {% when "link_menu" %}
             <div class="col {{ footer_grid_class }} m-6 c-12 mb-60 mb-order mb-50-tab">
-              <p class="footer-title text-color mb-20">
-                {{ block.settings.Column_heading }}
-              </p>
-              <ul class="footer-list">
-                {% for link in block.settings.menu.links %}
-                  <li class="footer-item">
-                    <a class="footer-link colors-text-secondary" href="{{ link.url }}">{{ link.title }}</a>
-                  </li>
-                {% endfor %}
-              </ul>
+              {% if block.settings.Column_heading != blank %}
+                <p class="footer-title text-color mb-20">
+                  {{ block.settings.Column_heading }}
+                </p>
+              {% endif %}
+              {% if block.settings.menu.links != blank %}
+                <ul class="footer-list">
+                  {% for link in block.settings.menu.links %}
+                    <li class="footer-item">
+                      <a class="footer-link colors-text-secondary" href="{{ link.url }}">{{ link.title }}</a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
             </div>
 
           {% when "infomation_lagel" %}         
             <div class="col {{ footer_grid_class }} m-6 c-12 mb-60 mb-order mb-50-tab">
+              {% if block.settings.heading != blank %}
                 <div class="footer-title text-color mb-20">
                     {{ block.settings.heading }}
                 </div>
+              {% endif %}
+
+              {% if block.settings.descript != blank %}
                 <div class="footer-list colors-text-secondary">
                   {{ block.settings.descript }}
                 </div>
+              {% endif %}
             </div>
 
           {% when "contact" %}
             <div class="col {{ footer_grid_class }} m-6 c-12 mb-60 mb-order mb-50-tab">
-              <div class="footer-title text-color mb-20">
-                {{ block.settings.heading }}
-              </div>
+              {% if block.settings.heading != blank %}
+                <div class="footer-title text-color mb-20">
+                  {{ block.settings.heading }}
+                </div>
+              {% endif %}
 
                 {% form 'customer' %}
                   <input type="hidden" name="contact[tags]" value="newsletter">

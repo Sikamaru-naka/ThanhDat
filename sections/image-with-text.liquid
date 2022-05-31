@@ -1,11 +1,25 @@
 
 
+{% style %}
+
+@media (max-width: 767px) {
+
+  .options__padding--image-text{
+    padding: {{ section.settings.padding_top }}px {{ section.settings.padding_bottom }}px;
+  }
+  
+}
+
+
+{% endstyle %}
+
+
 <div class="feature {% if section.settings.width == 'full' %} background_secondary {% endif %}">
   <div class="featured-wrap grid wide1 ">
     <div class="row no-gutters df m-mobile {% if section.settings.width == 'large' %} featured-options--bgc {% endif %}">
     {% if section.settings.layout == 'left' %}
       <div class="col c-12 m-12 l-6 oder-tab-mb-2 mt-30">
-        <div class="featured-options discover-content p-0">
+        <div class="featured-options discover-content options__padding--image-text">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when "icon"%}
@@ -52,7 +66,7 @@
 
     {% if section.settings.layout == 'right' %}
       <div class="col c-12 m-12 l-6 oder-tab-mb-2 mt-30">
-        <div class="featured-options discover-content pl-0 p-0">
+        <div class="featured-options discover-content pl-0 options__padding--image-text">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when "icon" %}
@@ -125,6 +139,26 @@
           "label": "Large width"
         }
       ]
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Custom padding top,buttom on mobile",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Custom padding left,right on mobile",
+      "default": 30
     }
   ],
   "blocks": [

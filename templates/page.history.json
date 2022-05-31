@@ -74,7 +74,9 @@
       ],
       "settings": {
         "layout": "left",
-        "width": "full"
+        "width": "full",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "16520616211a79a79a": {
@@ -120,7 +122,9 @@
       ],
       "settings": {
         "layout": "right",
-        "width": "full"
+        "width": "full",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "165206162687e77b6e": {
@@ -166,7 +170,9 @@
       ],
       "settings": {
         "layout": "left",
-        "width": "full"
+        "width": "full",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "1652061632b170b2f5": {
