@@ -1,4 +1,31 @@
 
+<style>
+  .cart__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cart__note label {
+    font-size: 17px;
+    line-height: 22px;
+    margin-bottom: 14px;
+    display: block;
+    margin-top: 30px;
+  }
+
+  .cart__note textarea {
+    width: 300px;
+    height: 130px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .flex-end {
+    justify-content: flex-end;
+  }
+
+</style>
+
 {% if cart == empty %}
   <div class="container cart-empty">
     <h1 class="cart-empty__heading">{{ "templates.main_cart.message" | t }}</h1>
@@ -80,8 +107,16 @@
       </div>
     
     
-      <div class="cart__bottom">
-        <div class="cart__bottom-total">
+      <div class="cart__bottom {% if section.settings.show_cart_note == blank %} flex-end{% endif %}">
+
+        {%- if section.settings.show_cart_note -%}
+          <cart-note class="cart__note field">
+            <label for="Cart-note">Order notes</label>
+            <textarea class="text-area field__input" name="note" form="cart" id="Cart-note" placeholder="">{{ cart.note }}</textarea>
+          </cart-note>
+        {%- endif -%}
+        
+        <div class="cart__bottom-total ">
       
           <p class="cart__bottom-subtotal">
             {{ "templates.main_cart.subtotal" | t }}: 
@@ -105,6 +140,21 @@
 
   </form>
 {% endif %}
+
+{% schema %}
+{
+  "name": "Subtotal",
+  "class": "cart__footer-wrapper",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_cart_note",
+      "default": false,
+      "label": "Enable cart note"
+    }
+  ]
+}
+{% endschema %}
 
 
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
