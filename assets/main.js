@@ -69,19 +69,22 @@ heart();
 
 const heightLine = document.querySelector('.header-items').offsetHeight;
 const amountLine = document.querySelectorAll('.header-items').length
-let menuHeight = heightLine * amountLine + 60
 
-menuOpen.addEventListener('click',function() {
-    document.querySelector('.header-list').style.transition = 'all 0.5s ease';
-    document.querySelector('.header-list').style.height = `${menuHeight}px`;
-    menuOpen.classList.add('disabled');
-    menuClose.classList.add('active');
-    document.querySelector('.overlay').style.display='block';
 
-})
+  menuOpen.addEventListener('click',function() {
+  document.querySelector('.header-list').style.transition = 'all 0.5s ease';
+  
+  document.querySelector('.header-list').classList.add('test')
+
+  menuOpen.classList.add('disabled');
+  menuClose.classList.add('active');
+  document.querySelector('.overlay').style.display='block';
+  })
+
+
 
 menuClose.addEventListener('click',function() {
-    document.querySelector('.header-list').style.height = '0';
+  document.querySelector('.header-list').classList.remove('test')
     menuOpen.classList.remove('disabled');
     menuClose.classList.remove('active');
     document.querySelector('.overlay').style.display='none';
@@ -102,7 +105,7 @@ const totalSubMenuHeight = amountSubMenu * amountSubMenuHeight
 if(iconArrowDown){
     
     iconArrowDown.addEventListener('click',function() {
-        
+        console.log(subMenuHeight.offsetHeight)
         if(subMenuHeight.offsetHeight === 0) {
             document.querySelector('.header-list').style.height = `${menuHeight + totalSubMenuHeight }px`;
             iconArrowDown.classList.add('icon-rotate');

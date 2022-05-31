@@ -1,0 +1,11 @@
+
+{% liquid
+  case image-icon
+    when 'icon1'
+      render 'icon-bracelet'
+    when 'icon2'
+      render 'icon-diamond'
+    else
+      render 'icon-candle-heart'
+  endcase
+%}

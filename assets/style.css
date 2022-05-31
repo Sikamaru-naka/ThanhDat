@@ -78,7 +78,7 @@
 
 .header-items {
     margin: 0 25px;
-    padding: 10px 0;
+    padding: 14px 0;
     position: relative;
 }
 
@@ -266,6 +266,7 @@
     position: relative;
     height: 100%;
 }
+
 
 .category-product__img svg{
     background: silver;
@@ -1775,4 +1776,8 @@ tr {
 
 .border{
     border: 1px solid #ECECEC;
+}
+
+.test {
+  height: 70vh !important;
 }
