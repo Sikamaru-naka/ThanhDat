@@ -3,12 +3,16 @@
   <div class="container__large ">
     <div class="grid wide1">
       <div class="form-title ">
-        <h2 class="heading">
-          {{ section.settings.heading }}
-        </h2>
+        {% if section.settings.heading != blank %}
+          <h2 class="heading">
+            {{ section.settings.heading }}
+          </h2>
+        {% endif %}
+        {% if section.settings.description != blank %}
         <div class="form-text colors-text-secondary">
           {{ section.settings.description }}   
         </div>
+        {% endif %}
       </div>
 
       <div class="row">
@@ -30,12 +34,16 @@
                 <div class="service-box contact-box">
                  
                   {% render 'list-icon', list-icon: block.settings.options_icon %}
-                  <h3 class="product-title contact-title " >
-                    {{ block.settings.description }}
-                  </h3>
-                  <a href="tel: {{ block.settings.detail }}" class="service-descript colors-text-secondary">
-                    {{ block.settings.detail }}
-                  </a>
+                  {% if block.settings.description != blank %}
+                    <h3 class="product-title contact-title " >
+                      {{ block.settings.description }}
+                    </h3>
+                  {% endif %}
+                  {% if block.settings.detail != blank %}
+                    <a href="tel: {{ block.settings.detail }}" class="service-descript colors-text-secondary">
+                      {{ block.settings.detail }}
+                    </a>
+                  {% endif %}
                 </div>
               </div>
           {% endcase %}
@@ -46,9 +54,15 @@
 
   <div class="hours-open">
     {% if section.settings.enable_time == true %}
-      <h2 class="hours-open__heading">{{ section.settings.time_description }}</h2>
-      <span class="{% if section.settings.daily_time == blank %} hidden {% endif %}">{{ section.settings.daily_time }}</span>
-      <span class="{% if section.settings.weekend == blank %} hidden {% endif %}">{{ section.settings.weekend }}</span>
+      {% if section.settings.time_description != blank %}
+        <h2 class="hours-open__heading">{{ section.settings.time_description }}</h2>
+      {% endif %}
+      {% if section.settings.daily_time != blank %}
+        <span class=" ">{{ section.settings.daily_time }}</span>
+      {% endif %}
+      {% if section.settings.weekend != blank %}
+        <span class="">{{ section.settings.weekend }}</span>
+      {% endif %}
     {% endif %}
   </div>
 </div> 

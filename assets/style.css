@@ -74,11 +74,12 @@
 .header-list {
     display: flex;
     flex-wrap: wrap;
+    /* clip-path: polygon(100% 0, 0 0, 0 0, 100% 0); */
 }
 
 .header-items {
     margin: 0 25px;
-    padding: 10px 0;
+    padding: 14px 0;
     position: relative;
 }
 

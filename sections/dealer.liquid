@@ -2,12 +2,16 @@
 <div class="dealer-container">
   <div class="form-container grid wide2 container__large">
     <div class="form-title title-product">
-      <h2 class="heading">
-        {{ section.settings.heading }}
-      </h2>
-      <p class="form-text title-product--text colors-text-secondary ">
-        {{ section.settings.subheading }}
-      </p>
+      {% if section.settings.heading != blank %}
+        <h2 class="heading">
+          {{ section.settings.heading }}
+        </h2>
+      {% endif %}
+      {% if section.settings.subheading != blank %}
+        <p class="form-text title-product--text colors-text-secondary ">
+          {{ section.settings.subheading }}
+        </p>
+      {% endif %}
     </div>
 
     {%- if form.posted_successfully? -%}

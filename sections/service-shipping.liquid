@@ -25,7 +25,7 @@
         -%}
         <div class="col c-12 {{ footer_grid_class }} mb-20">
           <div class="service-box background-third {% if block.settings.border == 'border' %} border {% endif %}">
-            {% render 'options-icon', options-icon: block.settings.options_icon %}
+            {% render 'list-icon-shipping', options-icon: block.settings.options_icon %}
             {% if block.settings.heading != blank %} 
               <h3 class="heading service-title ">
                 {{ block.settings.heading }}

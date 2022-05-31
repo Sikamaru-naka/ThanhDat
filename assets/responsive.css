@@ -306,6 +306,7 @@
     }
     .slide-text{
         padding: 0;
+        padding-bottom: 20px;
     }
 }
 
@@ -564,10 +565,11 @@
 
 @media (min-width: 1024px) {
     .product-option{
-        display: none
+       visibility: hidden;
     }
     .header-items:hover .product-option {
-        display: block;
+       visibility: unset;
+
     }
     .product-option {
         position: absolute;

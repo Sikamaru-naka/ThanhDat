@@ -71,13 +71,13 @@ const heightLine = document.querySelector('.header-items').offsetHeight;
 const amountLine = document.querySelectorAll('.header-items').length
 let menuHeight = heightLine * amountLine + 60
 
+
 menuOpen.addEventListener('click',function() {
     document.querySelector('.header-list').style.transition = 'all 0.5s ease';
     document.querySelector('.header-list').style.height = `${menuHeight}px`;
     menuOpen.classList.add('disabled');
     menuClose.classList.add('active');
     document.querySelector('.overlay').style.display='block';
-
 })
 
 menuClose.addEventListener('click',function() {
@@ -85,8 +85,13 @@ menuClose.addEventListener('click',function() {
     menuOpen.classList.remove('disabled');
     menuClose.classList.remove('active');
     document.querySelector('.overlay').style.display='none';
-
 })
+
+
+
+if(menuOpen.offsetHeight === 0){
+    console.log(123)
+}
 
 // open-menu-2
 
@@ -102,7 +107,7 @@ const totalSubMenuHeight = amountSubMenu * amountSubMenuHeight
 if(iconArrowDown){
     
     iconArrowDown.addEventListener('click',function() {
-        
+        console.log(subMenuHeight.offsetHeight)
         if(subMenuHeight.offsetHeight === 0) {
             document.querySelector('.header-list').style.height = `${menuHeight + totalSubMenuHeight }px`;
             iconArrowDown.classList.add('icon-rotate');
