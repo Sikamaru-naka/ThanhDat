@@ -4,6 +4,7 @@
     "social_linkedin_link": "https:\/\/linkedin.com\/",
     "social_instagram_link": "http:\/\/instagram.com\/shopify",
     "social_youtube_link": "https:\/\/www.youtube.com\/shopify",
+    "favicon": "shopify:\/\/shop_images\/green-eyed-kitten.jpg",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -69,6 +70,7 @@
           "logo": "shopify:\/\/shop_images\/logo-white.png",
           "show_logo": true,
           "show_social": true,
+          "payment_enable": false,
           "note_footer": "<p>De Carlo Nicholas- VAT number: 07020260480- REA: FI-674952 - Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy<\/p>"
         }
       }

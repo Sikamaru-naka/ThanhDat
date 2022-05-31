@@ -5,42 +5,52 @@
       "settings": {
       }
     },
-    "1652060097f78da5ee": {
-      "type": "care-product",
+    "165397024224ed98b5": {
+      "type": "service-shipping",
       "blocks": {
-        "165206009760961607-0": {
-          "type": "text",
+        "1653970242d7eaabd8-0": {
+          "type": "column",
           "settings": {
-            "options_icon": "icon1",
-            "title": "NOT TO WET IT",
-            "descript": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte"
+            "options_icon": "water",
+            "heading": "NOT TO WET IT",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte",
+            "link": "",
+            "more_link": "",
+            "border": "border"
           }
         },
-        "165206009760961607-1": {
-          "type": "text",
+        "1653970242d7eaabd8-1": {
+          "type": "column",
           "settings": {
-            "options_icon": "icon1",
-            "title": "NOT TO WET IT",
-            "descript": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte"
+            "options_icon": "water",
+            "heading": "NOT TO WET IT",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte",
+            "link": "",
+            "more_link": "",
+            "border": "border"
           }
         },
-        "165206009760961607-2": {
-          "type": "text",
+        "1653970242d7eaabd8-2": {
+          "type": "column",
           "settings": {
-            "options_icon": "icon1",
-            "title": "NOT TO WET IT",
-            "descript": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte"
+            "options_icon": "water",
+            "heading": "NOT TO WET IT",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte",
+            "link": "",
+            "more_link": "",
+            "border": "border"
           }
         }
       },
       "block_order": [
-        "165206009760961607-0",
-        "165206009760961607-1",
-        "165206009760961607-2"
+        "1653970242d7eaabd8-0",
+        "1653970242d7eaabd8-1",
+        "1653970242d7eaabd8-2"
       ],
       "settings": {
         "heading": "THINGS YOU DON’T DO WITH OUR PRODUCT",
-        "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
+        "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
+        "bgc": "light"
       }
     },
     "165206014988dea2e6": {
@@ -112,7 +122,7 @@
   },
   "order": [
     "1652060093fb5e5388",
-    "1652060097f78da5ee",
+    "165397024224ed98b5",
     "165206014988dea2e6",
     "16520605579b354407"
   ]
