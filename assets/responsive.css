@@ -5,7 +5,9 @@
 
   .category-product a{
     font-size: 1rem;
-    margin: 0px 16.5%;
+    width: 120px;
+    margin: auto;
+    /* margin: 0px 16.5%; */
   }  
 
   .nav-form{
@@ -87,9 +89,9 @@
         min-height: 345px;
     }
 
-    /* .discover-content {
+    .discover-content {
         padding: 60px 30px;
-    } */
+    }
 
     .p-0{
         padding:  0;

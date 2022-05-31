@@ -260,12 +260,13 @@
     position: relative;
     overflow: hidden;
     text-align: center;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .category-product__img {
     position: relative;
     height: 100%;
+    min-height: 222px;
 }
 
 
@@ -299,7 +300,8 @@
   right: 0;
   left: 0;
   z-index: 1;
-  margin: 0px 27.7%;
+  width: 120px;
+  margin: auto;
 }
 
 .category-product__img::after {
