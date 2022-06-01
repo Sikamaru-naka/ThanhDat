@@ -440,19 +440,10 @@
       height: 100vh;
     }
 
-
-
-
-
-
-
-
-
-
     .header-items {
-        padding: 14px;
-        margin: 0;
-        overflow: hidden;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
     }
 
     .header-link::after {
@@ -538,18 +529,18 @@
     .header-link {
         display: block;
         width: 100%;
+        padding: 14px;
     }
 
-    .product-option{
-        height: 0;
-    }
-   
-    .h10vh{
-        height: 10vh;
-    }
+  
 
-    .select-product__option-level:nth-child(1){
+    /* .select-product__option-level:nth-child(1){
         padding-top: 14px;
+    } */
+
+    .select-product__option-link {
+      padding: 13px 17px;
+      display: block;
     }
 
     .collection__options{
