@@ -211,6 +211,11 @@
       "settings": {
         "heading": "OUR SERVICES"
       }
+    },
+    "pagefly-home": {
+      "type": "pagefly-home",
+      "settings": {
+      }
     }
   },
   "order": [
@@ -219,6 +224,7 @@
     "165206602989029dc5",
     "1651586826e3fbf794",
     "16520660328a021147",
-    "165206722833dcf75f"
+    "165206722833dcf75f",
+    "pagefly-home"
   ]
 }
