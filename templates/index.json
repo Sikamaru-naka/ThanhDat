@@ -125,7 +125,10 @@
       "type": "featured-product",
       "settings": {
         "heading": "FEATURED PRODUCT",
-        "collection": "earings"
+        "collection": "earings",
+        "collums_product": 4,
+        "checkbox_show_image": false,
+        "show_vender": false
       }
     },
     "16520660328a021147": {
@@ -168,37 +171,53 @@
         "165206722850466240-0": {
           "type": "column",
           "settings": {
+            "options_icon": "box",
             "heading": "FREE SHIPPING IN ITALY",
+            "padding_top": 30,
+            "padding_bottom": 5,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             "link": "READ MORE",
-            "more_link": "shopify:\/\/pages\/faq"
+            "more_link": "shopify:\/\/pages\/faq",
+            "border": "border"
           }
         },
         "165206722850466240-1": {
           "type": "column",
           "settings": {
+            "options_icon": "box",
             "heading": "FREE SHIPPING IN ITALY",
+            "padding_top": 30,
+            "padding_bottom": 5,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             "link": "READ MORE",
-            "more_link": "shopify:\/\/pages\/faq"
+            "more_link": "shopify:\/\/pages\/faq",
+            "border": "border"
           }
         },
         "165206722850466240-2": {
           "type": "column",
           "settings": {
+            "options_icon": "box",
             "heading": "FREE SHIPPING IN ITALY",
+            "padding_top": 30,
+            "padding_bottom": 5,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             "link": "READ MORE",
-            "more_link": "shopify:\/\/pages\/faq"
+            "more_link": "shopify:\/\/pages\/faq",
+            "border": "border"
           }
         },
         "165206722850466240-3": {
           "type": "column",
           "settings": {
+            "options_icon": "box",
             "heading": "FREE SHIPPING IN ITALY",
+            "padding_top": 30,
+            "padding_bottom": 5,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             "link": "READ MORE",
-            "more_link": "shopify:\/\/pages\/faq"
+            "more_link": "shopify:\/\/pages\/faq",
+            "border": "border"
           }
         }
       },
@@ -209,12 +228,20 @@
         "165206722850466240-3"
       ],
       "settings": {
-        "heading": "OUR SERVICES"
+        "heading": "OUR SERVICES",
+        "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
+        "bgc": "gray"
       }
     },
     "pagefly-home": {
       "type": "pagefly-home",
       "settings": {
+      }
+    },
+    "1655371645cfe106ec": {
+      "type": "pagefly-section",
+      "settings": {
+        "section_id": "pf-75b35e22"
       }
     }
   },
@@ -225,6 +252,7 @@
     "1651586826e3fbf794",
     "16520660328a021147",
     "165206722833dcf75f",
-    "pagefly-home"
+    "pagefly-home",
+    "1655371645cfe106ec"
   ]
 }
