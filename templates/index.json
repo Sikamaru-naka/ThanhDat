@@ -235,11 +235,13 @@
     },
     "pagefly-home": {
       "type": "pagefly-home",
+      "disabled": true,
       "settings": {
       }
     },
     "1655371645cfe106ec": {
       "type": "pagefly-section",
+      "disabled": true,
       "settings": {
         "section_id": "pf-75b35e22"
       }
