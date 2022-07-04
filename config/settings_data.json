@@ -38,19 +38,8 @@
       "header": {
         "type": "header",
         "settings": {
-          "header_bgc": "background-1",
           "logo": "shopify:\/\/shop_images\/logo.png",
-          "logo_width": 140,
-          "logo_width_mobile": 120,
-          "menu_style": "left_center",
-          "sticky": false,
-          "menu": "main-menu",
-          "browsing_menu": false,
-          "heading_collection": "",
-          "collection_list": [
-
-          ],
-          "show_social_mobile": false
+          "menu": "main-menu"
         }
       },
       "footer": {

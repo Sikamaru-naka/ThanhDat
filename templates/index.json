@@ -1,5 +1,15 @@
 {
   "sections": {
+    "165691003684d70d79": {
+      "type": "newletter-blum",
+      "settings": {
+        "vertical_alignment": "Background 2",
+        "heading": "Newsletter",
+        "description": "",
+        "btn_label": "Subscribe",
+        "overlay_opa": 30
+      }
+    },
     "1651203086568e7a1c": {
       "type": "slider",
       "blocks": {
@@ -125,41 +135,29 @@
       "type": "featured-product",
       "settings": {
         "heading": "FEATURED PRODUCT",
-        "collection": "earings"
+        "collection": "earings",
+        "collums_product": 4,
+        "product_per_row": 4,
+        "show_vender": false
       }
     },
     "16520660328a021147": {
       "type": "image-banner",
-      "blocks": {
-        "16520660322a7cc9b2-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "NEW COLLECTION 2021",
-            "optionSize": "large"
-          }
-        },
-        "16520660322a7cc9b2-1": {
-          "type": "Description",
-          "settings": {
-            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu"
-          }
-        },
-        "39b5ed20-3d56-46e3-93d1-67a9cff5c777": {
-          "type": "Link",
-          "settings": {
-            "Link": "SEE MORE",
-            "more_link": "shopify:\/\/collections"
-          }
-        }
-      },
-      "block_order": [
-        "16520660322a7cc9b2-0",
-        "16520660322a7cc9b2-1",
-        "39b5ed20-3d56-46e3-93d1-67a9cff5c777"
-      ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/collection-inmg.jpg",
-        "options": "left"
+        "enable_large_heading": false,
+        "heading_text": "Welcome to our store",
+        "subheading_text": "Banner title",
+        "description_text": "",
+        "content_position": "center",
+        "show_content_bg": false,
+        "color_schema": "Accent1",
+        "height_screen": "vh--70",
+        "show_scroll_indicator": false,
+        "overlay_opa": 30,
+        "primary_btn_label": "Check now",
+        "primary_button_link": "",
+        "secondary_btn_label": "View details",
+        "secondary_button_link": ""
       }
     },
     "165206722833dcf75f": {
@@ -168,37 +166,53 @@
         "165206722850466240-0": {
           "type": "column",
           "settings": {
+            "options_icon": "box",
             "heading": "FREE SHIPPING IN ITALY",
+            "padding_top": 30,
+            "padding_bottom": 5,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             "link": "READ MORE",
-            "more_link": "shopify:\/\/pages\/faq"
+            "more_link": "shopify:\/\/pages\/faq",
+            "border": "border"
           }
         },
         "165206722850466240-1": {
           "type": "column",
           "settings": {
+            "options_icon": "box",
             "heading": "FREE SHIPPING IN ITALY",
+            "padding_top": 30,
+            "padding_bottom": 5,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             "link": "READ MORE",
-            "more_link": "shopify:\/\/pages\/faq"
+            "more_link": "shopify:\/\/pages\/faq",
+            "border": "border"
           }
         },
         "165206722850466240-2": {
           "type": "column",
           "settings": {
+            "options_icon": "box",
             "heading": "FREE SHIPPING IN ITALY",
+            "padding_top": 30,
+            "padding_bottom": 5,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             "link": "READ MORE",
-            "more_link": "shopify:\/\/pages\/faq"
+            "more_link": "shopify:\/\/pages\/faq",
+            "border": "border"
           }
         },
         "165206722850466240-3": {
           "type": "column",
           "settings": {
+            "options_icon": "box",
             "heading": "FREE SHIPPING IN ITALY",
+            "padding_top": 30,
+            "padding_bottom": 5,
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
             "link": "READ MORE",
-            "more_link": "shopify:\/\/pages\/faq"
+            "more_link": "shopify:\/\/pages\/faq",
+            "border": "border"
           }
         }
       },
@@ -209,11 +223,14 @@
         "165206722850466240-3"
       ],
       "settings": {
-        "heading": "OUR SERVICES"
+        "heading": "OUR SERVICES",
+        "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore",
+        "bgc": "gray"
       }
     }
   },
   "order": [
+    "165691003684d70d79",
     "1651203086568e7a1c",
     "16512287608aa91b17",
     "165206602989029dc5",
