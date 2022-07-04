@@ -7,7 +7,7 @@
     {% endif %}
     
     <div class="contact-form__wrapper grid wide">
-      <div class="row">
+      <div class="row {% if section.settings.img_position == "right" %} fldrr {% endif %}">
         <div class="col l-6">
           <div class="contact-form__img">
             <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ section.settings.img | image_url: width: 520, height: 520 }}" alt="image collection"/>
@@ -21,19 +21,12 @@
               <div class="contact-form__message">
                 <h3 class="form__message">Please adjust the following:</h3>
               </div>
-              <ul class="form__message" role="list">
-                <li>
-                  <a href="#ContactForm-email" class="link">
-                    {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}
-                  </a>
-                </li>
-              </ul>
             {%- endif -%}
     
             <div class="contact__fields">
               <div class="field">
-                <input class="field__input" type="text" id="ContactForm-name" name="contact[Name]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" placeholder="Name">
-                <label class="field__label" for="ContactForm-name">Name</label>
+                <input class="field__input" type="text" id="ContactForm-name" name="contact[Name]" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" placeholder="Enter name">
+                <label class="field__label" for="ContactForm-name">Your name</label>
               </div>
     
               <div class="field field--with-error">
@@ -49,9 +42,9 @@
                     aria-invalid="true"
                     aria-describedby="ContactForm-email-error"
                   {% endif %}
-                  placeholder="Email"
+                  placeholder="Enter email address"
                 >
-                <label class="field__label" for="ContactForm-email">Email <span aria-hidden="true">*</span></label>
+                <label class="field__label" for="ContactForm-email">Your email <span aria-hidden="true">*</span></label>
                 {%- if form.errors contains 'email' -%}
                   <small class="contact__field-error" id="ContactForm-email-error">
                     <span class="visually-hidden">Error</span>
@@ -100,7 +93,7 @@
     },
     {
       "type": "select",
-      "id": "select",
+      "id": "img_position",
       "label": "Image position",
       "options": [
         {
@@ -111,7 +104,8 @@
           "label": "Right",
           "value": "right"
         }
-      ]
+      ],
+      "default": "left"
     }
   ],
   "presets": [

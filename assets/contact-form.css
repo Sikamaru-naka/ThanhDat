@@ -3,6 +3,10 @@
   background-color: #F0F3FB;
 }
 
+.contact-form__wrapper{
+  overflow: hidden;
+}
+
 .row{
   margin-left: -25px;
     margin-right: -25px;
