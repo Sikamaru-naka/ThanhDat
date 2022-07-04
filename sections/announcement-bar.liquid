@@ -65,93 +65,22 @@
 
 {% schema %}
 {
-  "name": "Top bar",
-  "settings": [
+  "name": "Announcement",
+  "blocks": [
     {
-      "type": "select",
-      "id": "vertical_alignment",
-      "label": "Color scheme",
-      "options": [
+      "type": "announcement",
+      "name": "Announcement ",
+      "settings": [
         {
-          "value": "Accent 1",
-          "label": "Accent 1"
-        },
-        {
-          "value": "Accent 2",
-          "label": "Accent 2"
-        },
-        {
-          "value": "Accent 3",
-          "label": "Accent 3"
+          "type": "text",
+          "id": "text",
+          "default": "Welcome to our store",
+          "label": "Text"
         }
-      ],
-      "default": "Accent 1"
-    },
-    { 
-      "type":"header",
-      "content": "Messages"
-    },
-    {
-      "type": "checkbox",
-      "label": "Enable messages autoplay",
-      "id": "Enabel_autoplay"
-    },
-    {
-      "type": "range",
-      "id": "item_per_row",
-      "min": 3,
-      "max": 10,
-      "step": 1,
-      "label": "Change message every",
-      "default": 5,
-      "unit": "s"
-    },
-    { 
-      "type":"header",
-      "content": "Currency selector",
-      "info": "To add a currency, go to your [payment settings](https://accounts.shopify.com/select?rid=c08d3742-4fa9-4af3-8360-7c926dcc3806)"
-    },
-    {
-      "type": "link_list",
-      "id": "menu",
-      "label": "Select menu"
-    },
-    {
-      "type": "checkbox",
-      "label": "Show currency selector",
-      "id": "show_currency_selector",
-      "info": "Currency selector displays inside drawer on mobile"
-    },
-    { 
-      "type":"header",
-      "content": "Language selector",
-      "info": "To add a language, go to your [language settings](https://gia-dinh-g-u.myshopify.com/admin/settings/languages)"
-    },
-    {
-      "type": "checkbox",
-      "label": "Show language selector",
-      "id": "show_language_selector",
-      "info": "Language selector displays inside drawer on mobile"
+      ]
     }
     
-
-  ],
-  "blocks": [
-  {
-    "type": "announcement",
-    "name": "Announcement ",
-    "settings": [
-      {
-        "type": "text",
-        "id": "text",
-        "default": "Welcome to our store",
-        "label": "Text"
-      }
-    ]
-  }
   ]
 }
-    
-
 {% endschema %}
 

@@ -81,51 +81,6 @@
     ]
   },
   {
-    "name": "Product Badge",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "show_in_tock",
-        "label": "Show in stock"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_sale_badge",
-        "label": "Show Sale badge"
-      },
-      {
-        "type": "checkbox",
-        "id": "checkbox_show_image",
-        "label": "Show second image on hover"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_low_stock",
-        "label": "Show Low Stock badge"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_low_quantity",
-        "label": "Show sold quantity"
-      },
-      {
-        "type": "checkbox",
-        "id": "show_product_rating",
-        "label": "Show product rating",
-        "info": "To display a rating, add a product rating app. [Learn more](https:\/\/www.figma.com\/file\/OcmkNnTsla14jPs5bsVyJV\/Blum-v2---settings-%26-wireframes?node-id=2%3A4)"
-      },
-      {
-        "type": "range",
-        "id": "low_stock",
-        "min": 0,
-        "max": 10,
-        "label": "Low stock threshold",
-        "info": "Set to 0 for no threshold",
-        "default": 5
-      }
-    ]
-  },
-  {
     "name": "Social",
     "settings": [
       {

@@ -88,10 +88,6 @@
     {{ 'res-shop.css' | asset_url | stylesheet_tag }}
     {{ 'res-contact.css' | asset_url | stylesheet_tag }}
     {{ 'res-product.css' | asset_url | stylesheet_tag }}
-    {{ 'theme-setting.css' | asset_url | stylesheet_tag }}
-    {{ 'layout.css' | asset_url | stylesheet_tag }}
-
-
 
     {%- unless settings.type_page_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
@@ -102,8 +98,7 @@
   <body>
 
     {% section 'announcement-bar' %}
-    <!-- {% section 'header' %} -->
-    {% section 'header-blum' %}
+    {% section 'header' %}
     
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
       <!-- Đối tượng Content_For_Layout được yêu cầu trong chủ đề.liquid. Nó phải được đặt bên trong thẻ HTML <body>. Nó tự động tải nội dung được tạo bởi các mẫu khác như index.liquid hoặc sản phẩm.liquid. -->

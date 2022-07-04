@@ -65,14 +65,17 @@
   color: rgb(var(--colors-text-secondary));
 }
 
+.bgc-accent-1,
 .background-primary {
   background-color: rgb(var(--dark-bgc));
 }
 
+.bgc-accent-2,
 .background_secondary {
   background-color: rgb(var(--gray-bgc));
 }
 
+.bgc-background-1,
 .background-third {
   background-color: rgb(var(--white-bgc));
 }
@@ -183,6 +186,10 @@ p {
   margin: 0;
 }
 
+.dfn{
+  display: flex;
+}
+
 .df {
   display: flex;
   justify-content: center;
@@ -207,7 +214,13 @@ p {
   padding-top: 100px;
 }
 
+.mb-30{
+  margin-bottom: 30px;
+}
 
+.tact{
+  text-align: center;
+}
 
 /* .bg-gray {
   background-color: #807e7e;

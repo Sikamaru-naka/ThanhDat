@@ -172,14 +172,7 @@
           <div class="col {{ collumns_product }} m-6 c-12">
             {% render 'cart-product',
               product: product,
-              show_secondary_image: settings.checkbox_show_image,
-              show_in_tock: settings.show_in_tock,
-              show_sale_badge: settings.show_sale_badge,
-              show_low_stock: settings.show_low_stock,
-              show_low_quantity: settings.show_low_quatity,
-              show_product_rating: settings.show_product_rating,
-              low_tock_threshold: settings.low_stock,
-              
+              show_secondary_image: section.settings.checkbox_show_image,
             %}
           </div>
         {%- endfor -%}
@@ -204,6 +197,11 @@
         "max": 4,
         "step": 1,
         "default": 4
+      },
+      {
+        "type": "checkbox",
+        "id": "checkbox_show_image",
+        "label": "Show second image on hover"
       },
       {
         "type": "checkbox",

@@ -1,81 +1,83 @@
+{% style %}
+  .header-logo .logo__width{
+    width: {{ section.settings.logo_width }}px;
+  }
+  @media (max-width: 767px) {
+    .header-logo .logo_width_mobile{
+      width: {{ section.settings.logo_width_mobile }}px;
+    }
+  }
+{% endstyle %}
 
-<div class="header-nav background-third container__large container-pc-low">
-    <div class="header-nav__contain wide grid">
-      {% if section.settings.logo != blank %}
-        <a href="{{ routes.root_url }}" class="header-logo">
-          <img 	width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="header__logo-img" src="{{ section.settings.logo | image_url: width: 200, height: 200 }}" alt="image logo shop">
-        </a>
-        {% else %}  
-        <a href="{{ routes.root_url }}" class="header-logo">{{ shop.name }}</a>
-      {% endif %}           
+{% liquid
+  capture logo 
+      render 'header-logo'
+  endcapture
 
-      <ul class="header-list background-third">
-        {% for link in section.settings.menu.links %}
-          <li class="header-items">
-            {% if link.links.size > 0 %}
-            <div class="header-link--wrap df">
-                <a class="header-link color-text-primary" href="{{ link.url }}">{{ link.title }}</a>
-                {% render 'icon-arrow-down-black' %}
-            </div>
-            <div class="product-option background-third">
-              <ul class="select-product__option">
-                {% for child_link in link.links %}
-                  <li class="select-product__option-level">
-                    <a class="select-product__option-link color-text-primary" href="{{ child_link.url }}">{{ child_link.title }}</a>                                     
-                  </li>
-                {% endfor %}
-              </ul>
-            </div>
-            {% else %}
-              <a class="header-link color-text-primary" href="{{ link.url }}">{{ link.title }}</a>
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
+  capture menu 
+      render 'header-menu'
+  endcapture
 
-      <ul class="header-func-list">
-        <li>
-          <div class="tool-search">
-            {% render 'icon-search' %}               
-            <div class="search-form">
-              <form class="nav-form" action="{{ routes.search_url }}">
-                <input class="search-form__control" placeholder="Search product on Decarlo" type="search" name="q" value="{{ search.terms | escape }}">  
-                <button class="search-form__btn" type="submit" value="">search</button>
-              </form>
-            </div>
+  capture icon 
+      render 'header-icon'
+  endcapture
+
+  capture icon_search 
+      render 'header-icon-search'
+  endcapture
+
+  capture icon_user_cart
+      render 'header-icon-user-cart'
+  endcapture
+%}
+
+
+<div class="header-nav container__large container-pc-low 
+    bgc-{{ section.settings.header_bgc }}
+    {% if section.settings.sticky %} psfx {% endif %}">
+    {%- case section.settings.menu_style -%}
+		  {%- when 'left_left' -%}
+        <div class="header-nav__contain wide grid">
+          {{ logo }}          
+          <ul class="header-list fl1">
+            {{ menu }}
+          </ul>
+          {{ icon }}
+        </div>
+
+      {%- when 'left_center' -%}
+        <div class="header-nav__contain wide grid">
+          {{ logo }}          
+          <ul class="header-list">
+            {{ menu }}
+          </ul>
+          {{ icon }}
+        </div>
+
+      {%- when 'left_below' -%}
+        <div class="header-nav__contain wide grid">
+          <div class="logo-menu__wrap df fldcl">
+            {{ logo }}          
+            <ul class="header-list">
+              {{ menu }}
+            </ul>
           </div>
-        </li>
+          {{ icon }}
+        </div>
 
-        {%- if shop.customer_accounts_enabled -%}
-        <li>
-          <div class="user-settings">
-            <a href="{{ routes.account_login_url }}">
-              {% render 'icon-user' %}
-            </a>
-          </div>
-        </li>
-        {% endif %}
-
-        <li>
-          <div class="cart-has-product">
-            <a href="{{ routes.cart_url }}">
-              {% render 'icon-bag' %}
-            </a>
-            <div class="cart__number df">
-              <a href="{{ routes.cart_url }}">
-                {{ cart.item_count }}
-              </a>
-            </div>
-          </div>
-        </li>
-        <li class="hidden-pc">
-          <i class="bi bi-list menu-icon"></i>
-          <i class="bi bi-x close-icon "></i>
-        </li>
-      </ul>
-    </div>
+      {%- when 'center_below' -%}
+      <div class="header-nav__contain wide grid">
+        {{ icon_search }}
+        <div class="logo-menu__wrap df fldcl">
+          {{ logo }}          
+          <ul class="header-list">
+            {{ menu }}
+          </ul>
+        </div>
+        {{ icon_user_cart }}
+      </div>
+    {%- endcase -%}
 </div>
-
 
 <div class="overlay"></div>
 
@@ -84,6 +86,20 @@
 <script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'openFunctionNav.js' | asset_url }}" defer="defer"></script>
 
+<!-- <script>
+  const header = document.querySelector('.header-nav')
+  window.addEventListener('scroll', () => {
+    if ( window.scrollY === 0 ){
+      console.log(123)
+      header.style.marginTop = "50px"
+    }
+    else{
+      header.style.marginTop = "0px"
+      header.style.top = 0
+    }
+  })
+</script> -->
+
 
 
 {% schema %}
@@ -91,15 +107,124 @@
   "name": "Header",
   "settings":[
     {
+      "type": "select",
+      "id": "header_bgc",
+      "label": "Color scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        },
+        {
+          "value": "background-1",
+          "label": "Background color 1"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "logo"
+    },
+    {
       "type": "image_picker",
       "label": "Image logo",
-      "id": "logo"
+      "id": "logo",
+      "info": "200 x 60px .png recommended"
+    },
+    {
+      "type": "range",
+      "label": "Logo max width",
+      "id": "logo_width",
+      "min": 50,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "default": 140
+    },
+    {
+      "type": "range",
+      "label": "Logo max width on mobile",
+      "id": "logo_width_mobile",
+      "min": 50,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "default": 120
+    },
+    {
+      "type": "select",
+      "id": "menu_style",
+      "label": "Menu style on large screens",
+      "options": [
+        {
+          "value": "left_left",
+          "label": "Logo left, menu left"
+        },
+        {
+          "value": "center_below",
+          "label": "Logo center, menu below"
+        },
+        {
+          "value": "left_below",
+          "label": "Logo left, menu below"
+        },
+        {
+          "value": "left_center",
+          "label": "Logo left, menu center"
+        }
+      ],
+      "default": "left_center"
+    },
+    {
+      "type": "checkbox",
+      "id": "sticky",
+      "label": "Enable sticky header",
+      "info": "Header shows on the screen as customers scroll up."
+    },
+    {
+      "type": "header",
+      "content": "navigation"
     },
     {
       "type": "link_list",
       "id": "menu",
       "default": "main-menu",
       "label": "Menu"
+    },
+    {
+      "type": "header",
+      "content": "Collection browsing",
+      "info": "Show a list of product collections for better catalogue navigation"
+    },
+    {
+      "type": "checkbox",
+      "id": "browsing_menu",
+      "label": "Enable collection browsing menu",
+      "default": false
+    },
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "heading_collection"
+    },
+    {
+      "type": "collection_list",
+      "id": "collection_list",
+      "label": "Selected collections"
+    },
+    {
+      "type": "header",
+      "content": "Social media icons",
+      "info": "To display your social media accounts, add them in your theme settings"
+    },
+    {
+      "type": "checkbox",
+      "label": "Show social media on mobile",
+      "id": "show_social_mobile"
     }
   ]
 }
