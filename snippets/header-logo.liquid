@@ -1,7 +1,0 @@
-{% if section.settings.logo != blank %}
-  <a href="{{ routes.root_url }}" class="header-logo">
-    <img loading="lazy" class="header__logo-img logo__width logo_width_mobile" src="{{ section.settings.logo | image_url: width: 200, height: 200 }}" alt="image logo shop">
-  </a>
-  {% else %}  
-  <a href="{{ routes.root_url }}" class="header-logo">{{ shop.name }}</a>
-{% endif %} 

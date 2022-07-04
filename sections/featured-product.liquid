@@ -1,7 +1,9 @@
 
+
+
 <div class="category featured">
   <div class="category-wrap grid wide1 container__large ">
-    <h2 style="color: {{ section.settings.color_header }}" class="heading category-heading featured-heading color-text-primary">{{ section.settings.heading }}</h2> 
+    <h2 class="heading category-heading featured-heading color-text-primary">{{ section.settings.heading }}</h2> 
     <div class="row featured-row">
       {%- if section.settings.collection.products == blank -%}
        {%- for i in (1..4) -%}
@@ -11,7 +13,14 @@
        {%- endfor -%}
 
       {%- elsif section.settings.collection.products != blank -%}         
-        {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%} 
+        {%- for product in section.settings.collection.products limit: section.settings.product_per_row -%}
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when '@app' -%}
+                {% render block %}
+              {% endcase -%}
+            {% endfor -%}
+            
           {%- liquid
             if section.settings.collums_product == 1
               assign collumns_product = 'l-12'
@@ -26,23 +35,21 @@
           <div class="col {{ collumns_product }} m-3 c-12">
             {% render 'cart-product',
               product: product,
-              show_secondary_image: section.settings.checkbox_show_image,
-              show_in_stock: section.settings.show_in_stock,
-              show_sale_badge: section.settings.show_sale_badge,
-              show_low_stock: section.settings.show_low_stock,
-              low_stock: section.settings.low_stock,
+              show_secondary_image: settings.checkbox_show_image,
+              show_in_tock: settings.show_in_tock,
+              show_sale_badge: settings.show_sale_badge,
+              show_low_stock: settings.show_low_stock,
+              show_low_quantity: settings.show_low_quantity,
+              show_product_rating: settings.show_product_rating,
+              low_tock_threshold: settings.low_stock,
+
             %}
           </div>
         {%- endfor -%}
       {%- endif -%}
     </div>
 
-    {%- for block in section.blocks -%}
-      {%- case block.type -%}
-        {%- when '@app' -%}
-        {% render block %}
-      {% endcase -%}
-    {% endfor -%}
+    
   </div>
 </div>
 
@@ -57,12 +64,6 @@
       "default" : "FEATURED PRODUCT"
     },
     {
-      "type": "color",
-      "id": "color_header",
-      "label": "Heading color",
-      "default": "#000"
-    },
-    {
       "type": "collection",
       "id": "collection",
       "label": "Collection"
@@ -70,15 +71,6 @@
     {
       "type": "header",
       "content": "Product"
-    },
-    {
-      "type": "range",
-      "label": "Maximum products to show",
-      "id": "products_to_show",
-      "min": 4,
-      "max": 12,
-      "step": 1,
-      "default": 4
     },
     {
       "type": "range",
@@ -90,51 +82,19 @@
       "default": 4
     },
     {
-      "type": "checkbox",
-      "id": "checkbox_show_image",
-      "label": "Show second image on hover"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_sale_badge",
-      "label": "Show Sale badge",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_in_stock",
-      "label": "Show in stock",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_low_stock",
-      "label": "Show Low Stock badge",
-      "default": true,
-      "info": "Only show if reach the low stock threshold"
-    },
-    {
       "type": "range",
-      "label": "Low stock threshold",
-      "id": "low_stock",
+      "label": "product per row",
+      "id": "product_per_row",
       "min": 1,
-      "max": 10,
-      "step": 1,
+      "max": 12,
       "default": 4,
-      "info": "Set to 0 for no threshold"
+      "step": 1
     },
     {
       "type": "checkbox",
       "id": "show_vender",
       "label": "Show vendor",
       "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "show_rating",
-      "default": false,
-      "label": "Show product rating",
-      "info": "To display a rating, add a product rating app. [Learn more](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/theme-features#featured-collection-show-product-rating)"
     }
   ],
   "blocks": [

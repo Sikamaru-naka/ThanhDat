@@ -1,13 +1,5 @@
 {
   "sections": {
-    "1656907114f37dbee5": {
-      "type": "contact-form",
-      "settings": {
-        "heading": "Contact us",
-        "img": "shopify:\/\/shop_images\/green-eyed-kitten.jpg",
-        "select": "left"
-      }
-    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -71,7 +63,6 @@
     }
   },
   "order": [
-    "1656907114f37dbee5",
     "main",
     "1653385432bb5f8c79",
     "1653385435c89d6e27"

@@ -27,39 +27,9 @@
   Usage:
     {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
-<style>
-  .product-stock{
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: red;
-    color: white;
-    font-size: 1.6rem;
-    border-radius: 20px;
-    padding: 5px 10px;
-  }
-  .product-low-price{
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    color: white;
-    font-size: 1.4rem;
-  }
-  .product-sale{
-    margin-right: 10px;
-    display: block;
-    background: #38CA61;
-    border-radius: 20px;
-    padding: 5px 10px;
-  }
-  .product-low{
-    display: block;
-    background: #E85434;
-    border-radius: 20px;
-    padding: 5px 10px;
-  }
-</style>
- 
+
+
+
 {% if product %}
   <div class="feature-product category-product mb100 mb-0">
     <div class="feature__icon-heart">
@@ -72,37 +42,21 @@
         {% if product.media[1] != nil and show_secondary_image %}
           <img class="feature-img__contain-second" width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ product.media[1] | image_url: width: 533 }}" alt="img product">
         {% endif %}
-        {% if product.available == false %}
-          <span class="product-badge">Sold out</span>
-        {% elsif show_in_stock %}
-          <div>
-            {% for variant in product.variants %}
-              {% if variant.inventory_quantity > 0 %}
-                {% assign product_qty = product_qty | plus: variant.inventory_quantity %}
-              {% endif %}
-            {% endfor %}
-            {% if product_qty > 0 %}
-              <span class="product-badge"> Instock: {{ product_qty }}</span>
+
+        {% if product.available == false or product.selected_or_first_available_variant.inventory_quantity == 0 %}
+          <span class="product-badge product-badge--red">Sold out</span>
+        {% else %}
+      
+          <div class="product-badge__wrap">
+            {% if product.compare_at_price > product.price and show_sale_badge %}
+              <span class="product-badge--modify product-badge--green"> On sale {{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price }}%</span>
+            {% endif %}
+            {% if low_tock_threshold > product.selected_or_first_available_variant.inventory_quantity and show_low_stock %}
+              <span class="product-badge--modify product-badge--orange">Low stock</span>
             {% endif %}
           </div>
         {% endif %}
-      <div class="df product-low-price">
-        {% if product.compare_at_price > product.price and show_sale_badge %}
-          <span class="product-sale">Sale {{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price }}%</span>
-        {% endif %}
-        {% if show_low_stock and low_stock < 6 %}
-          {% for variant in product.variants %}
-            {% if variant.inventory_quantity > 0 %}
-              {% assign product_qty = product_qty | plus: variant.inventory_quantity %}
-            {% endif %}
-          {% endfor %}
-          {% if product_qty %}
-            <span class=" product-low"> Low stock </span>
-          {% endif %}
-        {% endif %}
-      </div>
-
-      
+        
 
       {% else %}
         {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
@@ -113,6 +67,11 @@
         {{ product.title }}
       </a>
     </div>
+    {% if show_in_tock and product.selected_or_first_available_variant.inventory_quantity > 0 %}
+          <span class=" product-show__quantity ">
+            Instock: {{ product.selected_or_first_available_variant.inventory_quantity }}
+          </span>
+        {% endif %}
     <div class="product-vendor {% if section.settings.show_vender == false %} hidden {% endif %}" >
       <a href="{{ product.url }}" class="">
         {% if product.vendor %}
@@ -125,18 +84,6 @@
         {{ product.price | money }}
       </a>
     </div>
-    
-
-    <!-- {% if product.variants.first.inventory_quantity > 0 %}
-      {% assign productStartCount = product.metafields.stock.initial | times:1 %}
-    {% if productStartCount > 0 %}
-      {% assign productInventory = product.variants.first.inventory_quantity %}
-        <p>{{ productStartCount | minus:productInventory }} sold. Only {{ productInventory }} remain.</p>
-      {% endif %}
-    {% else %}
-      <p>Uh Oh! All sold out...</p>
-    {% endif %} -->
-    
     <form method="post" action="/cart/add">
       <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
       <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
@@ -146,7 +93,6 @@
         </span>
       </button>
     </form>
-  
   </div>
 {% else %}
   

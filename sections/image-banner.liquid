@@ -1,45 +1,91 @@
-<div class="collection">
+{%- style -%}
+
+  
+  @media (max-width:376px){
+    .hidden_desktop{
+      display:none;
+    }
+    .hidden_mobile {
+      display: block;
+    }
+    
+    .button_wrap .image-banner__btn:first-child {
+      margin-right: 0;
+    }
+  }
+
+
+  #Banner-{{ section.id }} .collection-img::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000000;
+    opacity: {{ section.settings.overlay_opa | divided_by: 100.0 }};
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+{%- endstyle -%}
+<div id="Banner-{{ section.id }}" class="collection">
   <div class="collection-wrap">
     <div class="collection-img">
-      {%- if section.settings.image != blank -%}
-        <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ section.settings.image | image_url: width: 1720, height: 1720 }}" alt="image collection"/>
-      {%- elsif section.settings.image == blank -%}
+      {%- if section.settings.des_bg_img != blank -%}
+        <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="  hidden_desktop"
+          src="{{ section.settings.des_bg_img | image_url: width: 1720, height: 1720 }}" 
+        alt="image collection"/>
+      {%- elsif section.settings.des_bg_img == blank -%}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+
+      {%- if section.settings.des_bg_img != blank -%}
+        <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class=" hidden_mobile "
+        src="{{ section.settings.mb_bg_img | image_url: width: 1720, height: 1720 }}" 
+        alt="image collection"/>
+      {%- elsif section.settings.des_bg_img == blank -%}
         {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
       {%- endif -%}
     </div>
 
-    <div class="collection-content grid wide1 {% if section.settings.options == 'center' %} text-center {% endif %} ">
-      {% for block in section.blocks %}
-        {% case block.type %}
-          {% when 'heading' %}
-          {% if block.settings.heading != blank %}
-            <h2 class="heading collection-heading text-color {{ block.settings.optionSize }}">
-              {{ block.settings.heading }}
-            </h2>
-          {% endif %} 
-          {% when 'Description' %}
-          {% if block.settings.Description != blank %}
-            <p class="collection-text {% if section.settings.options == 'center' %} width-unset {% endif %}">
-              {{ block.settings.Description }}
-            </p>
-          {% endif %}
-          {% when 'Link' %}
-          {% if block.settings.Link != blank %}
-            <a href="{{ block.settings.more_link }}" class="collection-more text-color">
-              {{ block.settings.Link }}
-              {% if block.settings.Link != blank %}
-                {% render 'icon-arrow-right-white' %}
-              {% endif %}
-            </a>
-          {% endif %}
-          {% when 'Button' %}
-          {% if block.settings.Button != blank %}
-            <a href="{{ block.settings.Botton_url }}" class="btn">
-              {{ block.settings.Button }}
-            </a>
-          {% endif %}
-        {% endcase %}
-      {% endfor %}
+    <div class=" gutter-padding grid wide1 image-baner__height {{ section.settings.height_screen }} {% if section.settings.content_position == 'center' %} text-center {% endif %} ">
+      <div class="content-bgc collection-content {% if section.settings.show_content_bg == false %} bgc-tran {% else %} change-color__text{% endif %} 
+      {% if section.settings.content_position == 'leftcenter' %} image-banner__pos-left {% endif %}
+      {% if section.settings.content_position == 'leftbottom' %} image-banner__pos-leftbot {% endif %}">
+
+        {% if section.settings.subheading_text != blank %} 
+          <h3 class="heading image-baner__subtext text-color">
+            {{ section.settings.subheading_text }}
+          </h3>
+        {% endif %}
+  
+        {% if section.settings.heading_text != blank %}
+          <h2 class="heading collection-heading text-color {% if section.settings.enable_large_heading %} custom-size {% endif %} ">
+            {{ section.settings.heading_text }}
+          </h2>
+        {% endif %} 
+  
+        {% if section.settings.description_text != blank %}
+          <div class="collection-text ">
+            {{ section.settings.description_text }}
+          </div>
+        {% endif %}
+  
+        {%- if section.settings.primary_btn_label and section.settings.secondary_btn_label -%}
+          <div class="button_wrap">
+            {% if section.settings.primary_btn_label != blank %}
+              <a href="{{ section.settings.primary_button_link }}" class="btn image-banner__btn">
+                {{ section.settings.primary_btn_label }}
+              </a>
+            {% endif %}
+            {% if section.settings.secondary_btn_label != blank %}
+              <a href="{{ section.settings.secondary_button_link }}" class="btn image-banner__btn">
+                {{ section.settings.secondary_btn_label }}
+              </a>
+            {% endif %}
+          </div>
+        {%- endif -%}
+      </div>
+
 
     </div>
   </div>
@@ -50,122 +96,171 @@
   "name": "Image Banner",
   "settings": [
     {
-      "type": "image_picker",
-      "label": "Image",
-      "id": "image"
+      "type": "header",
+      "content": "content"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_large_heading",
+      "label": "Enable large heading"
+    },
+    {
+      "type": "text",
+      "label": "Heading",
+      "default": "Welcome to our store",
+      "id": "heading_text"
+    },
+    {
+      "type": "text",
+      "label": "Subheading",
+      "default": "Banner title",
+      "id": "subheading_text"
+    },
+    {
+      "type": "richtext",
+      "label": "Description",
+      "id": "description_text"
     },
     {
       "type": "select",
-      "label": "Options content",
-      "id": "options",
+      "label": "Content position",
+      "id": "content_position",
       "options": [
         {
-          "label": "Text center",
-          "value": "center"
+          "value": "center",
+          "label": "Center"
         },
         {
-          "label": "Text left",
-          "value": "left"
+          "value": "leftcenter",
+          "label": "Left center"
+        },
+        {
+          "value": "leftbottom",
+          "label": "Left bottom "
         }
-      ]
+
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_content_bg",
+      "label": "Show content background"
+    },
+    {
+      "type": "select",
+      "label": "Color scheme",
+      "id": "color_schema",
+      "options": [
+        {
+          "value": "Accent1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "Accent2",
+          "label": "Accent 2"
+        },
+        {
+          "value": "Accent3",
+          "label": "Accent 3"
+        },
+        {
+          "value": "Accent4",
+          "label": "Accent 4"
+        },
+        {
+          "value": "Accent 5",
+          "label": "Accent 5"
+        }
+
+      ],
+      "default": "Accent1"
+    },
+    {
+      "type": "header",
+      "content": "background"
+    },
+    {
+      "type": "image_picker",
+      "label": "Desktop background image",
+      "id": "des_bg_img",
+      "info": "1600px x 800px .png recommended"
+    },
+    {
+      "type": "image_picker",
+      "label": "Mobile background image",
+      "id": "mb_bg_img",
+      "info": "750 x 1100px .jpg recommended. If none is set, desktop image will be cropped."
+    },
+    {
+      "type": "select",
+      "label": "Height",
+      "id": "height_screen",
+      "options": [
+        {
+          "value": "vh--50",
+          "label": "50% screen height"
+        },
+        {
+          "value": "vh--70",
+          "label": "70% screen height"
+        },
+        {
+          "value": "vh--100",
+          "label": "100% screen height"
+        }
+      ],
+      "default": "vh--70"
+
+    },
+    {
+      "type": "checkbox",
+      "id": "show_scroll_indicator",
+      "label": "Show scroll indicator",
+      "info": "Useful when the banner is a full screen height hero section"
+    },
+    {
+      "type": "range",
+      "unit": "%",
+      "max": 100,
+      "min": 0,
+      "step": 1,
+      "default": 30,
+      "id": "overlay_opa",
+      "label": "Overlay opacity"
+    },
+    {
+      "type": "header",
+      "content": "button"
+    },
+    {
+      "type": "text",
+      "id": "primary_btn_label",
+      "label": "Primary button label",
+      "default": "Check now"
+    },
+    {
+      "type": "url",
+      "id": "primary_button_link",
+      "label": "Primary button link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_btn_label",
+      "label": "Secondary button label",
+      "default": "View details"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Secondary button link"
     }
-  ],
-  "blocks": [
-    {
-      "name": "Heading",
-      "type": "heading",
-      "settings": [
-        {
-          "type": "text",
-          "label": "Heading",
-          "id": "heading",
-          "default": "NEW COLLECTION 2021"  
-        },
-        {
-          "type": "select",
-          "label": "Options size heading",
-          "id": "optionSize",
-          "options": [
-            {
-              "label": "Large",
-              "value": "large"
-            },
-            {
-              "label": "Medium",
-              "value": "medium"
-            },
-            {
-              "label": "Small",
-              "value": "small"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Description",
-      "type": "Description",
-      "settings": [
-        {
-          "type": "text",
-          "label": "Description",
-          "id": "Description",
-          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu" 
-        }
-      ]
-    },
-    {
-      "name": "Link",
-      "type": "Link",
-      "settings": [
-        {
-          "type": "text",
-          "label": "Link",
-          "id": "Link",
-          "default": "SEE MORE"  
-        },
-        {
-          "type": "url",
-          "id": "more_link",
-          "label": "Link"
-        }
-      ]
-    },
-    {
-      "name": "Button",
-      "type": "Button",
-      "settings": [
-        {
-          "type": "text",
-          "label": "Button",
-          "id": "Button",
-          "default": "BACK TO SHOPPING NOW"  
-        },
-        {
-          "type": "url",
-          "label": "Botton url ",
-          "id": "Botton_url"
-        }
-      ]
-    }
+
   ],
   "presets": [
     {
-      "name": "Image Banner",
-      "blocks": [
-        {
-          "type": "heading"
-        },
-        {
-          "type": "Description"
-        },
-        {
-          "type": "Link"
-        },
-        {
-          "type": "Button"
-        }
-      ]
+      "name": "Image Banner"
+      
     }
   ]
 }

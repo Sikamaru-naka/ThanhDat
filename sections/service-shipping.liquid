@@ -12,59 +12,51 @@
 {% endfor %}
 
 
-<div class="service {% if section.settings.bgc == "gray" and section.settings.show_content_bgc %}  background_secondary {% endif %} ">
+<div class="service {% if section.settings.bgc == "gray" %}  background_secondary {% endif %} ">
   <div class="service-wrap grid wide1 container__large">
     {% if section.settings.heading != blank %}
       <h2 class="heading category-heading service-heading mb0">{{ section.settings.heading }}</h2>
     {% endif %}
 
     {% if section.settings.subheading != blank %}
-      <p class="form-text title-product--text colors-text-secondary tact">
+      <p class="form-text title-product--text colors-text-secondary ">
         {{ section.settings.subheading }}
       </p>
     {% endif %}
-    <div class="row pt-100 {% if section.settings.carousel %} service__wrapper {% endif %}">
+    <div class="row pt-100">
       {% for block in section.blocks %}
         {%- liquid
-          if section.settings.item_per_row == 6
-            assign footer_grid_class = 'l-2'
-          elsif section.settings.item_per_row == 5
-            assign footer_grid_class = 'l-2-4'
-          elsif section.settings.item_per_row == 4
+          if section.blocks.size == 4
             assign footer_grid_class = 'l-3'
-          elsif section.settings.item_per_row == 3
+          elsif section.blocks.size == 3
             assign footer_grid_class = 'l-4'
-          elsif section.settings.item_per_row == 2
+          elsif section.blocks.size == 2
             assign footer_grid_class = 'l-6'
-          elsif section.settings.item_per_row == 1
+          elsif section.blocks.size == 1
             assign footer_grid_class = 'l-12'
           endif
         -%}
-        <div class="col {{ footer_grid_class }} mb-20 service__item">
-          <div class="service-box background-third {% if section.settings.content_align == 'center' and section.settings.icon_position == 'top' %} tact {% endif %}
-          {% if block.settings.border == 'border' %} border {% endif %} 
-          {% if section.settings.icon_position == 'left' %} dfn {% endif %}">
+        <div class="col c-12 {{ footer_grid_class }} mb-20">
+          <div class="service-box background-third {% if block.settings.border == 'border' %} border {% endif %}">
             {% render 'list-icon-shipping', options-icon: block.settings.options_icon %}
-            <div class="service-info__wrap">
-              {% if block.settings.heading != blank %} 
-                <h3 class="heading service-title options__padding--header">
-                  {{ block.settings.heading }}
-                </h3>
-              {% endif %}
-              {% if block.settings.description != blank %}
-                <p class="service-descript colors-text-secondary">
-                  {{ block.settings.description }}
-                </p>
-              {% endif %} 
-              {% if block.settings.link != blank %}
-                <a href="{{ block.settings.more_link }}" class="collection-more service-more">
-                  {{ block.settings.link }}
-                  {% if block.settings.link != blank %}
-                    {% render 'icon-arrow-right-black' %}
-                  {% endif %}
-                </a>
-              {% endif %}
-            </div>
+            {% if block.settings.heading != blank %} 
+              <h3 class="heading service-title options__padding--header">
+                {{ block.settings.heading }}
+              </h3>
+            {% endif %}
+            {% if block.settings.description != blank %}
+              <p class="service-descript colors-text-secondary">
+                {{ block.settings.description }}
+              </p>
+            {% endif %} 
+            {% if block.settings.link != blank %}
+              <a href="{{ block.settings.more_link }}" class="collection-more service-more">
+                {{ block.settings.link }}
+                {% if block.settings.link != blank %}
+                  {% render 'icon-arrow-right-black' %}
+                {% endif %}
+              </a>
+            {% endif %}
           </div>
         </div>
       {% endfor %}
@@ -76,6 +68,18 @@
 {
   "name": "Service shipping",
   "settings": [
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "heading",
+      "default": "OUR SERVICES"
+    },
+    {
+      "type":"text",
+      "label":"subheading",
+      "id":"subheading",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
+    },
     {
       "type": "select",
       "label": "Background color",
@@ -90,90 +94,13 @@
           "value": "light"
         }
       ]
-    },
-    {
-      "type": "header",
-      "content": "content"
-    },
-    {
-      "type": "text",
-      "label": "Heading",
-      "id": "heading",
-      "default": "OUR SERVICES"
-    },
-    {
-      "type":"text",
-      "label":"Subheading",
-      "id":"subheading",
-      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
-    },
-    {
-      "type": "header",
-      "content": "icon with text items"
-    },
-    {
-      "type": "select",
-      "id": "content_align",
-      "label": "Content alignment",
-      "options":[
-        {
-          "label": "Left",
-          "value": "left"
-        },
-        {
-          "label": "Center",
-          "value": "center"
-        }
-      ],
-      "default": "center"
-    },
-    {
-      "type": "select",
-      "id": "icon_position",
-      "label": "Icon position",
-      "options":[
-        {
-          "label": "Top",
-          "value": "top"
-        },
-        {
-          "label": "Left",
-          "value": "left"
-        }
-      ],
-      "default": "top"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_content_bgc",
-      "label": "Show content background",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "layout"
-    },
-    {
-      "type": "range",
-      "id": "item_per_row",
-      "label": "Item per row",
-      "min": 2,
-      "max": 6,
-      "step": 1,
-      "default": 4
-    },
-    {
-      "type": "checkbox",
-      "label": "Enable carousel on mobile",
-      "id": "carousel",
-      "info": "Show the content list as a carousel instead of rows",
-      "default": false
     }
   ],
   "blocks": [
     {
       "name": "Column",
       "type": "column",
+      "limit": 4,
       "settings": [
         {
           "type": "select",
