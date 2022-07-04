@@ -1,8 +1,35 @@
 
+<style>
+  .cart__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cart__note label {
+    font-size: 17px;
+    line-height: 22px;
+    margin-bottom: 14px;
+    display: block;
+    margin-top: 30px;
+  }
+
+  .cart__note textarea {
+    width: 300px;
+    height: 130px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .flex-end {
+    justify-content: flex-end;
+  }
+
+</style>
+
 {% if cart == empty %}
   <div class="container cart-empty">
-    <h1 class="cart-empty__heading">Your cart is empty</h1>
-    <a href="{{ routes.all_products_collection_url }}" class="btn btn--cart-empty">Continue shopping</a>
+    <h1 class="cart-empty__heading">{{ "templates.main_cart.message" | t }}</h1>
+    <a href="{{ routes.all_products_collection_url }}" class="btn btn--cart-empty">{{ "templates.404.back_shop" | t }}</a>
   </div>
 {% else %}
   <form action="{{ routes.cart_url }}" method="post" id="cart">
@@ -11,17 +38,17 @@
       <div class="cart">
         <div class="cart-open dfs">
           <h1 class="cart-open__heading">
-            Your cart ({{ cart.item_count }})
+            {{ "templates.main_cart.title" | t }} ({{ cart.item_count }})
           </h1>
-          <a href="{{ routes.all_products_collection_url }}" class="cart-open__link">Continue shopping</a>
+          <a href="{{ routes.all_products_collection_url }}" class="cart-open__link">{{ "templates.404.back_shop" | t }}</a>
         </div>
     
         <table class="cart-items">
           <thead>
             <tr class="cart-item__headings">
-              <th class="cart-item__heading-title"> Product </th>
-              <th class="cart-item__heading-quantity"> Quantity </th>
-              <th class="cart-item__heading-total" > Total </th>
+              <th class="cart-item__heading-title"> {{ "templates.main_cart.product" | t }} </th>
+              <th class="cart-item__heading-quantity"> {{ "templates.main_cart.quantity" | t }} </th>
+              <th class="cart-item__heading-total" > {{ "templates.main_cart.total" | t }} </th>
             </tr>
           </thead>
           
@@ -64,7 +91,7 @@
 
                     <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
                       <a href="{{ item.url_to_remove }}" class="button--tertiary">
-                        Remove
+                        {{ "templates.main_cart.remove" | t }}
                       </a>
                     </cart-remove-button>
                   </div>
@@ -80,20 +107,28 @@
       </div>
     
     
-      <div class="cart__bottom">
-        <div class="cart__bottom-total">
+      <div class="cart__bottom {% if section.settings.show_cart_note == blank %} flex-end{% endif %}">
+
+        {%- if section.settings.show_cart_note -%}
+          <cart-note class="cart__note field">
+            <label for="Cart-note">Order notes</label>
+            <textarea class="text-area field__input" name="note" form="cart" id="Cart-note" placeholder="">{{ cart.note }}</textarea>
+          </cart-note>
+        {%- endif -%}
+        
+        <div class="cart__bottom-total ">
       
           <p class="cart__bottom-subtotal">
-            Subtotal: 
+            {{ "templates.main_cart.subtotal" | t }}: 
             <span> {{ cart.total_price | money_with_currency }} </span>
           </p>
           
           <div class="cart__bottom-btn">
 
-            <button type="submit" name="update" class="btn btn--secondary update-cart">Update</button>
+            <button type="submit" name="update" class="btn btn--secondary update-cart">{{ "templates.main_cart.update_btn" | t }}</button>
 
             <button type="submit" id="checkout" class="btn cart__bottom-checkout" name="checkout">
-              Checkout
+              {{ "templates.main_cart.checkout_btn" | t }}
             </button>
           </div>
 
@@ -105,6 +140,21 @@
 
   </form>
 {% endif %}
+
+{% schema %}
+{
+  "name": "Subtotal",
+  "class": "cart__footer-wrapper",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_cart_note",
+      "default": false,
+      "label": "Enable cart note"
+    }
+  ]
+}
+{% endschema %}
 
 
 <script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>

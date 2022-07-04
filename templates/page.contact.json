@@ -1,16 +1,19 @@
 {
   "sections": {
-    
-    "1652062584a605c630": {
-      "type": "sub-header",
+    "main": {
+      "type": "main-page",
       "settings": {
-        "heading": "CONTACT US"
       }
     },
-    "16520625718dd0424e": {
+    "1653385432bb5f8c79": {
+      "type": "sub-header",
+      "settings": {
+      }
+    },
+    "1653385435c89d6e27": {
       "type": "contact",
       "blocks": {
-        "16520625715a4887d9-0": {
+        "1653385435d5c299ee-0": {
           "type": "column",
           "settings": {
             "options_icon": "email",
@@ -18,7 +21,7 @@
             "detail": "Fill in the form"
           }
         },
-        "16520625715a4887d9-1": {
+        "1653385435d5c299ee-1": {
           "type": "column",
           "settings": {
             "options_icon": "Phone-around",
@@ -26,7 +29,7 @@
             "detail": "+39 348 317 9151"
           }
         },
-        "16520625715a4887d9-2": {
+        "1653385435d5c299ee-2": {
           "type": "column",
           "settings": {
             "options_icon": "Phone",
@@ -34,39 +37,34 @@
             "detail": "800 987 654"
           }
         },
-        "16520625715a4887d9-3": {
+        "1653385435d5c299ee-3": {
           "type": "column",
           "settings": {
             "options_icon": "Chat",
             "description": "CHAT WITH US",
             "detail": "800 987 654"
           }
-        },
-        "16520625715a4887d9-4": {
-          "type": "time",
-          "settings": {
-            "description": "CUSTOMER SERVICE OPENING HOURS",
-            "daily_time": "Monday-Friday: 09: 00-18: 30",
-            "weekend": "Saturday: 09: 00-12: 30"
-          }
         }
       },
       "block_order": [
-        "16520625715a4887d9-0",
-        "16520625715a4887d9-1",
-        "16520625715a4887d9-2",
-        "16520625715a4887d9-3",
-        "16520625715a4887d9-4"
+        "1653385435d5c299ee-0",
+        "1653385435d5c299ee-1",
+        "1653385435d5c299ee-2",
+        "1653385435d5c299ee-3"
       ],
       "settings": {
         "heading": "OUR CONSULTANTS WILL BE HAPPY TO HELP YOU",
-        "description": "Before contacting us we recommend that you read the frequently asked questions"
+        "description": "<p> Before contacting us we recommend that you read the frequently asked questions <\/p>",
+        "enable_time": true,
+        "time_description": "CUSTOMER SERVICE OPENING HOURS",
+        "daily_time": "Monday-Friday: 09: 00-18: 30",
+        "weekend": "Saturday: 09: 00-12: 30"
       }
     }
   },
   "order": [
-    
-    "1652062584a605c630",
-    "16520625718dd0424e"
+    "main",
+    "1653385432bb5f8c79",
+    "1653385435c89d6e27"
   ]
 }

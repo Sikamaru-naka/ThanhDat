@@ -1,35 +1,50 @@
 
 
+{% style %}
+
+@media (max-width: 767px) {
+
+  .options__padding--image-text{
+    padding: {{ section.settings.padding_top }}px {{ section.settings.padding_bottom }}px;
+  }
+  
+}
+
+
+{% endstyle %}
+
+
 <div class="feature {% if section.settings.width == 'full' %} background_secondary {% endif %}">
   <div class="featured-wrap grid wide1 ">
     <div class="row no-gutters df m-mobile {% if section.settings.width == 'large' %} featured-options--bgc {% endif %}">
     {% if section.settings.layout == 'left' %}
       <div class="col c-12 m-12 l-6 oder-tab-mb-2 mt-30">
-        <div class="featured-options discover-content p-0">
+        <div class="featured-options discover-content options__padding--image-text">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when "icon"%}
-                {%- liquid
-                  if block.settings.options_icon == 'icon1'
-                    render 'icon-bracelet'
-                  elsif block.settings.options_icon == 'icon2' 
-                    render 'icon-diamond'
-                  else 
-                    render 'icon-candle-heart'
-                  endif
-                -%}
+                {% render 'list-icon-image', image-icon: block.settings.options_icon %}
+
               {% when 'heading' %}
-                <div class="featured-title">{{ block.settings.heading }}</div>
+                {% if block.settings.heading != blank %}
+                  <div class="featured-title">{{ block.settings.heading }}</div>
+                {% endif %}
               {% when 'subheading' %}
-                <h3 class="featured-subheading color-text-primary">{{ block.settings.subheading }}</h3> 
+                {% if block.settings.subheading != blank %}
+                  <h3 class="featured-subheading color-text-primary">{{ block.settings.subheading }}</h3> 
+                {% endif %}
               {% when 'description' %}
-              <div class="featured-descript colors-text-secondary">
-                {{ block.settings.richtext }}
-              </div>
+                {% if block.settings.richtext != blank %}
+                  <div class="featured-descript colors-text-secondary">
+                    {{ block.settings.richtext }}
+                  </div>
+                {% endif %}
               {% when 'button' %}
-              <a href="{{ block.settings.link }}" class="btn featured-btn">
-                {{ block.settings.button }}
-              </a>
+                {% if block.settings.button != blank %}
+                  <a href="{{ block.settings.link }}" class="btn featured-btn">
+                    {{ block.settings.button }}
+                  </a>
+                {% endif %}
             {% endcase %}
           {% endfor %}
         </div>
@@ -41,7 +56,7 @@
         {% case block.type %}
         {% when 'image' %}
             {%- if block.settings.image != blank -%}
-              <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="featured-img {% if section.settings.width == 'large' %} featured-img-mw {% endif %}" src="{{ block.settings.image | image_url: width: 720, height: 720 }}" alt="">
+              <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="featured-img {% if section.settings.width == 'large' %} featured-img-mw {% endif %}" src="{{ block.settings.image | image_url: width: 720, height: 720 }}" alt="picture">
             {%- else -%}
               {{ 'collection-1' | placeholder_svg_tag: 'featured-img bg-gray ' }}
             {%- endif -%} 
@@ -51,31 +66,33 @@
 
     {% if section.settings.layout == 'right' %}
       <div class="col c-12 m-12 l-6 oder-tab-mb-2 mt-30">
-        <div class="featured-options discover-content pl-0 p-0">
+        <div class="featured-options discover-content pl-0 options__padding--image-text">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when "icon" %}
-                {%- liquid
-                  if block.settings.options_icon == 'icon1'
-                    render 'icon-bracelet'
-                  elsif block.settings.options_icon == 'icon2' 
-                    render 'icon-diamond'
-                  else 
-                    render 'icon-candle-heart'
-                  endif
-                -%}
-              {% when 'heading' %}
-                <div class="featured-title">{{ block.settings.heading }}</div>
-              {% when 'subheading' %}
-                <h3 class="featured-subheading color-text-primary">{{ block.settings.subheading }}</h3> 
-              {% when 'description' %}
-              <div class="featured-descript colors-text-secondary">
-                {{ block.settings.richtext }}
-              </div>
-              {% when 'button' %}
-                <a href="{{ block.settings.link }}" class="btn featured-btn">
-                  {{ block.settings.button }}
-                </a>
+                
+                {% render 'list-icon-image', image-icon: block.settings.options_icon %}
+
+                {% when 'heading' %}
+                  {% if block.settings.heading != blank %}
+                    <div class="featured-title">{{ block.settings.heading }}</div>
+                  {% endif %}
+                {% when 'subheading' %}
+                  {% if block.settings.subheading != blank %}
+                    <h3 class="featured-subheading color-text-primary">{{ block.settings.subheading }}</h3> 
+                  {% endif %}
+                {% when 'description' %}
+                  {% if block.settings.richtext != blank %}
+                    <div class="featured-descript colors-text-secondary">
+                      {{ block.settings.richtext }}
+                    </div>
+                  {% endif %}
+                {% when 'button' %}
+                  {% if block.settings.button != blank %}
+                    <a href="{{ block.settings.link }}" class="btn featured-btn">
+                      {{ block.settings.button }}
+                    </a>
+                {% endif %}
             {% endcase %}
           {% endfor %}        
         </div>
@@ -122,6 +139,26 @@
           "label": "Large width"
         }
       ]
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Custom padding top,buttom on mobile",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Custom padding left,right on mobile",
+      "default": 30
     }
   ],
   "blocks": [

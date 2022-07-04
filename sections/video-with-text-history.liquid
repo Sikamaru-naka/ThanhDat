@@ -4,10 +4,8 @@
   {% if section.settings.position == 'above' %}
     <div class="history-vid">
         
-      <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | image_url: width: 1720, height: 1720 }}" alt="">
-
-      <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="history-play {% if section.settings.imagevid == blank %} hidden {% endif %}" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
-        
+      <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | image_url: width: 1720, height: 1720 }}" alt="discover-img">
+      {% render 'play-vid' %}        
         
       {%- if section.settings.video_url.type == 'youtube' -%}
         <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1" class="js-youtube control-video--his" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
@@ -20,23 +18,26 @@
   {% for block in section.blocks %}
     {% case block.type %}
       {% when "heading" %}
+      {% if block.settings.heading != blank %}
         <h1 class="birthday-heading heading ">
           {{ block.settings.heading }}
         </h1>
+      {% endif %}
       {% when "description" %}
+      {% if block.settings.richtext != blank %}
         <div class="birthday-descript colors-text-secondary {% if section.settings.position == 'below' %} mb-30 {% endif %}">
           {{ block.settings.richtext }}
         </div>
+      {% endif %}
     {% endcase %}
   {% endfor %}
   
   {% if section.settings.position == 'below' %}
     <div class="history-vid">
         
-      <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | image_url: width: 720, height: 720 }}" alt="">
+      <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | image_url: width: 720, height: 720 }}" alt="picture">
 
-      <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="history-play {% if section.settings.imagevid == blank %} hidden {% endif %}" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
-        
+      {% render 'play-vid' %}
         
       {%- if section.settings.video_url.type == 'youtube' -%}
         <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1" class="js-youtube control-video--his" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>

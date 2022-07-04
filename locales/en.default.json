@@ -16,51 +16,60 @@
     "name": {
       "first_name": "First Name",
       "last_name": "Last Name"
+    },
+    "thanks": {
+      "thank": "Thanks for subscribing !!!"
     }
   },
-  "pagefly": {
-    "products": {
-      "product": {
-        "regular_price": "Regular price",
-        "sold_out": "Sold out",
-        "unavailable": "Unavailable",
-        "on_sale": "Sale",
-        "quantity": "Quantity",
-        "add_to_cart": "Add to cart",
-        "back_to_collection": "Back to {{ title }}",
-        "view_details": "View details"
-      }
+  "dealer": {
+    "label": {
+      "title": "TITLE",
+      "first_name": "FIRST NAME",
+      "sur_name": "SUR NAME",
+      "email": "EMAIL",
+      "phone": "PHONE",
+      "city": "CITY",
+      "company": "COMPANY",
+      "province": "PROVINCE",
+      "vat_number": "VAT NUMBER",
+      "request": "REQUEST",
+      "message": "MESSAGE",
+      "provision_check1": "I agree to receive communications regarding exclusive offers, services and news.",
+      "provision_check2": "After reading the privacy policy , I consent to the processing of my personal data.",
+      "submit": "SEND INQUIRY"
+    }
+  },
+  "socials_media": {
+    "socials": {
+      "social_title": "SOCIAL"
+    }
+  },
+  "products": {
+    "product": {
+      "add_cart": "ADD TO CART",
+      "product_name": "PRODUCT NAME"
+    }
+  },
+  "templates": {
+    "404": {
+      "title": "Page not found",
+      "subtext": "404",
+      "back_shop": "Continue Shopping"
     },
     "article": {
-      "tags": "Tags:",
-      "all_topics": "All topics",
-      "by_author": "by {{ author }}",
-      "posted_in": "Posted in",
-      "read_more": "Read more",
-      "back_to_blog": "Back to {{ title }}"
+      "btn": "Back to blog"
     },
-    "comments": {
-      "title": "Leave a comment",
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "post": "Post comment",
-      "moderated": "Please note, comments must be approved before they are published",
-      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
-      "success": "Your comment was posted successfully! Thank you!",
-      "comments_with_count": {
-        "one": "{{ count }} comment",
-        "other": "{{ count }} comments"
-      }
-    },
-    "password_page": {
-      "login_form_message": "Enter store using password:",
-      "login_form_password_label": "Password",
-      "login_form_password_placeholder": "Your password",
-      "login_form_submit": "Enter",
-      "signup_form_email_label": "Email",
-      "signup_form_success": "We will send you an email right before we open!",
-      "password_link": "Enter using password"
+    "main_cart": {
+      "message": "Your cart is empty",
+      "title": " Your Cart",
+      "product": "Product",
+      "quantity": "Quantity",
+      "total": "Total",
+      "back_shop": "Continue shopping",
+      "remove": "Remove",
+      "subtotal": "Subtotal",
+      "update_btn": "UPDATE",
+      "checkout_btn": "CHECKOUT"
     }
   }
 }

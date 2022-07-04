@@ -16,51 +16,60 @@
     "name": {
       "first_name": "ファーストネーム",
       "last_name": "苗字"
+    },
+    "thanks": {
+      "thank": "購読していただきありがとうございます!!!"
     }
   },
-  "pagefly": {
-    "products": {
-      "product": {
-        "regular_price": "Regular price",
-        "sold_out": "Sold out",
-        "unavailable": "Unavailable",
-        "on_sale": "Sale",
-        "quantity": "Quantity",
-        "add_to_cart": "Add to cart",
-        "back_to_collection": "Back to {{ title }}",
-        "view_details": "View details"
-      }
+  "dealer": {
+    "label": {
+      "title": "タイトル",
+      "first_name": "ファーストネーム",
+      "sur_name": "家系の名前",
+      "email": "Eメール",
+      "phone": "電話",
+      "city": "街",
+      "company": "会社",
+      "province": "州",
+      "vat_number": "VAT番号",
+      "request": "リクエスト",
+      "message": "メッセージ",
+      "provision_check1": "独占オファー、サービス、ニュースに関する連絡を受け取ることに同意します",
+      "provision_check2": "プライバシーポリシーを読んだ後、私は自分の個人データの処理に同意します。",
+      "submit": "お問い合わせを送信"
+    }
+  },
+  "socials_media": {
+    "socials": {
+      "social_title": "ソーシャル"
+    }
+  },
+  "products": {
+    "product": {
+      "add_cart": "カートに追加",
+      "product": "商品名"
+    }
+  },
+  "templates": {
+    "404": {
+      "title": "ページが見つかりません",
+      "subtext": "404",
+      "back_shop": "ショッピングを続ける"
     },
     "article": {
-      "tags": "Tags:",
-      "all_topics": "All topics",
-      "by_author": "by {{ author }}",
-      "posted_in": "Posted in",
-      "read_more": "Read more",
-      "back_to_blog": "Back to {{ title }}"
+      "btn": "ブログに戻る"
     },
-    "comments": {
-      "title": "Leave a comment",
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "post": "Post comment",
-      "moderated": "Please note, comments must be approved before they are published",
-      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
-      "success": "Your comment was posted successfully! Thank you!",
-      "comments_with_count": {
-        "one": "{{ count }} comment",
-        "other": "{{ count }} comments"
-      }
-    },
-    "password_page": {
-      "login_form_message": "Enter store using password:",
-      "login_form_password_label": "Password",
-      "login_form_password_placeholder": "Your password",
-      "login_form_submit": "Enter",
-      "signup_form_email_label": "Email",
-      "signup_form_success": "We will send you an email right before we open!",
-      "password_link": "Enter using password"
+    "main_cart": {
+      "message": "あなたのカートは空です",
+      "title": " あなたのカートは空です",
+      "product": "製品",
+      "quantity": "量",
+      "total": "合計",
+      "back_shop": "ショッピングを続ける",
+      "remove": "削除する",
+      "subtotal": "小計",
+      "update_btn": "アップデート",
+      "checkout_btn": "小切手"
     }
   }
 }

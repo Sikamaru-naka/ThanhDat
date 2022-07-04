@@ -2,11 +2,23 @@
 /* mobile */
 
 @media (max-width: 767px) {
+  .service__item{
+    min-width: 250px;
+  }
+
+  .category-product a{
+    font-size: 1rem;
+    width: 120px;
+    margin: auto;
+    /* margin: 0px 16.5%; */
+  }  
+
   .nav-form{
     width: 100%;
   }
   .category-product__img svg{
-    height: 165px;
+    /* height: 165px; */
+    height: 100%;
   }
   .cart-item__heading-total,
   .cart-item__heading-quantity {
@@ -56,9 +68,9 @@
         line-height: var(--line-height-heading-mb);
     }
 
-    .btn-category {
+    /* .btn-category {
         bottom: 10px;
-    }
+    } */
 
 
     .category-heading {
@@ -241,7 +253,7 @@
     }
 
     .feature-product form {
-        margin-bottom: 10px;
+        margin-bottom: 40px;
     }
 
     .heading.large{
@@ -303,6 +315,10 @@
         font-size: 2.5rem;
         line-height: 3rem;
     }
+    .slide-text{
+        padding: 0;
+        padding-bottom: 20px;
+    }
 }
 
 /* tablet */
@@ -332,7 +348,12 @@
     .blog__post-title h2{
         font-size: 3rem;
     }
-
+    .slide-text{
+        padding-top: 100px;
+    }
+    .btn-category{
+        margin: 0px 16.7%;
+    }
     
 }
 
@@ -408,9 +429,28 @@
         z-index: 3;
         width: 100%;
         box-shadow: inset 0px -1px 0px #ECECEC; 
-        height: 0;
         overflow: hidden;
+        height: 0;
+        /* clip-path: polygon(100% 0, 0 0, 0 0, 100% 0); */
+        transition: all 0.3s linear;
     }
+
+    /* .menu-active{
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    } */
+
+    .menu-active1 {
+      height: 100vh;
+    }
+
+
+
+
+
+
+
+
+
 
     .header-items {
         padding: 14px;
@@ -507,6 +547,14 @@
         height: 0;
     }
    
+    .h10vh{
+        height: 10vh;
+    }
+
+    .select-product__option-level:nth-child(1){
+        padding-top: 14px;
+    }
+
     .collection__options{
         flex-direction: column
     }
@@ -555,10 +603,11 @@
 
 @media (min-width: 1024px) {
     .product-option{
-        display: none
+       visibility: hidden;
     }
     .header-items:hover .product-option {
-        display: block;
+       visibility: unset;
+
     }
     .product-option {
         position: absolute;
@@ -586,11 +635,11 @@
     
   }
 
-  .header-nav {
+  /* .header-nav {
     position: relative;
     box-shadow: inset 0px -1px 0px #ececec;
     z-index: 10;
-  }
+  } */
 
   .search-form {
     left: 0;

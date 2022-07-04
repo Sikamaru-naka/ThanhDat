@@ -2,7 +2,7 @@
   <div class="collection-wrap">
     <div class="collection-img">
       {%- if section.settings.image != blank -%}
-        <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ section.settings.image | image_url: width: 1720, height: 1720 }}"/>
+        <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ section.settings.image | image_url: width: 1720, height: 1720 }}" alt="image collection"/>
       {%- elsif section.settings.image == blank -%}
         {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
       {%- endif -%}
@@ -12,24 +12,32 @@
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'heading' %}
+          {% if block.settings.heading != blank %}
             <h2 class="heading collection-heading text-color {{ block.settings.optionSize }}">
               {{ block.settings.heading }}
             </h2>
+          {% endif %} 
           {% when 'Description' %}
+          {% if block.settings.Description != blank %}
             <p class="collection-text {% if section.settings.options == 'center' %} width-unset {% endif %}">
               {{ block.settings.Description }}
             </p>
+          {% endif %}
           {% when 'Link' %}
+          {% if block.settings.Link != blank %}
             <a href="{{ block.settings.more_link }}" class="collection-more text-color">
               {{ block.settings.Link }}
               {% if block.settings.Link != blank %}
                 {% render 'icon-arrow-right-white' %}
               {% endif %}
             </a>
+          {% endif %}
           {% when 'Button' %}
+          {% if block.settings.Button != blank %}
             <a href="{{ block.settings.Botton_url }}" class="btn">
               {{ block.settings.Button }}
             </a>
+          {% endif %}
         {% endcase %}
       {% endfor %}
 

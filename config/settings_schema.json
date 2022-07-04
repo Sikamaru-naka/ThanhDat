@@ -17,13 +17,13 @@
       {
         "type": "color",
         "id": "colors_text",
-        "default": "#171719",
+        "default": "#fff",
         "label": "Text color"
       },
       {
         "type": "color",
         "id": "colors_text_primary",
-        "default": "#fff",
+        "default": "#171719",
         "label": "Text color primary"
       },
       {
@@ -35,31 +35,31 @@
       {
         "type": "color",
         "id": "background_primary",
-        "default": "#fff",
+        "default": "#171719",
         "label": "Background-primary"
       },
       {
         "type": "color",
         "id": "background_secondary",
-        "default": "#171719",
+        "default": "#F5F5F5",
         "label": "Background-secondary"
       },
       {
         "type": "color",
         "id": "background_third",
-        "default": "#F5F5F5",
+        "default": "#fff",
         "label": "Background-third"
       },
       {
         "type": "color",
         "id": "background_btn",
-        "default": "#fff",
+        "default": "#EE4D2D",
         "label": "Background buttom"
       },
       {
         "type": "color",
         "id": "background_btn_secondary",
-        "default": "#EE4D2D",
+        "default": "#fff",
         "label": "Background buttom"
       }
     ]

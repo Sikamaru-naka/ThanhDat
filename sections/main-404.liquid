@@ -18,9 +18,9 @@
 </style>
 
 <div class="page__404 grid wide">
-  <h2>404</h2>
-  <p>Page not found</p>
+  <h2>{{ "templates.404.subtext" | t }}</h2>
+  <p>{{ "templates.404.title" | t }}</p>
   <a href="{{ routes.all_products_collection_url }}" class="btn">
-    Continue Shopping
+    {{ "templates.404.back_shop" | t }}
   </a>
 </div>

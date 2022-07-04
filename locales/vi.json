@@ -16,51 +16,60 @@
     "name": {
       "first_name": "Họ",
       "last_name": "Tên"
+    },
+    "thanks": {
+      "thank": "Cảm Ơn Đã Đăng Kí"
     }
   },
-  "pagefly": {
-    "products": {
-      "product": {
-        "regular_price": "Regular price",
-        "sold_out": "Sold out",
-        "unavailable": "Unavailable",
-        "on_sale": "Sale",
-        "quantity": "Quantity",
-        "add_to_cart": "Add to cart",
-        "back_to_collection": "Back to {{ title }}",
-        "view_details": "View details"
-      }
+  "dealer": {
+    "label": {
+      "title": "TIÊU ĐỀ",
+      "first_name": "HỌ",
+      "sur_name": "TÊN ",
+      "email": "THƯ ĐIỆN TỬ",
+      "phone": "ĐIỆN THOẠI",
+      "city": "THÀNH PHỐ",
+      "company": "CÔNG TY",
+      "province": "TỈNH ",
+      "vat_number": "THUẾ VAT",
+      "request": "YÊU CẦU",
+      "message": "TIN NHẮN",
+      "provision_check1": "TÔI ĐỒNG Ý NHẬN THÔNG BÁO LIÊN QUAN ĐẾN CÁC ƯU ĐÃI, DỊCH VỤ VÀ CÁC TIN TỨC ĐỘC QUYỀN.",
+      "provision_check2": "SAU KHI ĐỌC CHÍNH SÁCH BẢO MẬT, TÔI ĐỒNG Ý VỚI VIỆC XỬ LÝ DỮ LIỆU CÁ NHÂN CỦA MÌNH.",
+      "submit": "GỬI YÊU CẦU"
+    }
+  },
+  "socials_media": {
+    "socials": {
+      "social_title": "PHƯƠNG TIỆN XÃ HỘI"
+    }
+  },
+  "products": {
+    "product": {
+      "add_cart": "THÊM VÀO GIỎ HÀNG",
+      "product_name": "TÊN SẢN PHẨM"
+    }
+  },
+  "templates": {
+    "404": {
+      "title": "Không Tìm Thấy Trang",
+      "subtext": "404",
+      "back_shop": "Tiếp tục mua sắm"
     },
     "article": {
-      "tags": "Tags:",
-      "all_topics": "All topics",
-      "by_author": "by {{ author }}",
-      "posted_in": "Posted in",
-      "read_more": "Read more",
-      "back_to_blog": "Back to {{ title }}"
+      "btn": "Quay Về Trang Blog"
     },
-    "comments": {
-      "title": "Leave a comment",
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "post": "Post comment",
-      "moderated": "Please note, comments must be approved before they are published",
-      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
-      "success": "Your comment was posted successfully! Thank you!",
-      "comments_with_count": {
-        "one": "{{ count }} comment",
-        "other": "{{ count }} comments"
-      }
-    },
-    "password_page": {
-      "login_form_message": "Enter store using password:",
-      "login_form_password_label": "Password",
-      "login_form_password_placeholder": "Your password",
-      "login_form_submit": "Enter",
-      "signup_form_email_label": "Email",
-      "signup_form_success": "We will send you an email right before we open!",
-      "password_link": "Enter using password"
+    "main_cart": {
+      "message": "Giỏ Hàng Của Bạn Hiện Đang Trống",
+      "title": " Giỏ Hàng Của Bạn",
+      "product": "Sản Phẩm",
+      "quantity": "Số Lượng",
+      "total": "Tổng",
+      "back_shop": "Tiếp tục mua sắm",
+      "remove": "Xóa",
+      "subtotal": "Tổng Số Tiền",
+      "update_btn": "CẬP NHẬT",
+      "checkout_btn": "THANH TOÁN"
     }
   }
 }

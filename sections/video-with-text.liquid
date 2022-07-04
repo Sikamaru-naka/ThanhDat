@@ -6,10 +6,9 @@
         <div class="col l-6 m-6 c-12">
           <div class="discover-vid">
             
-            <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | image_url: width: 720, height: 720 }}" alt="">
+            <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | image_url: width: 720, height: 720 }}" alt="discover-img">
 
-            <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-play {% if section.settings.imagevid == blank %} hidden {% endif %}" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
-
+            {% render 'play-vid' %}
             
             {%- if section.settings.video_url.type == 'youtube' -%}
               <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1" class="js-youtube control-video" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
@@ -28,19 +27,25 @@
             {% for block in section.blocks %}
               {% case block.type %}
                 {% when 'heading' %}
-                  <h2 class="heading color-text-primary">
-                    {{ block.settings.heading }}
-                  </h2>
+                  {% if block.settings.heading != blank %}
+                    <h2 class="heading color-text-primary  ">
+                      {{ block.settings.heading }}
+                    </h2>
+                  {% endif %}
                 {% when 'description' %}
-                  <div class="discover-content__text">
-                    {{ block.settings.richtext }}
-                  </div>
+                  {% if block.settings.richtext != blank %}
+                    <div class="discover-content__text  ">
+                      {{ block.settings.richtext }}
+                    </div>
+                  {% endif %}
                 {% when 'link' %}
+                {% if block.settings.btn != blank %}
                   <div class="">
-                    <a href="{{ block.settings.link }}" class="btn">
+                    <a href="{{ block.settings.link }}" class="btn  ">
                       {{ block.settings.btn }}
                     </a>
                   </div>
+                {% endif %}
                 {% endcase %}
             {% endfor %}
           </div>
@@ -53,8 +58,7 @@
             
             <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | image_url: width: 720, height: 720 }}" alt="">
 
-            <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-play" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
-
+            {% render 'play-vid' %}
             
             {%- if section.settings.video_url.type == 'youtube' -%}
               <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1" class="js-youtube control-video" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>

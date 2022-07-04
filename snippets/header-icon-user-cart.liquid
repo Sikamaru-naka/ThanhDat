@@ -1,0 +1,29 @@
+<ul class="header-func-list">
+
+  {%- if shop.customer_accounts_enabled -%}
+  <li>
+    <div class="user-settings">
+      <a href="{{ routes.account_login_url }}">
+        {% render 'icon-user' %}
+      </a>
+    </div>
+  </li>
+  {% endif %}
+
+  <li>
+    <div class="cart-has-product">
+      <a href="{{ routes.cart_url }}">
+        {% render 'icon-bag' %}
+      </a>
+      <div class="cart__number df">
+        <a href="{{ routes.cart_url }}">
+          {{ cart.item_count }}
+        </a>
+      </div>
+    </div>
+  </li>
+  <li class="hidden-pc">
+    <i class="bi bi-list menu-icon"></i>
+    <i class="bi bi-x close-icon "></i>
+  </li>
+</ul>

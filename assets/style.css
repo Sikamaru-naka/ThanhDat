@@ -54,7 +54,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 110px;
 }
 
 .header-nav__contain > svg{
@@ -74,11 +73,13 @@
 .header-list {
     display: flex;
     flex-wrap: wrap;
+    /* clip-path: polygon(100% 0, 0 0, 0 0, 100% 0); */
 }
 
 .header-items {
-    margin: 0 25px;
-    padding: 10px 0;
+    /* margin: 0 25px; */
+    margin: 0 15px;
+    padding: 14px 0;
     position: relative;
 }
 
@@ -191,9 +192,15 @@
     display: flex;
 }
 
+.slide-text{
+    padding-top: 448px;
+    padding-bottom: 50px;
+}
+
 .slider-img {
     width: 100%;
-    height: 610px;
+    /* height: 610px; */
+    height: 100%;
     object-fit: cover;
     position: absolute;
     z-index: -1;
@@ -201,13 +208,12 @@
 
 
 .hero-heading {
-    padding-top: 448px;
-    padding-bottom: 20px;
     display: block;
+    padding-bottom: 20px;
 }
 
 .button{
-    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .pre-btn {
@@ -241,7 +247,7 @@
 /* category */
 
 .category {
-    margin-bottom: 203px;
+    margin-bottom: 193px;
 }
 
 .category-heading {
@@ -254,12 +260,15 @@
     position: relative;
     overflow: hidden;
     text-align: center;
+    /* margin-bottom: 20px; */
 }
 
 .category-product__img {
     position: relative;
     height: 100%;
+    min-height: 222px;
 }
+
 
 .category-product__img svg{
     background: silver;
@@ -272,26 +281,38 @@
   display: block;
   height: 360px;
   object-fit: cover;
+  position: absolute;
 }
 
+.category-product__img-position svg,
+.category-product__img-position img{
+  position: static;
+}
+
+.feature-img__contain-second {
+  opacity: 0;
+}
 
 .btn-category {
-    position: absolute;
-    bottom: 30px;
-    padding: 13px 0;
-    width: 125px;
-    z-index: 1;
+  position: absolute;
+  bottom: 30px;
+  padding: 13px 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  width: 120px;
+  margin: auto;
 }
 
 .category-product__img::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.11);
-    top: 0;
-    left: 0;
-    display: none;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.11);
+  top: 0;
+  left: 0;
+  display: none;
 }
 
 .category-product--placeholder {
@@ -311,7 +332,8 @@
 
 .btn-category:hover ~.category-product__img>img,
 .category-product__img:hover img {
-    transform: scale(1.2);
+  transform: scale(1.2);
+  opacity: 1;
 }
 
 /* discovery */
@@ -408,7 +430,10 @@
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);
     color: #555562;
+}
 
+.product-vendor a{
+    font-size: 1.4rem;
 }
 
 .btn-feature {
@@ -419,6 +444,7 @@
 .feature-img {
     overflow: hidden;
     border: #ab9f9f 3px solid;
+    height: 360px;
 }
 
 .feature-img--placeholder{
@@ -583,23 +609,22 @@
   width: 50px;
   text-align: center;
   border: none;
-
 }
 
 .service-box {
-    text-align: center;
     padding: 50px 20px;
 }
 
-
+.service-box > svg{
+    margin-bottom: 30px;
+    margin-right: 20px;
+}
 
 .service-title {
     margin-bottom: 5px;
     --font-size-bold: 1.6rem;
     line-height: var(--line-height-regular);
     color: var(--text-color);
-    margin-top: 30px;
-
 }
 
 .service-descript {
@@ -1269,7 +1294,6 @@
 }
 
 .category__info-name{
-    margin-top: 80px;
     font-size: 2.5rem;
     font-style: italic;
     color: #84848E;
@@ -1733,4 +1757,66 @@ tr {
 .price-select::-webkit-scrollbar-thumb {
   background-color: #cccccc82; /* Màu của thanh cuộn (scroll thumb) */
   border-radius: 8px;
+}
+
+.product-badge{
+  position: absolute;
+  bottom: 18px;
+  left: 15px;
+  font-size: 1.6rem;
+  background: #000000;
+  color: #fff;
+  border-radius: 20px;
+  padding: 5px 10px;
+  border: 0.1px solid #ffffff47;
+}
+
+.mb0{
+  margin-bottom: 0;
+}
+
+.border{
+  border: 1px solid #ECECEC;
+}
+
+.header-list.js-menu-height {
+  height: 70vh !important;
+}
+
+.footer__payment{
+  margin-top: 40px;
+}
+
+.list-payment{
+  width: 495px;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.service__wrapper{
+  flex-wrap: nowrap;
+  overflow: scroll;
+}
+
+.service__wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.fl1{
+    flex: 1;
+}
+
+.fldcl{
+    flex-direction: column;
+}
+
+.search-form__input--text{
+    font-size: 1.6rem;
+    margin-left: 10px;
+}
+
+.psfx{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 }

@@ -16,51 +16,60 @@
     "name": {
       "first_name": "名",
       "last_name": "姓"
+    },
+    "thanks": {
+      "thank": "感谢订阅!!!"
     }
   },
-  "pagefly": {
-    "products": {
-      "product": {
-        "regular_price": "Regular price",
-        "sold_out": "Sold out",
-        "unavailable": "Unavailable",
-        "on_sale": "Sale",
-        "quantity": "Quantity",
-        "add_to_cart": "Add to cart",
-        "back_to_collection": "Back to {{ title }}",
-        "view_details": "View details"
-      }
+  "dealer": {
+    "label": {
+      "title": "标题",
+      "first_name": "名",
+      "sur_name": "姓",
+      "email": "电子邮件",
+      "phone": "电话",
+      "city": "城市",
+      "company": "公司",
+      "province": "省",
+      "vat_number": "增值税号",
+      "request": "要求",
+      "message": "信息",
+      "provision_check1": "我同意接收有关独家优惠、服务和新闻的通讯",
+      "provision_check2": "阅读隐私政策后，我同意处理我的个人数据。",
+      "submit": "发送询问"
+    }
+  },
+  "socials_media": {
+    "socials": {
+      "social_title": "社会的"
+    }
+  },
+  "products": {
+    "product": {
+      "add_cart": "添加到购物车",
+      "product": "产品名称"
+    }
+  },
+  "templates": {
+    "404": {
+      "title": "找不到网页",
+      "subtext": "404",
+      "back_shop": "ショッピングを続ける"
     },
     "article": {
-      "tags": "Tags:",
-      "all_topics": "All topics",
-      "by_author": "by {{ author }}",
-      "posted_in": "Posted in",
-      "read_more": "Read more",
-      "back_to_blog": "Back to {{ title }}"
+      "btn": "返回博客"
     },
-    "comments": {
-      "title": "Leave a comment",
-      "name": "Name",
-      "email": "Email",
-      "message": "Message",
-      "post": "Post comment",
-      "moderated": "Please note, comments must be approved before they are published",
-      "success_moderated": "Your comment was posted successfully. We will publish it in a little while, as our blog is moderated.",
-      "success": "Your comment was posted successfully! Thank you!",
-      "comments_with_count": {
-        "one": "{{ count }} comment",
-        "other": "{{ count }} comments"
-      }
-    },
-    "password_page": {
-      "login_form_message": "Enter store using password:",
-      "login_form_password_label": "Password",
-      "login_form_password_placeholder": "Your password",
-      "login_form_submit": "Enter",
-      "signup_form_email_label": "Email",
-      "signup_form_success": "We will send you an email right before we open!",
-      "password_link": "Enter using password"
+    "main_cart": {
+      "message": "您的购物车是空的",
+      "title": " 您的购物车是空的",
+      "product": "S产品",
+      "quantity": "数量",
+      "total": " 全部的",
+      "back_shop": "继续购物",
+      "remove": "删除",
+      "subtotal": "小计",
+      "update_btn": "更新",
+      "checkout_btn": "查看"
     }
   }
 }

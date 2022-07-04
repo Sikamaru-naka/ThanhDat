@@ -1,0 +1,135 @@
+
+<style>
+  .newletter__subheading {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  .newletter__heading {
+    font-size: 4.9rem;
+    line-height: 5.3rem;
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+
+  .newletter__description {
+    font-size: 1.7rem;
+    line-height: 2.2rem;
+    margin-bottom: 32px;
+    margin-top: 14px;
+  }
+
+  .section.newletter {
+    padding: 64px 0;
+    background-color: #f0f0f0;
+  }
+
+</style>
+
+<div class="section newletter">
+  <div class="container">
+
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'subheading' -%}
+          <h3 class="newletter__subheading color-text-primary">
+            {{ block.settings.subheading }}
+          </h3>
+    
+        {%- when 'heading' -%}
+        <h2 class="newletter__heading color-text-primary">
+          {{ block.settings.heading }}
+
+        </h2>
+
+        {%- when 'description' -%}
+        <div class="newletter__description color-text-primary">
+          {{ block.settings.richtext }}
+          
+        </div>
+
+        {%- when 'emailForm' -%}
+
+        <form method="post" action="/contact?oseid=tiJotsx4ZMbKngbbhDDCma7S#contact_form" id="contact_form" accept-charset="UTF-8" class="contact-form" data-editor-form-attribute=""><input type="hidden" name="form_type" value="customer"><input type="hidden" name="utf8" value="✓">
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="form-email">
+          <input required="" type="email" name="contact[email]" value="" aria-describedby="ContactFooter-success" class="colors-text-secondary" id="inputEmail" placeholder="Email">
+          <button type="submit" class="text-color">Subscribe</button>
+        </div><input type="hidden" name="oseid" value="tiJotsx4ZMbKngbbhDDCma7S"></form>
+    {% endcase %}
+    {% endfor %}
+
+  </div>
+</div>
+
+
+{% schema %}
+  
+{
+  "name": "Newleter",
+  "settings": [
+    
+  ],
+  "blocks": [
+  {
+    "name": "SubHeading",
+    "type": "subheading",
+    "settings": [
+      {
+        "type": "text",
+        "id": "subheading",
+        "label": "SubHeading",
+        "default": "PREHEADING"
+      }
+    ]
+  },
+  {
+    "name": "Heading",
+    "type": "heading",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Heading",
+        "default": "Newsletter"
+      }
+    ]
+  },
+  {
+    "name": "Descript",
+    "type": "description",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "richtext",
+        "label": "Descript",
+        "default": "<p>Invite customers to join your mailing list.</p>"
+      }
+    ]
+  },
+  {
+    "name": "Email form",
+    "type": "emailForm"
+  }
+  ],
+  "presets": [
+    {
+      "name": "Newletter",
+      "blocks": [
+        {
+          "type": "subheading"
+        },
+        {
+          "type": "heading"
+        },
+        {
+          "type": "description"
+        },
+        {
+          "type": "emailForm"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

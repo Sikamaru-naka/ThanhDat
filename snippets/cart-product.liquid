@@ -1,0 +1,184 @@
+
+{% comment %}
+
+  {% render 'card-product',
+    card_product: product,
+    media_aspect_ratio: section.settings.image_ratio,
+    show_secondary_image: section.settings.show_secondary_image,
+    show_vendor: section.settings.show_vendor,
+    show_rating: section.settings.show_rating,
+    lazy_load: lazy_load,
+    show_quick_add: section.settings.enable_quick_add,
+    section_id: section.id
+  %}
+
+  render một product cart
+
+  Cho phép:
+    - card_product: {Object} Product Liquid object (optional)
+    - media_aspect_ratio: {String} Size of the product image card. Values are "square" and "portrait". Default is "square" (optional)
+    - show_secondary_image: {Boolean} Show the secondary image on hover. Default: false (optional)
+    - show_vendor: {Boolean} Show the product vendor. Default: false
+    - show_rating: {Boolean} Show the product rating. Default: false
+    - extend_height: {Boolean} Card height extends to available container space. Default: true (optional)
+    - lazy_load: {Boolean} Image should be lazy loaded. Default: true (optional)
+    - show_quick_add: {Boolean} Show the quick add button.
+    - section_id: {String} The ID of the section that contains this card.
+  Usage:
+    {% render 'card-product', show_vendor: section.settings.show_vendor %}
+{% endcomment %}
+<style>
+  .product-stock{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: red;
+    color: white;
+    font-size: 1.6rem;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+  .product-low-price{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: white;
+    font-size: 1.4rem;
+  }
+  .product-sale{
+    margin-right: 10px;
+    display: block;
+    background: #38CA61;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+  .product-low{
+    display: block;
+    background: #E85434;
+    border-radius: 20px;
+    padding: 5px 10px;
+  }
+</style>
+ 
+{% if product %}
+  <div class="feature-product category-product mb100 mb-0">
+    <div class="feature__icon-heart">
+      <i class="bi bi-suit-heart feature-icon "></i>
+      <i class="bi bi-suit-heart-fill feature-icon--active "></i>
+    </div>
+    <div class="category-product__img feature-img">
+      {% if product.featured_image != blank %}
+        <img class="feature-img__contain" width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ product.featured_image | image_url: width: 300 }}" alt="img product">
+        {% if product.media[1] != nil and show_secondary_image %}
+          <img class="feature-img__contain-second" width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ product.media[1] | image_url: width: 533 }}" alt="img product">
+        {% endif %}
+        {% if product.available == false %}
+          <span class="product-badge">Sold out</span>
+        {% elsif show_in_stock %}
+          <div>
+            {% for variant in product.variants %}
+              {% if variant.inventory_quantity > 0 %}
+                {% assign product_qty = product_qty | plus: variant.inventory_quantity %}
+              {% endif %}
+            {% endfor %}
+            {% if product_qty > 0 %}
+              <span class="product-badge"> Instock: {{ product_qty }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+      <div class="df product-low-price">
+        {% if product.compare_at_price > product.price and show_sale_badge %}
+          <span class="product-sale">Sale {{ product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price }}%</span>
+        {% endif %}
+        {% if show_low_stock and low_stock < 6 %}
+          {% for variant in product.variants %}
+            {% if variant.inventory_quantity > 0 %}
+              {% assign product_qty = product_qty | plus: variant.inventory_quantity %}
+            {% endif %}
+          {% endfor %}
+          {% if product_qty %}
+            <span class=" product-low"> Low stock </span>
+          {% endif %}
+        {% endif %}
+      </div>
+
+      
+
+      {% else %}
+        {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
+    </div>
+    <div class="product-name">
+      <a href="{{ product.url }}" class="">
+        {{ product.title }}
+      </a>
+    </div>
+    <div class="product-vendor {% if section.settings.show_vender == false %} hidden {% endif %}" >
+      <a href="{{ product.url }}" class="">
+        {% if product.vendor %}
+          {{ product.vendor }}
+        {% endif %}
+      </a>
+    </div>
+    <div class="product-cost"> 
+      <a href="{{ product.url }}" class="">
+        {{ product.price | money }}
+      </a>
+    </div>
+    
+
+    <!-- {% if product.variants.first.inventory_quantity > 0 %}
+      {% assign productStartCount = product.metafields.stock.initial | times:1 %}
+    {% if productStartCount > 0 %}
+      {% assign productInventory = product.variants.first.inventory_quantity %}
+        <p>{{ productStartCount | minus:productInventory }} sold. Only {{ productInventory }} remain.</p>
+      {% endif %}
+    {% else %}
+      <p>Uh Oh! All sold out...</p>
+    {% endif %} -->
+    
+    <form method="post" action="/cart/add">
+      <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+      <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
+      <button type="submit" name="add" class="btn btn-feature">
+        <span class="">
+          ADD TO CART
+        </span>
+      </button>
+    </form>
+  
+  </div>
+{% else %}
+  
+    <div class="feature-product category-product ">
+        <i class="bi bi-suit-heart feature-icon "></i>
+        <i class="bi bi-suit-heart-fill feature-icon--active "></i>
+        <div class="category-product__img feature-img feature-img--placeholder">
+          {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
+        </div>
+        <div class="product-name">
+          <a href="./product_detail.html" class="">
+            {{ "products.product.product_name" | t }}
+          </a>
+        </div>
+        <div class="product-cost">
+            <a href="./product_detail.html" class="">
+            $99.99
+            </a>
+        </div>
+        <form method="post" action="/cart/add">
+          <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+          <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
+          <button type="submit" name="add" class="btn btn-feature">
+            <span class="">
+              {{ "products.product.add_cart" | t }}
+            </span>
+          </button>
+        </form>
+    </div>
+  
+{% endif %}
+
+
+
+  

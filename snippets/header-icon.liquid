@@ -1,0 +1,40 @@
+<ul class="header-func-list">
+  <li>
+    <div class="tool-search">
+      {% render 'icon-search' %}               
+      <div class="search-form">
+        <form class="nav-form" action="{{ routes.search_url }}">
+          <input class="search-form__control" placeholder="Search product on Decarlo" type="search" name="q" value="{{ search.terms | escape }}">  
+          <button class="search-form__btn" type="submit" value="">search</button>
+        </form>
+      </div>
+    </div>
+  </li>
+
+  {%- if shop.customer_accounts_enabled -%}
+  <li>
+    <div class="user-settings">
+      <a href="{{ routes.account_login_url }}">
+        {% render 'icon-user' %}
+      </a>
+    </div>
+  </li>
+  {% endif %}
+
+  <li>
+    <div class="cart-has-product">
+      <a href="{{ routes.cart_url }}">
+        {% render 'icon-bag' %}
+      </a>
+      <div class="cart__number df">
+        <a href="{{ routes.cart_url }}">
+          {{ cart.item_count }}
+        </a>
+      </div>
+    </div>
+  </li>
+  <li class="hidden-pc">
+    <i class="bi bi-list menu-icon"></i>
+    <i class="bi bi-x close-icon "></i>
+  </li>
+</ul>
