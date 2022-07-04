@@ -13,7 +13,6 @@ const productHeartFill = $$('.feature-product .feature-icon--active');
 
 const menuOpen = $('.menu-icon');
 const menuClose = $('.close-icon');
-const overlay = $('.overlay');
 
 
 // căn giữa btn category
@@ -85,15 +84,12 @@ menuOpen.addEventListener('click', function(){
   menuOpen.style.display = 'none';
   menuClose.style.display = 'block';
   document.querySelector('.header-list').classList.add('menu-active1')
-  overlay.style.display = 'block';
 })
 
 menuClose.addEventListener('click', function(){
   document.querySelector('.header-list').classList.remove('menu-active1')
   menuOpen.style.display = 'block';
   menuClose.style.display = 'none';
-  overlay.style.display = 'none'
-
 })
 
 // click icon arrow open menu
@@ -102,7 +98,7 @@ const iconArrow = document.querySelector('.header-link--wrap svg')
 const subMenu = document.querySelector('.product-option')
 
 iconArrow.addEventListener('click', () => {
-  subMenu.classList.toggle('hidden')
+  subMenu.classList.toggle('h10vh')
 })
 
 

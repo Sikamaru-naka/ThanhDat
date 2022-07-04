@@ -54,7 +54,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 110px;
 }
 
 .header-nav__contain > svg{
@@ -78,7 +77,8 @@
 }
 
 .header-items {
-    margin: 0 25px;
+    /* margin: 0 25px; */
+    margin: 0 15px;
     padding: 14px 0;
     position: relative;
 }
@@ -579,19 +579,17 @@
 }
 
 .text-center {
-  text-align: center;
+    text-align: center;
 }
 
-.margin-auto {
-  margin: 0 auto;
+.width-unset{
+    max-width: unset;
 }
-
 
 /* service */
 
 .service-wrap {
     padding: 100px 0;
-    text-align: center;
 }
 
 .service-heading {
@@ -611,15 +609,16 @@
   width: 50px;
   text-align: center;
   border: none;
-
 }
 
 .service-box {
-    text-align: center;
     padding: 50px 20px;
 }
 
-
+.service-box > svg{
+    margin-bottom: 30px;
+    margin-right: 20px;
+}
 
 .service-title {
     margin-bottom: 5px;
@@ -1300,6 +1299,21 @@
     color: #84848E;
 }
 
+.heading.large {
+  font-size: var(--font-size-bold);
+  line-height: var(--line-height-bold);
+  text-shadow: 0 0 1px #000;
+}
+
+.heading.medium  {
+  font-size: 2.5rem;
+  line-height: 3.5rem;
+}
+
+.heading.small {
+  font-size: 2rem;
+  line-height: 3rem;
+}
 
 .icon-arrow {
   width: 20px;
@@ -1777,4 +1791,32 @@ tr {
   width: 495px;
   flex-wrap: wrap;
   margin: auto;
+}
+
+.service__wrapper{
+  flex-wrap: nowrap;
+  overflow: scroll;
+}
+
+.service__wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.fl1{
+    flex: 1;
+}
+
+.fldcl{
+    flex-direction: column;
+}
+
+.search-form__input--text{
+    font-size: 1.6rem;
+    margin-left: 10px;
+}
+
+.psfx{
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 }
