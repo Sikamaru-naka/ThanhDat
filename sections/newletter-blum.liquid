@@ -72,8 +72,6 @@
 						<span class="alert-text alert-text--success">Thank you! Your submission has been received!</span>
 					</div>
         {%- else -%}
-          <label class="hidden" for="EmailContact">Email</label>
-          <input id="EmailContact" class="element input wf" required="required" type="email" name="contact[email]" value="{{ form.email }}" aria-required="true" autocorrect="off" autocapitalize="off" autocomplete="email" placeholder="Your email"/>
           {% if form.errors contains 'email' %}
             <div class="alert alert-error " role="region" aria-live="polite" id="Newsletter-success--{{ section.id }}">
               <span class="icon icon-small icon--error  mr-12">{% render 'icon-alert-error' %}</span>
@@ -81,6 +79,8 @@
             </div>
           {% endif %}
         {%- endif -%}
+        <label class="hidden" for="EmailContact">Email</label>
+        <input id="EmailContact" class="element input wf" required="required" type="email" name="contact[email]" value="{{ form.email }}" aria-required="true" autocorrect="off" autocapitalize="off" autocomplete="email" placeholder="Your email"/>
         
         <button type="submit" class="button" >
           {{ section.settings.btn_label }}
