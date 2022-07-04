@@ -1,19 +1,29 @@
-
 <div class="category">
   <div class="category-wrap grid wide1 container__large">
     <h2 class="heading category-heading color-text-primary">{{ section.settings.heading }}</h2>
     <div class="row">
       {% for block in section.blocks %}
         {%- if block.settings.collection != blank -%}
-          <div class="col l-3 m-3 c-6 mb-15">
+          {%- liquid
+            if section.blocks.size == 4
+              assign footer_grid_class = 'l-3'
+            elsif section.blocks.size == 3
+              assign footer_grid_class = 'l-4'
+            elsif section.blocks.size == 2
+              assign footer_grid_class = 'l-6'
+            elsif section.blocks.size == 1
+              assign footer_grid_class = 'l-12'
+            endif
+          -%}
+          <div class="col {{ footer_grid_class }} m-3 c-6 mb-15">
             <div class="category-product">
               <a href="{{ block.settings.collection.url }}" class="btn btn-category">
                 {{ block.settings.collection.title }}
                   
               </a>
-              <div class="category-product__img">
+              <div class="category-product__img category-product__img-position">
                 <a href="{{ block.settings.collection.url }}">
-                  <img 	width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ block.settings.collection.featured_image | image_url: width: 720, height: 720 }}" alt="">
+                  <img 	width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ block.settings.collection.featured_image | image_url: width: 720, height: 720 }}" alt="image product">
                 </a>
               </div>
             </div>
@@ -24,7 +34,7 @@
             <a href="./product_detail.html" class="btn btn-category btn-category-placeholder">               
               Collection title
             </a>
-            <div class="category-product__img category-product__img--placeholder">
+            <div class="category-product__img category-product__img--placeholder category-product__img-position">
                 {{ 'collection-4' | placeholder_svg_tag: 'bg-gray ' }}
             </div>
           </div>
@@ -62,7 +72,15 @@
   ],
   "presets": [
     {
-      "name": "Collection list"
+      "name": "Collection list",
+      "blocks": [
+        {
+          "type": "collection",
+          "type": "collection",
+          "type": "collection",
+          "type": "collection"
+        }
+      ]
     }
   ]
 }

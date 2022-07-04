@@ -1,78 +1,48 @@
+
 <div class="category featured">
   <div class="category-wrap grid wide1 container__large ">
-    <h2 class="heading category-heading featured-heading color-text-primary">{{ section.settings.heading }}</h2> 
+    <h2 style="color: {{ section.settings.color_header }}" class="heading category-heading featured-heading color-text-primary">{{ section.settings.heading }}</h2> 
     <div class="row featured-row">
       {%- if section.settings.collection.products == blank -%}
        {%- for i in (1..4) -%}
-        <div class="col l-3 m-3 c-12">
-          <div class="feature-product category-product ">
-              <i class="bi bi-suit-heart feature-icon "></i>
-              <i class="bi bi-suit-heart-fill feature-icon--active "></i>
-              <div class="category-product__img feature-img feature-img--placeholder">
-                {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
-              </div>
-              <div class="product-name">
-                <a href="./product_detail.html" class="">
-                  PRODUCT NAME
-                </a>
-              </div>
-              <div class="product-cost">
-                  <a href="./product_detail.html" class="">
-                  $99.99
-                  </a>
-              </div>
-              <form method="post" action="/cart/add">
-                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-                <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
-                <button type="submit" name="add" class="btn btn-feature">
-                  <span class="">
-                    ADD TO CART
-                  </span>
-                </button>
-              </form>
-          </div>
-        </div>
+       {% render 'cart-product',
+          product: product
+        %}
        {%- endfor -%}
 
       {%- elsif section.settings.collection.products != blank -%}         
-        {%- for product in section.settings.collection.products -%}   
-          <div class="col l-3 m-3 ">
-            <div class="feature-product category-product mb100 mb-0">
-              <div class="feature__icon-heart">
-                <i class="bi bi-suit-heart feature-icon "></i>
-                <i class="bi bi-suit-heart-fill feature-icon--active "></i>
-              </div>
-              <div class="category-product__img feature-img">
-                {% if product.featured_image != blank %}
-                  <img class="feature-img__contain" width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ product.featured_image | image_url: width: 300 }}">
-                {% else %}
-                  {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
-                {% endif %}
-              </div>
-              <div class="product-name">
-                <a href="{{ product.url }}" class="">
-                  {{ product.title }}
-                </a>
-              </div>
-              <div class="product-cost"> 
-                <a href="{{ product.url }}" class="">
-                  {{ product.price | money }}
-                </a>
-              </div>
-              <form method="post" action="/cart/add">
-                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-                <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
-                <button type="submit" name="add" class="btn btn-feature">
-                  <span class="">
-                    ADD TO CART
-                  </span>
-                </button>
-              </form>
-            </div>
+        {%- for product in section.settings.collection.products limit: section.settings.products_to_show -%} 
+          {%- liquid
+            if section.settings.collums_product == 1
+              assign collumns_product = 'l-12'
+            elsif section.settings.collums_product == 2
+              assign collumns_product = 'l-6'
+            elsif section.settings.collums_product == 3
+              assign collumns_product = 'l-4'
+            elsif section.settings.collums_product == 4
+              assign collumns_product = 'l-3'
+            endif
+          -%}
+          <div class="col {{ collumns_product }} m-3 c-12">
+            {% render 'cart-product',
+              product: product,
+              show_secondary_image: section.settings.checkbox_show_image,
+              show_in_stock: section.settings.show_in_stock,
+              show_sale_badge: section.settings.show_sale_badge,
+              show_low_stock: section.settings.show_low_stock,
+              low_stock: section.settings.low_stock,
+            %}
           </div>
         {%- endfor -%}
       {%- endif -%}
     </div>
+
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when '@app' -%}
+        {% render block %}
+      {% endcase -%}
+    {% endfor -%}
   </div>
 </div>
 
@@ -87,9 +57,89 @@
       "default" : "FEATURED PRODUCT"
     },
     {
+      "type": "color",
+      "id": "color_header",
+      "label": "Heading color",
+      "default": "#000"
+    },
+    {
       "type": "collection",
       "id": "collection",
       "label": "Collection"
+    },
+    {
+      "type": "header",
+      "content": "Product"
+    },
+    {
+      "type": "range",
+      "label": "Maximum products to show",
+      "id": "products_to_show",
+      "min": 4,
+      "max": 12,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "range",
+      "label": "Number of collums product on desktop",
+      "id": "collums_product",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "checkbox_show_image",
+      "label": "Show second image on hover"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sale_badge",
+      "label": "Show Sale badge",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_in_stock",
+      "label": "Show in stock",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_low_stock",
+      "label": "Show Low Stock badge",
+      "default": true,
+      "info": "Only show if reach the low stock threshold"
+    },
+    {
+      "type": "range",
+      "label": "Low stock threshold",
+      "id": "low_stock",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "default": 4,
+      "info": "Set to 0 for no threshold"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vender",
+      "label": "Show vendor",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_rating",
+      "default": false,
+      "label": "Show product rating",
+      "info": "To display a rating, add a product rating app. [Learn more](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/theme-features#featured-collection-show-product-rating)"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
     }
   ],
   "presets":[
