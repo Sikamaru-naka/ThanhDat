@@ -1,5 +1,5 @@
 .contact-form__main--wrap{
-  padding: 48px 0;
+  padding: 48px 25px;
   background-color: #F0F3FB;
 }
 
@@ -27,9 +27,14 @@
   margin-bottom: 60px;
 }
 
+.contact-form__img svg,
 .contact-form__img img{
   width: 100%;
   object-fit: cover;
+}
+
+.contact-form__img svg{
+  background: cadetblue
 }
 
 .field{
@@ -44,7 +49,8 @@
 }
 
 .field__input{
-  width: 275px;
+  min-width: 275px;
+  width: 100%;
   height: 40px;
   padding-left: 12px;
 }
@@ -77,4 +83,18 @@
   color: white;
   box-shadow: 0px 2px 0px rgb(0 0 0 / 4%);
   border-radius: 2px;
+}
+
+.form__message{
+  font-size: 18px;
+  color: #b70707;
+}
+
+.contact__field-error span{
+  font-size: 14px;
+  color: #b70707;
+}
+
+.contact-form__bgc{
+  background-color: #ccc
 }

@@ -6,6 +6,10 @@
     flex-direction: column;
   }
 
+  .contact-form__wrapper .col{
+    width: 100%;
+  }
+
   .service__item{
     min-width: 250px;
   }
